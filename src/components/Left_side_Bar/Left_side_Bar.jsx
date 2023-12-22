@@ -13,6 +13,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import "./Left_side_Bar.css";
+import Right_side_bar from "../Right_side_bar/Right_side_bar";
 
 const Left_side_Bar = () => {
   const [topicsshow, setTopicsShow] = useState(true);
@@ -24,7 +25,7 @@ const Left_side_Bar = () => {
   const [celebrityShow, setCelebrityShow] = useState(false);
   return (
     <section className="main-container">
-      <div className="leftSide_bar" id="leftSideBar_id">
+      <aside className="leftSide_bar" id="leftSideBar_id">
         <div className="left-side-bar-top-content">
           <div className="left-name-icons">
             <FontAwesomeIcon className="icons-left-side" icon={faHouse} />
@@ -270,11 +271,181 @@ const Left_side_Bar = () => {
                   </div>
                 </div>
               )}
+              <div className="left-name-icons">
+                <p>Animals and Pets</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Anime</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Art</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Cars and Motor Vehicles</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Crafts and DIY</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Culture, Race, and Ethnicity</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Ethics and philosophy</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Fashion</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Food and Drink</p>
+              </div>
+              <div className="left-name-icons">
+                <p>History</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Hobbies</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Law</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Learning and Education</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Military</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Movies</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Music</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Place</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Pocasts and Streamers</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Politics</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Programming </p>
+              </div>
+              <div className="left-name-icons">
+                <p>Reading,Writing,and Literature</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Religion and Spirituality</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Science</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Tabletop Games</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Technology</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Travel</p>
+              </div>
+              <div
+                className="left-topics"
+                onClick={() => {
+                  setTopicsShow((old) => {
+                    return !old;
+                  });
+                }}
+              >
+                {" "}
+                <p>RESOURES</p>
+                {topicsshow ? (
+                  <FontAwesomeIcon icon={faAngleUp} />
+                ) : (
+                  <FontAwesomeIcon icon={faAngleDown} />
+                )}
+              </div>
+              <div className="left-name-icons">
+                <p>About Reddit</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Advertise</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Help</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Blog</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Careers</p>
+              </div>
+              <div className="left-name-icons">
+                <p>Press</p>
+              </div>
             </div>
           )}
+          <div>
+            <div className="left-name-icons">
+              <p>Communities</p>
+            </div>
+            <div className="left-name-icons">
+              <p>Best of Reddit</p>
+            </div>
+            <div className="left-name-icons">
+              <p>Topics</p>
+            </div>
+          </div>
+          <div>
+            <div className="left-name-icons">
+              <p>Content Policy</p>
+            </div>
+            <div className="left-name-icons">
+              <p>Privacy Policy</p>
+            </div>
+            <div className="left-name-icons">
+              <p>User Agreement</p>
+            </div>
+          </div>
+          <div
+            className="left-topics"
+            onClick={() => {
+              setTopicsShow((old) => {
+                return !old;
+              });
+            }}
+          >
+            {" "}
+            <p>POPULAR POSTS</p>
+            {topicsshow ? (
+              <FontAwesomeIcon icon={faAngleUp} />
+            ) : (
+              <FontAwesomeIcon icon={faAngleDown} />
+            )}
+          </div>
+          <div>
+            <p>English / Global</p>
+          </div>
+          <div>
+            <p>Deutsch</p>
+          </div>
+          <div>
+            <p>Espanol</p>
+          </div>
+          <div>
+            <p>Francais</p>
+          </div>
+          <div>
+            <p>Italiano</p>
+          </div>
+          <div>
+            <p>Portugues</p>
+          </div>
         </div>
-      </div>
-      <div className="right-side-bar"></div>
+      </aside>
+      <main className="right-side-bar">
+        <Right_side_bar />
+      </main>
     </section>
   );
 };
