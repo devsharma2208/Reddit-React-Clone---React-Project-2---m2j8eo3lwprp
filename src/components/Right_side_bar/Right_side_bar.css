@@ -4,8 +4,7 @@
   /* height: 200vh; */
   position: static;
 }
-.right_side_bar_container {
-}
+
 .right_Side-crousal {
   height: 33vh;
   background: red;
@@ -16,11 +15,11 @@
   grid-gap: 1.5rem;
 }
 .right_right_all_content {
-  background-color: green;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  background-color: rgb(255, 255, 255);
   height: fit-content;
-
-  /* overflow-y: scroll; */
-  /* scrollbar-color: red; */
+  /* padding: 1rem; */
 }
 .right_side_popular_community {
   position: sticky;
@@ -56,4 +55,30 @@
   > p {
     font-size: 0.8rem;
   }
+}
+.fetched-data-main-containt-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.fetched-main-contiant {
+  border-radius: 1rem;
+  padding: 1rem;
+  &:hover {
+    background-color: rgb(237, 240, 242);
+    cursor: pointer;
+  }
+}
+.userName-image-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  > h5 {
+    color: rgb(164, 162, 161);
+  }
+}
+.main-containt {
+  color: rgb(108, 108, 108);
+  margin: 0.5rem;
 }

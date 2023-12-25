@@ -42,7 +42,7 @@
   > p {
     font-size: 0.9rem;
     margin: 0.5rem 0.5rem;
-    text-align: center;
+    text-align: start;
   }
 }
 .icons-left-side {
@@ -81,4 +81,11 @@
     margin: 0.8rem 0.8rem;
     color: rgb(104, 106, 107);
   }
+}
+.popularPosts-left-side-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: #666768;
+  font-size: 0.95rem;
 }
