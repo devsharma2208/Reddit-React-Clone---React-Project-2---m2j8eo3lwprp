@@ -6,8 +6,9 @@
 }
 
 .right_Side-crousal {
-  height: 33vh;
-  background: red;
+  height: 40vh;
+  background: rgb(255, 255, 255);
+  width: 62rem;
 }
 .right_side_content {
   display: grid;
@@ -21,13 +22,29 @@
   height: fit-content;
   /* padding: 1rem; */
 }
+#popular-com-fix::-webkit-scrollbar {
+  width: 0.5rem;
+}
 .right_side_popular_community {
   position: sticky;
   top: 5rem;
-  height: fit-content;
+  height: 85vh;
   background-color: rgb(245, 249, 252);
   margin: 1rem 0;
   border-radius: 1rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  --thumbBG: #bcc0c3;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+.right_side_popular_community::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+.right_side_popular_community::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
 }
 .right-sird-content-fixed {
   padding: 1rem;
@@ -81,4 +98,67 @@
 .main-containt {
   color: rgb(108, 108, 108);
   margin: 0.5rem;
+}
+.right-content-comntes {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.like-post {
+  padding: 0.4rem;
+  border-radius: 50%;
+  &:hover {
+    color: rgb(255, 2, 2);
+    background-color: rgb(202, 209, 209);
+  }
+}
+.disLike {
+  padding: 0.4rem;
+  border-radius: 50%;
+  &:hover {
+    color: rgb(158, 2, 255);
+    background-color: rgb(202, 209, 209);
+  }
+}
+.right-content-comntes-likes {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgb(233, 230, 230);
+  padding: 0.1rem;
+  border-radius: 3rem;
+  > p {
+    margin-bottom: 0.3rem;
+  }
+  &:hover {
+    background-color: rgb(222, 221, 221);
+  }
+}
+.comments {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgb(233, 230, 230);
+  padding: 0.4rem 0.8rem;
+  border-radius: 1rem;
+  &:hover {
+    background-color: rgb(222, 221, 221);
+  }
+}
+.comments-icon {
+  font-size: 5rem;
+}
+.share-btn {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgb(233, 230, 230);
+  padding: 0.4rem 0.8rem;
+  border-radius: 1rem;
+  &:hover {
+    background-color: rgb(222, 221, 221);
+  }
 }
