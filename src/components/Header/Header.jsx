@@ -4,8 +4,8 @@ import {
   faQrcode,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
-const Header = () => {
+import React, { useState } from "react";
+const Header = ({ setLognIn }) => {
   return (
     <div className="header-container">
       <div className="header-content-1">
@@ -42,7 +42,12 @@ const Header = () => {
 
         <h4>Get App</h4>
       </div>
-      <div className="login">
+      <div
+        className="login"
+        onClick={() => {
+          setLognIn(true);
+        }}
+      >
         <h4>Log In</h4>
       </div>
       <div className="dot-icon">

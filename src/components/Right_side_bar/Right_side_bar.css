@@ -35,8 +35,10 @@
   overflow-y: scroll;
   overflow-x: hidden;
   scrollbar-width: thin;
-  --thumbBG: #bcc0c3;
-  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  &:hover {
+    --thumbBG: #bcc0c3;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  }
 }
 .right_side_popular_community::-webkit-scrollbar-track {
   background: var(--scrollbarBG);

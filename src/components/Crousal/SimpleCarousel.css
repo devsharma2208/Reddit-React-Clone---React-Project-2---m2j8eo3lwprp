@@ -9,12 +9,13 @@
   > h1 {
     font-size: 1.6rem;
     font-weight: 700;
+    cursor: pointer;
   }
   > p {
     font-size: 0.9rem;
+    cursor: pointer;
   }
 }
-
 .carousel-img {
   position: absolute;
   border-radius: 1rem;
@@ -30,4 +31,5 @@
   height: 185px;
   width: 300px;
   border-radius: 1rem;
+  cursor: pointer;
 }
