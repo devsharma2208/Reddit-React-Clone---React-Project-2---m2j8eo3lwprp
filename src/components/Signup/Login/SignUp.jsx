@@ -2,9 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Login.css";
 import axios from "axios";
 const SignUp = ({ setToggle }) => {
-  const [isSignUpStatus, setIsSignUpStatus] = useState();
+  // const [isSignUpStatus, setIsSignUpStatus] = useState();
   const [signUpClick, setSignUpClick] = useState(false);
-  const userName = useRef(null);
+  const [allFieldFill, setAllFieldFill] = useState("");
+  const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
   const config = {
@@ -20,28 +21,36 @@ const SignUp = ({ setToggle }) => {
         { ...body },
         config
       );
-      console.log(res.data);
-      setIsSignUpStatus(res.data);
+      console.log(res);
+      // setIsSignUpStatus(res.data);
     } catch (err) {
       console.log(err);
+      setAllFieldFill(err.response.data.message);
       setSignUpClick(false);
     }
   };
   useEffect(() => {
-    const body = {
-      name: userName.current.value,
-      email: email.current.value,
-      password: password.current.value,
-      appType: "reddit",
-    };
-    signUp_Fetch(body);
+    if (signUpClick) {
+      const body = {
+        name: name.current.value,
+        email: email.current.value,
+        password: password.current.value,
+        appType: "reddit",
+      };
+      signUp_Fetch(body);
+      setSignUpClick(false);
+    }
   }, [signUpClick]);
-  const handleSubmitdata = (e) => {
+  const handleSignUpdata = (e) => {
     e.preventDefault();
-    setSignUpClick(true);
+    if (name.current.value && email.current.value && password.current.value) {
+      setSignUpClick(true);
+    } else {
+      setAllFieldFill("Please Fill all required fields");
+    }
   };
   return (
-    <form onSubmit={(e) => handleSubmitdata}>
+    <form onSubmit={(e) => handleSignUpdata(e)}>
       <div>
         <div className="sign-up-container">
           <h1>Sign Up</h1>
@@ -74,7 +83,7 @@ const SignUp = ({ setToggle }) => {
 
             <div className="userName-password">
               <label htmlFor="name">UserName*</label>
-              <input type="text" name="name" id="name" ref={userName} />
+              <input type="text" name="name" id="name" ref={name} />
             </div>
             <div className="userName-password">
               <label htmlFor="email">Email*</label>
@@ -90,7 +99,7 @@ const SignUp = ({ setToggle }) => {
               />
             </div>
             <div className="forget-pass-signup">
-              <span>Forget password?</span>
+              <p className="fill-all-field">{allFieldFill && allFieldFill}</p>
               <p>
                 Already a redditor?{" "}
                 <span
@@ -105,7 +114,7 @@ const SignUp = ({ setToggle }) => {
           </div>
         </div>
         <div className="log-in-btn">
-          <input type="button" value="Continue" />
+          <input type="submit" value="Sign Up" />
         </div>
       </div>
     </form>

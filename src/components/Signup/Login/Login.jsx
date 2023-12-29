@@ -7,11 +7,7 @@ const Login = ({ setLognIn }) => {
   const [toggle, setToggle] = useState(false);
   const [isLogInStatus, setIsLogInStatus] = useState();
   const [loginClick, setLoginClick] = useState(false);
-  // const [body, setBody] = useState({
-  //   email: "",
-  //   password: "",
-  //   appType: "reddit",
-  // });
+  const [errIncorrectEmailOrPass, setErrIncorrectEmailOrPass] = useState("");
   const email = useRef(null);
   const password = useRef(null);
   const config = {
@@ -31,24 +27,28 @@ const Login = ({ setLognIn }) => {
       setIsLogInStatus(res.data);
     } catch (err) {
       console.log(err);
+      setErrIncorrectEmailOrPass(err.response.data.message);
       setLoginClick(false);
     }
   };
   useEffect(() => {
-    const body = {
-      email: email.current.value,
-      password: password.current.value,
-      appType: "reddit",
-    };
-    login_Fetch(body);
+    if (loginClick) {
+      const body = {
+        email: email.current.value,
+        password: password.current.value,
+        appType: "reddit",
+      };
+      login_Fetch(body);
+      setLoginClick(false);
+      // console.log("login");
+    }
   }, [loginClick]);
   const handleLogindata = (e) => {
     e.preventDefault();
-
     setLoginClick(true);
   };
   return (
-    <form className="Login-page" onSubmit={(e) => handleLogindata(e)}>
+    <div className="Login-page">
       <div className="cross-sign-div">
         <span
           className="cross-sign"
@@ -60,7 +60,7 @@ const Login = ({ setLognIn }) => {
         </span>
       </div>
       {!toggle ? (
-        <>
+        <form onSubmit={(e) => handleLogindata(e)}>
           <div className="login-container">
             <h1>Log In</h1>
             <p>
@@ -102,6 +102,9 @@ const Login = ({ setLognIn }) => {
                   ref={password}
                 />
               </div>
+              <div className="err-massage">
+                {errIncorrectEmailOrPass && errIncorrectEmailOrPass}
+              </div>
               <div className="forget-pass-signup">
                 <span>Forget password?</span>
                 <p>
@@ -120,11 +123,11 @@ const Login = ({ setLognIn }) => {
           <div className="log-in-btn">
             <input type="submit" value="Log In" />
           </div>
-        </>
+        </form>
       ) : (
         <SignUp setToggle={setToggle} />
       )}
-    </form>
+    </div>
   );
 };
 

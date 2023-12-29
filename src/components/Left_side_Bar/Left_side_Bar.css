@@ -63,6 +63,11 @@
 .arroow-icons {
   color: rgb(160, 154, 154);
 }
+.topic-bottom-line {
+  border-bottom: 0.13rem solid rgb(237, 231, 231);
+  padding-bottom: 0.8rem;
+  margin-top: 1rem;
+}
 .leftBar-iconsand-topics {
   display: flex;
   justify-content: space-between;
