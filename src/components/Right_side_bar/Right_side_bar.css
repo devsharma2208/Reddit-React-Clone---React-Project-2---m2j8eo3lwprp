@@ -164,3 +164,47 @@
     background-color: rgb(222, 221, 221);
   }
 }
+.after-log-in-right-side-container {
+  margin: 1rem 2rem 1rem 0;
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+}
+.reddit-Premium-img {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.first-box-preimum {
+  background-color: aqua;
+  /* margin-right: 2rem; */
+  padding: 1rem;
+  border-radius: 0.3rem;
+}
+.try-btn {
+  margin-top: 1rem;
+  > button {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    background-color: rgb(250, 73, 14);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(220, 84, 39);
+    }
+  }
+}
+.bg-img-right {
+  background-image: url("https://www.redditstatic.com/desktop2x/img/id-cards/home-banner@2x.png");
+  background-position-y: center;
+  background-position-x: center;
+  background-size: cover;
+  height: 34px;
+  /* margin: -12px -12px 10px; */
+  border-radius: 3px 3px 0 0;
+}

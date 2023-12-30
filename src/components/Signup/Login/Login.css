@@ -176,3 +176,7 @@
 .fill-all-field {
   color: red;
 }
+.success-signup {
+  color: green;
+  font-weight: 700;
+}

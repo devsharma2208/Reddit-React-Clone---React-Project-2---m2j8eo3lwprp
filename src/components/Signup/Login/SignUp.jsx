@@ -5,6 +5,7 @@ const SignUp = ({ setToggle }) => {
   // const [isSignUpStatus, setIsSignUpStatus] = useState();
   const [signUpClick, setSignUpClick] = useState(false);
   const [allFieldFill, setAllFieldFill] = useState("");
+  const [signup, setSignup] = useState(false);
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
@@ -15,14 +16,20 @@ const SignUp = ({ setToggle }) => {
   };
 
   const signUp_Fetch = async (body) => {
+    setSignup(false);
     try {
+      setAllFieldFill("");
       const res = await axios.post(
         "https://academics.newtonschool.co/api/v1/user/signup",
         { ...body },
         config
       );
-      console.log(res);
+      // console.log(res);
       // setIsSignUpStatus(res.data);
+      setSignup(true);
+      setTimeout(() => {
+        setToggle(false);
+      }, 1500);
     } catch (err) {
       console.log(err);
       setAllFieldFill(err.response.data.message);
@@ -100,6 +107,9 @@ const SignUp = ({ setToggle }) => {
             </div>
             <div className="forget-pass-signup">
               <p className="fill-all-field">{allFieldFill && allFieldFill}</p>
+              <p className="success-signup">
+                {signup && "Successfully SignUp Please Login"}
+              </p>
               <p>
                 Already a redditor?{" "}
                 <span

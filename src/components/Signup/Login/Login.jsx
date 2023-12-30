@@ -5,7 +5,6 @@ import axios from "axios";
 
 const Login = ({ setLognIn }) => {
   const [toggle, setToggle] = useState(false);
-  const [isLogInStatus, setIsLogInStatus] = useState();
   const [loginClick, setLoginClick] = useState(false);
   const [errIncorrectEmailOrPass, setErrIncorrectEmailOrPass] = useState("");
   const email = useRef(null);
@@ -15,16 +14,23 @@ const Login = ({ setLognIn }) => {
       projectID: "7k1ct68pbbmr",
     },
   };
-
+  // console.log(JSON.parse(localStorage.getItem("userDetails")));
   const login_Fetch = async (body) => {
+    setErrIncorrectEmailOrPass("");
     try {
       const res = await axios.post(
         "https://academics.newtonschool.co/api/v1/user/login",
         { ...body },
         config
       );
-      console.log(res.data);
-      setIsLogInStatus(res.data);
+      // console.log(res.data);
+      localStorage.setItem("userDetails", [
+        JSON.stringify({
+          name: res.data.data.name,
+          email: res.data.data.email,
+          token: res.data.token,
+        }),
+      ]);
     } catch (err) {
       console.log(err);
       setErrIncorrectEmailOrPass(err.response.data.message);
@@ -100,6 +106,7 @@ const Login = ({ setLognIn }) => {
                   name="password"
                   id="password"
                   ref={password}
+                  autoComplete="current-password"
                 />
               </div>
               <div className="err-massage">
