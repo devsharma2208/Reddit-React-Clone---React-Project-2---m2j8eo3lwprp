@@ -18,9 +18,19 @@
 .right_right_all_content {
   margin-top: 1rem;
   border-radius: 1rem;
-  background-color: rgb(255, 255, 255);
   height: fit-content;
-  /* padding: 1rem; */
+}
+.right-right-all_content_after_login {
+  background-color: white;
+  border-radius: 0.5rem !important;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.3rem;
+  align-items: flex-start;
+  &:hover {
+    background-color: white !important;
+    border: 1px solid black;
+  }
 }
 #popular-com-fix::-webkit-scrollbar {
   width: 0.5rem;
@@ -177,7 +187,7 @@
   gap: 0.5rem;
 }
 .first-box-preimum {
-  background-color: aqua;
+  background-color: rgb(255, 255, 255);
   /* margin-right: 2rem; */
   padding: 1rem;
   border-radius: 0.3rem;
@@ -199,6 +209,13 @@
     }
   }
 }
+.create-comm-container-jdks {
+  background-color: #ffffff;
+  padding-bottom: 0.5rem;
+}
+.all-con-adfljk {
+  padding: 0 0.5rem 0.5rem;
+}
 .bg-img-right {
   background-image: url("https://www.redditstatic.com/desktop2x/img/id-cards/home-banner@2x.png");
   background-position-y: center;
@@ -207,4 +224,133 @@
   height: 34px;
   /* margin: -12px -12px 10px; */
   border-radius: 3px 3px 0 0;
+}
+.bg-img-tattu {
+  background: url(https://www.redditstatic.com/desktop2x/img/id-cards/snoo-home@2x.png);
+  background-size: 40px 68px;
+  height: 68px;
+  width: 40px;
+  display: inline-block;
+  flex-shrink: 0;
+  margin: -0.7rem 0 0 0.5rem;
+}
+.bg-img-tattu-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  > p {
+    font-weight: 600;
+    color: #5a5d5f;
+  }
+}
+.community-text-p {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+.community-btn1,
+.community-btn2 {
+  > button {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 3rem;
+  }
+}
+.community-btn1 > button {
+  background-color: #0079d3;
+  color: white;
+  font-weight: 800;
+  border: none;
+  &:hover {
+    background-color: #1a85d6;
+    cursor: pointer;
+  }
+}
+.community-btn2 > button {
+  background-color: #ffffff;
+  color: #0079d3;
+  font-weight: 700;
+  border-color: #0079d3;
+  &:hover {
+    background-color: #eeeeee;
+    cursor: pointer;
+  }
+}
+.last-comm-content {
+  display: flex;
+  margin: 0.5rem 0;
+  gap: 1.5rem;
+  font-size: 0.77rem;
+  align-items: center;
+  justify-content: flex-start;
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+.last-comm-content-lang {
+  display: flex;
+  margin: 0.5rem 0;
+  gap: 4.5rem;
+  font-size: 0.8rem;
+  align-items: center;
+  justify-content: flex-start;
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
+.last-comm-content-container {
+  background-color: white;
+  padding: 0.5rem;
+  position: sticky;
+  top: 5rem;
+}
+.comments-after-login {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+
+  > div {
+    display: inherit;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    padding: 0 0.5rem;
+    &:hover {
+      background-color: #e0e2e3;
+    }
+    > img {
+      margin-top: 0.3rem;
+    }
+    > p {
+      font-size: 0.9rem;
+    }
+  }
+}
+.right-content-comntes-likes-after-login {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  /* background-color: rgb(233, 230, 230); */
+  padding: 0.1rem;
+  border-radius: 3rem;
+  > p {
+    margin-bottom: 0.3rem;
+  }
+  &:hover {
+    background-color: rgb(222, 221, 221);
+  }
+}
+.right-content-comntes-after-login {
+  height: 142vh;
+  background-color: rgb(246, 242, 242);
+  padding: 2px;
+  border-radius: 0.2rem;
 }

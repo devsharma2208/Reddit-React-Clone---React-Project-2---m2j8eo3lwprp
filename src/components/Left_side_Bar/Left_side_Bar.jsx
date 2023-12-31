@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+import "./Left_side_Bar.css";
 import { faGg } from "@fortawesome/free-brands-svg-icons";
 import {
   faAngleDown,
@@ -11,8 +13,6 @@ import {
   faVrCardboard,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
-import "./Left_side_Bar.css";
 import Right_side_bar from "../Right_side_bar/Right_side_bar";
 
 const Left_side_Bar = () => {
@@ -29,7 +29,9 @@ const Left_side_Bar = () => {
     JSON.parse(localStorage.getItem("userDetails"))
   );
   return (
-    <section className="main-container">
+    <section
+      className={`main-container ${userData && "after-login-main-container"}`}
+    >
       <aside
         className={`leftSide_bar ${userData && "left-side-after-login"}`}
         id="leftSideBar_id"

@@ -3,6 +3,7 @@ import "./Right_side_bar.css";
 import Fetch_Data from "./Fetched_data";
 import Crousal from "../Crousal/Crousal";
 import axios from "axios";
+import After_login_Content_right from "./After_login_right-Content/After_login_Content_right";
 
 const Right_side_bar = () => {
   const [popularPostData, setPopularPostData] = useState([]);
@@ -38,7 +39,7 @@ const Right_side_bar = () => {
       )}
       <div className="right_side_content">
         <div className="right_right_all_content">
-          <Fetch_Data />
+          <Fetch_Data userData={userData} />
         </div>
         {!userData ? (
           <div className="right_side_popular_community" id="popular-com-fix">
@@ -63,27 +64,7 @@ const Right_side_bar = () => {
             </div>
           </div>
         ) : (
-          <div className="after-log-in-right-side-container">
-            <div className="first-box-preimum">
-              <div className="reddit-Premium-img">
-                <img
-                  src="https://i.redd.it/veuemg4c8q171.jpg"
-                  alt="Reddit Premium img"
-                  height={50}
-                />
-                <div>
-                  <span>Reddit Premium</span>
-                  <p>The best Reddit experience</p>
-                </div>
-              </div>
-              <div className="try-btn">
-                <button>Try Now</button>
-              </div>
-            </div>
-            <div>
-              <div className="bg-img-right"></div>
-            </div>
-          </div>
+          <After_login_Content_right />
         )}
       </div>
     </section>

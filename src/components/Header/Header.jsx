@@ -1,23 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
-  faBell,
-  faBellConcierge,
-  faComment,
-  faCommentDots,
+  faAngleDown,
+  faAngleUp,
   faEllipsis,
+  faHouse,
   faMagnifyingGlass,
   faPlus,
   faQrcode,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Left_Side_bar_afterLogin from "./Left_Side_bar_afterLogin";
 
 const Header = ({ setLognIn }) => {
   const [userData, setUserData] = useState(
     JSON.parse(localStorage.getItem("userDetails"))
   );
-  useEffect(() => {
-    // console.log(userData);
-  }, []);
+  const [toggle, setToggle] = useState(false);
   return (
     <div className="header-container">
       <div className="header-content-1">
@@ -26,8 +24,28 @@ const Header = ({ setLognIn }) => {
           src="https://logos-world.net/wp-content/uploads/2023/11/Reddit-New-Logo.png"
           alt="Reddit logo"
         />
+        {userData && (
+          <div>
+            {" "}
+            <div
+              className="home-content-after-login"
+              onClick={() => {
+                setToggle((old) => !old);
+              }}
+            >
+              <h3>
+                <FontAwesomeIcon icon={faHouse} /> <span>Home</span>
+              </h3>
+              {toggle ? (
+                <FontAwesomeIcon icon={faAngleUp} />
+              ) : (
+                <FontAwesomeIcon icon={faAngleDown} />
+              )}
+            </div>
+            <Left_Side_bar_afterLogin toggle={toggle} />
+          </div>
+        )}
       </div>
-
       <div className="search-container">
         <FontAwesomeIcon
           icon={faMagnifyingGlass}
