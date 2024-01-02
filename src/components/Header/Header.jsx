@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Left_Side_bar_afterLogin from "./Left_Side_bar_afterLogin";
+import Profile_Dropdown from "./profile-dropdown/Profile_Dropdown";
 
 const Header = ({ setLognIn }) => {
   const [userData, setUserData] = useState(
@@ -120,7 +121,7 @@ const Header = ({ setLognIn }) => {
         </>
       ) : (
         <>
-          <div>
+          <div className="dwopdown-container">
             <div className="advertise-icon">
               <img
                 src="https://cdn-icons-png.flaticon.com/512/411/411789.png"
@@ -129,6 +130,7 @@ const Header = ({ setLognIn }) => {
               />
               <span>Advertise</span>
             </div>
+            <Profile_Dropdown />
           </div>
         </>
       )}

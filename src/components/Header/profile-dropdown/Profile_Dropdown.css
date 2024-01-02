@@ -1,0 +1,38 @@
+.dropdown-container {
+  border: 1px solid rgb(213, 210, 210);
+  padding: 0 0.4rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(250, 248, 248);
+  }
+}
+.dropdown-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  > div > p {
+    color: black;
+    font-weight: 500;
+    font-size: 0.8rem;
+  }
+}
+.name-container-data {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+}
+.dropdown-Container {
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  margin-top: 0.8rem;
+  width: 11.5rem;
+}
+.profile-dropdown-details {
+  overflow-y: scroll;
+  height: 80vh;
+}
