@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Login.css";
 import SignUp from "./SignUp";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ setLognIn }) => {
   const [toggle, setToggle] = useState(false);
@@ -9,6 +10,7 @@ const Login = ({ setLognIn }) => {
   const [errIncorrectEmailOrPass, setErrIncorrectEmailOrPass] = useState("");
   const email = useRef(null);
   const password = useRef(null);
+  const navigate = useNavigate();
   const config = {
     headers: {
       projectID: "7k1ct68pbbmr",
@@ -31,6 +33,11 @@ const Login = ({ setLognIn }) => {
           token: res.data.token,
         }),
       ]);
+      setLognIn(false);
+      navigate("/");
+      setTimeout(() => {
+        window.location.reload();
+      }, 10);
     } catch (err) {
       console.log(err);
       setErrIncorrectEmailOrPass(err.response.data.message);

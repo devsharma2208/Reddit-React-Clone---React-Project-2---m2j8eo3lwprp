@@ -30,9 +30,25 @@
   background-color: rgb(255, 255, 255);
   position: absolute;
   margin-top: 0.8rem;
-  width: 11.5rem;
-}
-.profile-dropdown-details {
+  width: 13rem;
+  padding: 1rem;
   overflow-y: scroll;
+  overflow-x: hidden;
   height: 80vh;
+  border-radius: 0.5rem;
+}
+
+.my-staf-div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.online-Status-btn {
+  width: 110%;
+  display: flex;
+  justify-content: space-between !important;
+  gap: 1rem !important;
+  > p {
+    font-size: 0.9rem;
+  }
 }

@@ -3,11 +3,10 @@ import "./Profile_Dropdown.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import DropDown from "./DropDown";
-const Profile_Dropdown = () => {
+const Profile_Dropdown = ({ toggle, setToggle }) => {
   const [userData, setUserData] = useState(
     JSON.parse(localStorage.getItem("userDetails"))
   );
-  const [toggle, setToggle] = useState(false);
   return (
     <div>
       <div
@@ -43,11 +42,6 @@ const Profile_Dropdown = () => {
           )}
         </div>
       </div>
-      {toggle && (
-        <div>
-          <DropDown />
-        </div>
-      )}
     </div>
   );
 };

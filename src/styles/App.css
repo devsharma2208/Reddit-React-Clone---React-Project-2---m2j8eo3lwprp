@@ -198,3 +198,7 @@
   display: flex;
   gap: 1rem;
 }
+.dropdownContainer-profile {
+  position: absolute;
+  margin: 2rem 2rem 2rem 4rem;
+}

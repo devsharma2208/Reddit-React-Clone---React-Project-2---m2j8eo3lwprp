@@ -1,11 +1,9 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import _debounce from "lodash/debounce";
 import {
   faArrowUpFromBracket,
   faEllipsis,
-  faMessage,
-  faUpLong,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

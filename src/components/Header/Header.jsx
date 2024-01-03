@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   faAngleDown,
   faAngleUp,
@@ -11,12 +11,15 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Left_Side_bar_afterLogin from "./Left_Side_bar_afterLogin";
 import Profile_Dropdown from "./profile-dropdown/Profile_Dropdown";
+import DropDown from "./profile-dropdown/DropDown";
 
 const Header = ({ setLognIn }) => {
-  const [userData, setUserData] = useState(
-    JSON.parse(localStorage.getItem("userDetails"))
-  );
+  const [userData, setUserData] = useState();
   const [toggle, setToggle] = useState(false);
+  const [profileDropDoen, setProfileDropDown] = useState(false);
+  useEffect(() => {
+    setUserData(JSON.parse(localStorage.getItem("userDetails")));
+  }, []);
   return (
     <div className="header-container">
       <div className="header-content-1">
@@ -130,7 +133,15 @@ const Header = ({ setLognIn }) => {
               />
               <span>Advertise</span>
             </div>
-            <Profile_Dropdown />
+            <Profile_Dropdown
+              toggle={profileDropDoen}
+              setToggle={setProfileDropDown}
+            />
+            {profileDropDoen && (
+              <div className="dropdownContainer-profile">
+                <DropDown />
+              </div>
+            )}
           </div>
         </>
       )}
