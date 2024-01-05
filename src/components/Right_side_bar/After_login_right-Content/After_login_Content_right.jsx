@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const After_login_Content_right = () => {
+  const natigate = useNavigate();
   return (
     <div className="after-log-in-right-side-container">
       <div className="first-box-preimum">
@@ -33,7 +35,12 @@ const After_login_Content_right = () => {
           </p>
           <div style={{ borderBottom: "1px solid #e6e8eb" }}></div>
           <div>
-            <div className="community-btn1">
+            <div
+              className="community-btn1"
+              onClick={() => {
+                natigate("submit");
+              }}
+            >
               <button>Create Post</button>
             </div>
             <div className="community-btn2">

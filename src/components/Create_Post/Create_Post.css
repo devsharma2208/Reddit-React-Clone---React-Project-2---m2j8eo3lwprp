@@ -1,0 +1,106 @@
+.create-post-container {
+  background-color: rgb(214, 224, 227);
+  height: 110vh;
+}
+.div-container-create {
+  padding: 2.5rem 8rem;
+}
+.create-post-text {
+  color: rgb(92, 92, 91);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.grid-create-post {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  grid-gap: 2rem;
+}
+.draft-comments {
+  text-align: end;
+
+  > span {
+    color: blue;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.8rem;
+    border-radius: 2rem;
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(203, 200, 200);
+    }
+    > span {
+      background-color: gray;
+      border-radius: 0.2rem;
+      color: rgb(255, 255, 255);
+      padding: 0.2rem 0.3rem;
+    }
+  }
+}
+.slectOption {
+  margin-top: 2rem;
+}
+.select-option {
+  width: 20rem;
+}
+.create-post-header-container {
+  background-color: #ffffff;
+}
+.create-post-header-data {
+  margin-top: 0.7rem;
+  display: flex;
+  justify-content: space-evenly;
+  border: 2px solid rgb(249, 245, 245);
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid rgb(249, 245, 245);
+    padding: 0.7rem 3.3rem;
+    font-size: 0.9rem;
+  }
+}
+.hkhklhlk {
+  cursor: pointer;
+  &:hover {
+    background-color: #ebf3f7;
+  }
+}
+.hklhlhfs {
+  cursor: no-drop;
+  color: #c7bdbd;
+}
+.input-title-con {
+  margin: 1rem;
+}
+.inp-title {
+  padding: 0.8rem;
+}
+.right-side-create-comments {
+  background-color: rgb(255, 255, 255);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.comment-icon-text {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  gap: 1rem;
+  border-bottom: 0.2rem solid rgb(246, 243, 243);
+  padding-bottom: 0.5rem;
+  > img {
+    transform: rotate(-25deg);
+  }
+  > p {
+    font-weight: 600;
+    color: #504e4e;
+  }
+}
+.list-container {
+  font-size: 0.8rem;
+  padding: 1rem;
+  > li {
+    color: #504e4e;
+    padding: 0.6rem 0;
+    border-bottom: 0.2rem solid rgb(246, 243, 243);
+    font-weight: 500;
+  }
+}

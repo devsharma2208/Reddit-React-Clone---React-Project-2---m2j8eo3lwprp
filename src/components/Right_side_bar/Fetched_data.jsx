@@ -30,7 +30,7 @@ const Fetch_Data = ({ userData }) => {
         `https://academics.newtonschool.co/api/v1/reddit/post?limit=10&page=${page}`,
         config
       );
-
+      console.log(res.data.data);
       setData((prevData) => [...prevData, ...res.data.data]);
       setPage((prevPage) => prevPage + 1);
     } catch (error) {
@@ -120,17 +120,24 @@ const Fetch_Data = ({ userData }) => {
                 <img
                   src={item.author.profileImage}
                   alt="author Image"
-                  style={{ width: "3rem", borderRadius: "50%" }}
+                  style={{
+                    width: "3rem",
+                    borderRadius: "50%",
+                  }}
                 />
-                <h5>{item.channel.name}</h5>
+                <div>
+                  <h5>{item.channel.name}</h5>
+                  <h6>{item.author.name}</h6>
+                </div>
               </div>
               <h4 className="main-containt">{item.content}</h4>
-              <img
-                src={item.channel.image}
-                width={650}
-                style={{ borderRadius: "1.2rem" }}
-                alt="channel Image"
-              />
+              <div className="imageMainContainer">
+                <img
+                  src={item.images[0]}
+                  style={{ borderRadius: "1.2rem" }}
+                  alt="channel Image"
+                />
+              </div>
               {!userData ? (
                 <div className="right-content-comntes">
                   <div className="right-content-comntes-likes">

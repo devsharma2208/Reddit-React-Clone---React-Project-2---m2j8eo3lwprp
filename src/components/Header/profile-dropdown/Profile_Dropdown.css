@@ -26,11 +26,11 @@
   gap: 0.4rem;
   font-size: 0.7rem;
 }
-.dropdown-Container {
+.dropdown-Container-pro {
   background-color: rgb(255, 255, 255);
   position: absolute;
   margin-top: 0.8rem;
-  width: 13rem;
+  width: 15rem;
   padding: 1rem;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -49,6 +49,63 @@
   justify-content: space-between !important;
   gap: 1rem !important;
   > p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    margin-left: 1rem;
+    font-weight: 500;
   }
+}
+.head-home-lkjkhdk {
+  display: flex;
+  font-size: 0.8rem;
+  margin-left: 1rem;
+  font-weight: 500;
+}
+.empty {
+  border-bottom: 0.1rem solid rgb(236, 235, 235);
+  margin-top: 1rem;
+}
+.opt {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-top: 1rem;
+  color: rgb(143, 139, 139);
+  gap: 0.5rem;
+  margin-left: -0.5rem;
+}
+.head-home-lkjk {
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+.opti {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-left: -0.5rem;
+  margin-top: 0.8rem;
+}
+.expo {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+.more {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+.reddit_inc {
+  display: flex;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  color: rgb(143, 139, 139);
+  gap: 0.5rem;
+}
+.unmjo {
+  border-bottom: 0.2rem solid rgb(236, 235, 235);
+  margin: 0.8rem 0;
 }

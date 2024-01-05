@@ -5,9 +5,12 @@ import { faAngleDown, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { styled } from "@mui/material/styles";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
+import { useNavigate } from "react-router-dom";
 const DropDown = () => {
+  const navigate = useNavigate();
   const handleUser = () => {
     localStorage.clear();
+    navigate("/");
     setTimeout(() => {
       window.location.reload();
     });
@@ -71,7 +74,7 @@ const DropDown = () => {
     },
   }));
   return (
-    <div className="dropdown-Container">
+    <div className="dropdown-Container-pro">
       <div className="my-staf-div">
         <img
           style={{
@@ -90,23 +93,16 @@ const DropDown = () => {
           <p>Online Status</p>
           <FormControlLabel control={<IOSSwitch defaultChecked />} />
         </li>
-        <li>
-          <img
-            src="https://www.redditstatic.com/shreddit/assets/moments/recap/recap-banana-icon.svg"
-            alt="all image icon"
-            width="22"
-          />
-          <span>Reddit Recap</span>
-          <span>new</span>
-        </li>
+
         <li className="head-home-lkjkhdk">Profile</li>
-        <li>
+        <li className="head-home-lkjkhdk">
           <span>Create Avatar</span>
         </li>
-        <li>
+        <li className="head-home-lkjkhdk">
           <span>User Settings</span>
         </li>
-        <p>
+        <div className="empty"></div>
+        <p className="opt">
           <img
             src="https://www.iconpacks.net/icons/3/free-view-icon-6444-thumb.png"
             alt="plus"
@@ -114,79 +110,85 @@ const DropDown = () => {
           />{" "}
           <span>View Options</span>
         </p>
-        <li>
+        <li className="head-home-lkjk">
           <span>Dark Mode</span>
         </li>
-        <li>
+        <div className="empty"></div>
+        <p className="opti">
           <img
             src="https://cdn3.iconfinder.com/data/icons/user-interface-web-1/550/web-circle-circular-round_11-512.png"
             alt="primium icon"
             width={22}
           />
           <span>Create a Community</span>
-        </li>
-        <li>
+        </p>
+        <p className="opti">
           <img
             src="https://cdn-icons-png.flaticon.com/512/411/411789.png"
             alt="avatar icon"
             width={22}
           />
           <span>Advertise on Reddit</span>
-        </li>
-        <li>
+        </p>
+        <p className="opti">
           <img
             src="https://static.thenounproject.com/png/1407038-200.png"
             alt="avatar icon"
             width={22}
           />
           <span>Premium</span>
-        </li>
-        <li>
+        </p>
+        <p className="opti">
           <img
             src="https://cdn-icons-png.flaticon.com/512/4406/4406266.png"
             alt="avatar icon"
             width={22}
           />
-          <span>Explore</span>
-          <FontAwesomeIcon icon={faAngleDown} />
-        </li>
-        <li>
+          <div className="expo">
+            <span>Explore</span>
+            <FontAwesomeIcon icon={faAngleDown} />
+          </div>
+        </p>
+        <p className="opti">
           <img
             src="https://static-00.iconduck.com/assets.00/question-mark-circled-icon-512x512-wsm5hkwj.png"
             alt="avatar icon"
             width={22}
           />
           <span>Help Center</span>
-        </li>
-        <li>
+        </p>
+        <p className="opti">
           <img
             src="https://www.thesslstore.com/blog/wp-content/uploads/2017/05/circle-with-i-1.png"
             alt="avatar icon"
             width={22}
           />
-          <span>More</span>
-          <FontAwesomeIcon icon={faAngleDown} />
-        </li>
-        <li>
+          <div className="more">
+            <span>More</span>
+            <FontAwesomeIcon icon={faAngleDown} />
+          </div>
+        </p>
+        <p className="opti">
           <img
             src="https://static.thenounproject.com/png/2017700-200.png"
             alt="avatar icon"
             width={22}
           />
           <span>Terms & Policies</span>
-        </li>
-        <li>
+        </p>
+        <li className="head-home-lkjk">
           <span>User Agreement</span>
         </li>
-        <li>
+        <li className="head-home-lkjk">
           <span>Pricacy Policy</span>
         </li>
-        <li>
+        <li className="head-home-lkjk">
           <span>Content Policy</span>
         </li>
-        <li>
+        <li className="head-home-lkjk">
           <span>Moderator Code of Conduct</span>
         </li>
+        <div className="unmjo"></div>
         <li onClick={handleUser}>
           <img
             src="https://cdn1.iconfinder.com/data/icons/materia-arrows-symbols-vol-3/24/018_128_arrow_exit_logout-512.png"
@@ -195,7 +197,7 @@ const DropDown = () => {
           />
           <span>Log Out</span>
         </li>
-        <p>Reddit, Inc. © 2024. All rights reserved.</p>
+        <p className="reddit_inc">Reddit, Inc. © 2024. All rights reserved.</p>
       </ul>
     </div>
   );
