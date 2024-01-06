@@ -40,6 +40,95 @@
 }
 .select-option {
   width: 20rem;
+  background-color: #ffffff;
+  border-radius: 0.3rem;
+}
+
+.quill-container {
+  padding: 1rem;
+}
+.ql-toolbar {
+  background-color: #f2f6f7;
+}
+.ql-editor {
+  width: 45rem !important;
+  height: 7rem !important;
+  > p {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+.bo-da-ta {
+  display: flex;
+  padding: 1rem 1.5rem;
+  gap: 1.5rem;
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 0.15rem solid rgb(190, 183, 183);
+    color: #c7bdbd;
+    padding: 0.2rem 0.8rem;
+    border-radius: 2rem;
+    cursor: no-drop;
+    &:hover {
+      background-color: rgb(245, 246, 246);
+    }
+  }
+  > .nsfw {
+    color: rgb(143, 141, 141);
+    cursor: pointer;
+  }
+}
+.hr {
+  background-color: rgb(243, 240, 240);
+  height: 0.1rem;
+  margin: 0 1rem;
+}
+.btn-comment {
+  margin: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  > button {
+    padding: 0.2rem 1rem;
+    border-color: rgb(97, 148, 226);
+    background-color: white;
+    border-radius: 2rem;
+    font-weight: 900;
+    color: rgb(83, 83, 204);
+    &:hover {
+      background-color: rgb(83, 83, 204);
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+.check-box {
+  margin: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  > input {
+    transform: scale(1.5);
+  }
+  > label {
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+}
+.last-con {
+  margin: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  > p {
+    font-size: 0.9rem;
+    text-decoration: underline;
+    font-weight: 500;
+    color: rgb(78, 126, 247);
+    cursor: pointer;
+  }
 }
 .create-post-header-container {
   background-color: #ffffff;
@@ -71,6 +160,9 @@
 .input-title-con {
   margin: 1rem;
 }
+.input-textfield {
+  width: 45rem;
+}
 .inp-title {
   padding: 0.8rem;
 }
@@ -78,6 +170,7 @@
   background-color: rgb(255, 255, 255);
   padding: 1rem;
   border-radius: 0.5rem;
+  height: 18rem;
 }
 .comment-icon-text {
   display: flex;
