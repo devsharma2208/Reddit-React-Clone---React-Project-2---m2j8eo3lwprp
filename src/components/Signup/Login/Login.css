@@ -1,9 +1,9 @@
 .login-container-form {
-  height: 68vh;
+  height: 34rem;
 }
 .login-container {
   margin: 1rem 1rem 1rem 5rem;
-  height: 53vh;
+  height: 25rem;
   overflow: scroll;
   overflow-x: hidden;
   > h1 {
@@ -160,11 +160,11 @@
   }
 }
 .sign-container-form {
-  height: 68vh;
+  height: 35rem;
 }
 .sign-up-container {
   margin: 1rem 1rem 1rem 5rem;
-  height: 52vh;
+  height: 25rem;
   overflow: scroll;
   overflow-x: hidden;
   > h1 {
