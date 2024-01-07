@@ -263,7 +263,7 @@
 .community-btn2 {
   > button {
     width: 100%;
-    padding: 0.5rem;
+
     margin-top: 0.5rem;
     border-radius: 3rem;
   }
@@ -272,6 +272,7 @@
   background-color: #0079d3;
   color: white;
   font-weight: 800;
+  padding: 0.5rem;
   border: none;
   &:hover {
     background-color: #1a85d6;

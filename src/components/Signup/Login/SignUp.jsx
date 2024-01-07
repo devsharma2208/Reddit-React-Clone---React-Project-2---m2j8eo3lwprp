@@ -57,7 +57,7 @@ const SignUp = ({ setToggle }) => {
     }
   };
   return (
-    <form onSubmit={(e) => handleSignUpdata(e)}>
+    <form onSubmit={(e) => handleSignUpdata(e)} className="sign-container-form">
       <div>
         <div className="sign-up-container">
           <h1>Sign Up</h1>

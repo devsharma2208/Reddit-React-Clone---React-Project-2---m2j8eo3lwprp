@@ -1,0 +1,122 @@
+.modal-btn {
+  height: 2rem !important;
+  text-transform: lowercase !important;
+  text-transform: capitalize !important;
+  font-weight: 600 !important;
+}
+.css-1wnsr1i {
+  width: 28rem !important;
+}
+.comm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  > h4 {
+    font-size: 1.2rem;
+    color: rgb(130, 123, 123);
+  }
+  > p {
+    font-size: 2rem;
+    transform: rotate(135deg);
+    cursor: pointer;
+    color: #797373;
+  }
+}
+.border-line {
+  border: 0.1rem solid rgb(244, 238, 238);
+}
+
+.na-de {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #797373;
+  > p {
+    font-size: 0.7rem;
+  }
+}
+.input-data {
+  > input {
+    width: 95%;
+    border: 0.1rem solid rgb(202, 193, 193);
+    height: 2rem;
+    font-size: 1.3rem;
+    padding: 0 1rem;
+    border-radius: 0.3rem;
+  }
+}
+.radio-btns {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 2rem;
+  gap: 1rem;
+  > div {
+    display: flex;
+    gap: 1rem;
+    > label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      color: rgb(100, 96, 96);
+      > span {
+        margin-left: 0.5rem;
+        font-weight: 100;
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
+.che-bo {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  > div {
+    display: flex;
+    gap: 1rem;
+    > input {
+      width: 1rem;
+    }
+    > label {
+      font-size: 0.9rem;
+      > span {
+        background-color: rgb(237, 68, 68);
+        padding: 0.1rem 0.8rem;
+        border-radius: 0.5rem;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+.btns-community {
+  margin-top: 1rem;
+  height: 3rem;
+  background-color: rgb(241, 246, 248);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  > button {
+    text-align: center;
+    padding: 0.2rem 1rem;
+    border-radius: 2rem;
+    background-color: rgb(241, 246, 248);
+    border-color: rgb(18, 119, 208);
+    font-weight: 800;
+    color: rgb(0, 47, 255);
+    &:hover {
+      background-color: #efeaea;
+    }
+  }
+  .comm-btn {
+    background-color: rgb(22, 81, 190);
+    color: #ffffff;
+    &:hover {
+      background-color: rgb(40, 96, 200);
+    }
+  }
+}

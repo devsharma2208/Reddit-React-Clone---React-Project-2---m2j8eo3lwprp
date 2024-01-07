@@ -73,7 +73,10 @@ const Login = ({ setLognIn }) => {
         </span>
       </div>
       {!toggle ? (
-        <form onSubmit={(e) => handleLogindata(e)}>
+        <form
+          onSubmit={(e) => handleLogindata(e)}
+          className="login-container-form"
+        >
           <div className="login-container">
             <h1>Log In</h1>
             <p>

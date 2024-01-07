@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Community_Modal from "../../Create_Community_modal/Community_Modal";
 
 const After_login_Content_right = () => {
   const natigate = useNavigate();
@@ -44,7 +45,9 @@ const After_login_Content_right = () => {
               <button>Create Post</button>
             </div>
             <div className="community-btn2">
-              <button>Create Community</button>
+              <button>
+                <Community_Modal />
+              </button>
             </div>
           </div>
         </div>

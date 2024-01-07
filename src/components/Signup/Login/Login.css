@@ -1,3 +1,24 @@
+.login-container-form {
+  height: 68vh;
+}
+.login-container {
+  margin: 1rem 1rem 1rem 5rem;
+  height: 53vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  > h1 {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+  > p {
+    font-size: 0.9rem;
+    margin-right: 1.5rem;
+    > span {
+      color: blue;
+      cursor: pointer;
+    }
+  }
+}
 .Login-page {
   background-color: rgb(255, 255, 255);
   top: 50%;
@@ -29,24 +50,7 @@
     border: 1px solid rgb(174, 167, 167);
   }
 }
-.login-container {
-  margin: 1rem 1rem 1rem 5rem;
-  height: 68vh;
-  overflow: scroll;
-  overflow-x: hidden;
-  > h1 {
-    font-size: 1.5rem;
-    padding-bottom: 0.5rem;
-  }
-  > p {
-    font-size: 0.9rem;
-    margin-right: 1.5rem;
-    > span {
-      color: blue;
-      cursor: pointer;
-    }
-  }
-}
+
 .err-massage {
   font-size: 0.8rem;
   color: red;
@@ -155,9 +159,12 @@
     }
   }
 }
+.sign-container-form {
+  height: 68vh;
+}
 .sign-up-container {
   margin: 1rem 1rem 1rem 5rem;
-  height: 68vh;
+  height: 52vh;
   overflow: scroll;
   overflow-x: hidden;
   > h1 {

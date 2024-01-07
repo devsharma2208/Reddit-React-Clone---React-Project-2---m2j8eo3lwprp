@@ -272,22 +272,32 @@ const Create_Post = () => {
               </div>
             </div>
           </div>
-          <div className="right-side-create-comments">
-            <div className="comment-icon-text">
-              <img
-                src="https://i.redd.it/snoovatar/avatars/5b73c029-506b-49a5-aab1-a2dc61ca62f8.png"
-                alt="reddit image"
-                width={50}
-              />
-              <p>Posting to Reddit</p>
+          <div>
+            <div className="right-side-create-comments">
+              <div className="comment-icon-text">
+                <img
+                  src="https://i.redd.it/snoovatar/avatars/5b73c029-506b-49a5-aab1-a2dc61ca62f8.png"
+                  alt="reddit image"
+                  width={50}
+                />
+                <p>Posting to Reddit</p>
+              </div>
+              <ol className="list-container">
+                <li>Remember the human</li>
+                <li>Behave like you would in real life</li>
+                <li>Look for the original source of content</li>
+                <li>Search for duplicates before posting</li>
+                <li>Read the community’s rules</li>
+              </ol>
             </div>
-            <ol className="list-container">
-              <li>Remember the human</li>
-              <li>Behave like you would in real life</li>
-              <li>Look for the original source of content</li>
-              <li>Search for duplicates before posting</li>
-              <li>Read the community’s rules</li>
-            </ol>
+            <div className="last-post">
+              <p>
+                Please be mindful of reddit's <span> content policy</span>
+              </p>
+              <p>
+                and practice good <span> reddiquette.</span>
+              </p>
+            </div>
           </div>
         </div>
       </div>

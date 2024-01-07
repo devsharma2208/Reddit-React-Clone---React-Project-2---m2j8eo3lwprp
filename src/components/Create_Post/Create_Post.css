@@ -1,6 +1,6 @@
 .create-post-container {
   background-color: rgb(214, 224, 227);
-  height: 110vh;
+  height: fit-content;
 }
 .div-container-create {
   padding: 2.5rem 8rem;
@@ -104,6 +104,18 @@
     }
   }
 }
+.last-post {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  color: #504e4e;
+  > p {
+    margin-bottom: 0.5rem;
+    > span {
+      color: blue;
+      cursor: pointer;
+    }
+  }
+}
 .check-box {
   margin: 1rem 1.5rem;
   display: flex;
@@ -122,6 +134,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  padding-bottom: 1rem;
   > p {
     font-size: 0.9rem;
     text-decoration: underline;
