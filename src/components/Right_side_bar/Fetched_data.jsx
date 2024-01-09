@@ -6,13 +6,17 @@ import {
   faEllipsis,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { json, useNavigate } from "react-router-dom";
 
 const Fetch_Data = ({ userData }) => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const [isFetching, setIsFetching] = useState(false);
   const [error, setError] = useState(null);
-
+  const userToken = localStorage.getItem("userDetails")
+    ? JSON.parse(localStorage.getItem("userDetails")).token
+    : "";
+  const navigate = useNavigate();
   const config = {
     headers: {
       projectID: "7k1ct68pbbmr",
@@ -64,7 +68,38 @@ const Fetch_Data = ({ userData }) => {
   useEffect(() => {
     fetchData();
   }, []);
+  const likePost_config = {
+    headers: {
+      Authorization: `Bearer ${userToken}`,
+      projectID: "7k1ct68pbbmr",
+    },
+  };
+  const handleLike = async (postId) => {
+    console.log(postId);
+    try {
+      const res = await axios.post(
+        `https://academics.newtonschool.co/api/v1/reddit/like/${postId}`,
+        {},
+        likePost_config
+      );
+      // console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const handleDislike = async (postId) => {
+    console.log(postId);
+    try {
+      const res = await axios.delete(
+        `https://academics.newtonschool.co/api/v1/reddit/like/${postId}`,
 
+        likePost_config
+      );
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <div className="fetched-data-main-containt-container">
       {data.length > 0 &&
@@ -78,7 +113,7 @@ const Fetch_Data = ({ userData }) => {
             {userData && (
               <div className="right-content-comntes-after-login">
                 <div className="right-content-comntes-likes-after-login">
-                  <div>
+                  <div onClick={() => handleLike(item._id)}>
                     <svg
                       className="like-post-after-login"
                       rpl=""
@@ -97,7 +132,7 @@ const Fetch_Data = ({ userData }) => {
                     </svg>
                   </div>
                   <p>{item.likeCount}</p>
-                  <div>
+                  <div onClick={() => handleDislike(item._id)}>
                     <svg
                       className="disLike-after-login"
                       rpl=""
@@ -198,7 +233,18 @@ const Fetch_Data = ({ userData }) => {
                 </div>
               ) : (
                 <div className="comments-after-login">
-                  <div>
+                  <div
+                    onClick={() => {
+                      navigate(`/comments/:${item.author.name}`);
+                      sessionStorage.setItem(
+                        "userImage",
+                        JSON.stringify({
+                          imageUrl: item.images[0],
+                          postId: item._id,
+                        })
+                      );
+                    }}
+                  >
                     <img
                       src="https://cdn.icon-icons.com/icons2/1524/PNG/512/comment_106501.png"
                       alt="comment icon"

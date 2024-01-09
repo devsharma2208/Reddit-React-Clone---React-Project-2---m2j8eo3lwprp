@@ -5,6 +5,7 @@ import Left_side_Bar from "./Left_side_Bar/Left_side_Bar";
 import Login from "./Signup/Login/Login";
 import { Route, Routes } from "react-router-dom";
 import Create_Post from "./Create_Post/Create_Post";
+import Comments from "./Comments/Comments";
 
 function App() {
   const [lognIn, setLognIn] = useState(false);
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Left_side_Bar />} />
         <Route path="submit" element={<Create_Post />} />
+        <Route path="/comments/:name" element={<Comments />} />
       </Routes>
     </div>
   );
