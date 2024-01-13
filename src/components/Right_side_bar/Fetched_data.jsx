@@ -6,13 +6,14 @@ import {
   faEllipsis,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { json, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Fetch_Data = ({ userData }) => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const [isFetching, setIsFetching] = useState(false);
   const [error, setError] = useState(null);
+
   const userToken = localStorage.getItem("userDetails")
     ? JSON.parse(localStorage.getItem("userDetails")).token
     : "";
@@ -68,6 +69,7 @@ const Fetch_Data = ({ userData }) => {
   useEffect(() => {
     fetchData();
   }, []);
+
   const likePost_config = {
     headers: {
       Authorization: `Bearer ${userToken}`,
@@ -83,6 +85,7 @@ const Fetch_Data = ({ userData }) => {
         likePost_config
       );
       // console.log(res);
+      // window.location.reload();
     } catch (err) {
       console.log(err);
     }

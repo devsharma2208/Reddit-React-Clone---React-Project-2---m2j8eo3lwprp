@@ -1,0 +1,213 @@
+.comm-container {
+  background-color: rgb(91, 91, 91);
+  height: fit-content;
+}
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(20, 20, 20);
+  color: white;
+  height: 3rem;
+  margin: 0 5rem;
+  padding: 0 4rem;
+}
+.arrow-img {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.spn {
+  margin-bottom: 0.3rem;
+  color: rgb(114, 113, 113);
+}
+.content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgb(202, 194, 194);
+}
+.con-hfd {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  > span {
+    font-size: 0.7rem;
+    background-color: rgb(99, 99, 233);
+    padding: 0.2rem 0.5rem;
+    font-weight: 700;
+    border-radius: 0.3rem;
+  }
+}
+.clo-comm {
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.4rem;
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(64, 63, 63);
+  }
+  > span {
+    margin: 0 0.2rem;
+    font-weight: 600;
+    color: rgb(221, 214, 214);
+  }
+}
+.main-content-comm {
+  margin: 0 5rem;
+  display: grid;
+  grid-template-columns: 6fr 2.8fr;
+  background-color: rgb(96, 159, 207);
+  padding: 2rem 4rem;
+  grid-gap: 1rem;
+}
+.imgdata {
+  width: 100%;
+  height: 3rem;
+}
+.uoiipo {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  background-color: #ffffff;
+}
+.lakesdeep-icn {
+  display: flex;
+  padding-top: 0.1rem;
+  gap: 1rem;
+  align-items: center;
+  color: rgb(127, 121, 121);
+  > img {
+    border-radius: 50%;
+  }
+  > p {
+    font-size: 0.8rem;
+    > span {
+      background-color: blue;
+      color: #ffffff;
+      padding: 0 0.5rem;
+      border-radius: 0.2rem;
+    }
+  }
+}
+.ch-img {
+  width: 4rem;
+  border-radius: 50%;
+}
+.all-da {
+  background-color: white;
+}
+.na-da-ta-ca {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgb(97, 91, 91);
+  padding: 0.5rem;
+}
+.con-comm {
+  padding: 0 1rem;
+  > p {
+    color: rgb(143, 146, 149);
+  }
+}
+.under-line {
+  margin: 1rem;
+  border-bottom: 0.1rem solid rgb(217, 212, 212);
+}
+.btn-com {
+  margin: 1rem;
+  > button {
+    width: 100%;
+    height: 2.3rem;
+    border-radius: 3rem;
+    border: none;
+    background-color: rgb(13, 192, 192);
+    font-weight: 800;
+    color: #ffffff;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(14, 211, 211);
+    }
+  }
+}
+.com-op-ic-con {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 2rem;
+  font-size: 0.7rem;
+  color: rgb(87, 90, 92);
+  > p {
+    font-weight: 700;
+  }
+}
+.dicss {
+  margin-top: 0.7rem;
+  > span {
+    background-color: rgb(207, 8, 8);
+    color: #ffffff;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    font-weight: 600;
+    padding: 0.2rem;
+  }
+}
+.con-bell-icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.conn-comment {
+  margin-top: 1rem;
+  color: rgb(104, 99, 99);
+}
+.image-single-post {
+  margin-top: 1rem;
+  width: 100%;
+  > img {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+}
+.commene-share-oth {
+  display: flex;
+  gap: 2rem;
+  margin: 1rem;
+}
+.shar-comment-oth {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  &:hover {
+    background-color: #ede4e4;
+    cursor: pointer;
+  }
+}
+.comm-dfadasf {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.comments-formate-container {
+  margin: 1rem;
+  > div {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    > p {
+      font-weight: 600;
+    }
+    > span {
+      font-size: 0.7rem;
+    }
+  }
+}
+.comment-btn {
+  text-align: end;
+  margin-right: 1rem;
+}
