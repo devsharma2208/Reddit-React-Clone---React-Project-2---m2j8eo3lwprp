@@ -5,7 +5,7 @@ import Crousal from "../Crousal/Crousal";
 import axios from "axios";
 import After_login_Content_right from "./After_login_right-Content/After_login_Content_right";
 
-const Right_side_bar = () => {
+const Right_side_bar = ({ setLognIn }) => {
   const [popularPostData, setPopularPostData] = useState([]);
   const [userData, setUserData] = useState(
     JSON.parse(localStorage.getItem("userDetails"))
@@ -39,7 +39,7 @@ const Right_side_bar = () => {
       )}
       <div className="right_side_content">
         <div className="right_right_all_content">
-          <Fetch_Data userData={userData} />
+          <Fetch_Data userData={userData} setLognIn={setLognIn} />
         </div>
         {!userData ? (
           <div className="right_side_popular_community" id="popular-com-fix">

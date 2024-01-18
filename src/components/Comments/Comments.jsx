@@ -24,6 +24,7 @@ const Comments = () => {
   const userImage = JSON.parse(sessionStorage.getItem("userImage"));
   const [commentData, setCommentData] = useState("");
   const [commentBtn, setCommentBtn] = useState(true);
+  const [commentToggle, setCommentToggle] = useState(false);
   const userToken = localStorage.getItem("userDetails")
     ? JSON.parse(localStorage.getItem("userDetails")).token
     : "";
@@ -55,13 +56,14 @@ const Comments = () => {
         `https://academics.newtonschool.co/api/v1/reddit/post/${userImage.postId}`,
         singlePostConfig
       );
-      console.log(res.data.data);
+      // console.log(res.data.data);
       setSinglePostData(res.data.data);
     } catch (err) {
       console.log(err);
     }
   };
   const getComments = async (userImage) => {
+    setCommentData("");
     // console.log(postId);
     try {
       const res = await axios.get(
@@ -69,19 +71,52 @@ const Comments = () => {
 
         likePost_config
       );
-      console.log(res.data.data);
+      // console.log(res.data.data);
       setCommentData(res.data.data);
     } catch (err) {
       console.log(err);
     }
   };
+  const createComment = async (body) => {
+    console.log("dev");
+    try {
+      const res = await axios.post(
+        `https://academics.newtonschool.co/api/v1/reddit/comment/${userImage.postId}`,
+        body,
+        likePost_config
+      );
+      console.log(res);
+      setCommentToggle(false);
+      setComment("");
+    } catch (err) {
+      console.log(err);
+      setCommentToggle(false);
+    }
+  };
   useEffect(() => {
-    singlePostData();
-    getComments(userImage);
-  }, []);
-  const handleReactQuillValue = (content) => {
-    setComment(content);
+    if (commentBtn) {
+      singlePostData();
+      getComments(userImage);
+    }
+  }, [commentBtn]);
+  useEffect(() => {
+    console.log("guddu");
+    if (commentToggle) {
+      console.log("sharma");
+      let body = {
+        content: comment,
+      };
+      createComment(body);
+    }
+  }, [commentToggle]);
+  const handleReactQuillValue = (content, delta, source, editor) => {
     setCommentBtn(false);
+    setComment(editor.getContents().ops[0].insert);
+  };
+  const handleComment = (e) => {
+    // e.preventDefault();
+    setCommentBtn(true);
+    setCommentToggle(true);
   };
   return (
     <>
@@ -110,11 +145,17 @@ const Comments = () => {
             <div className="uoiipo">
               <div>
                 <div>
-                  <FontAwesomeIcon icon={faUpLong} />
+                  <FontAwesomeIcon
+                    icon={faUpLong}
+                    className="arrow-icon-comm"
+                  />
                 </div>
                 <div>{singlePostDataValue.likeCount}</div>
                 <div>
-                  <FontAwesomeIcon icon={faDownLong} />
+                  <FontAwesomeIcon
+                    icon={faDownLong}
+                    className="arrow-icon-comm"
+                  />
                 </div>
               </div>
               <div>
@@ -132,7 +173,7 @@ const Comments = () => {
                     </p>
                   </div>
                   <div>
-                    <FontAwesomeIcon icon={faBell} />
+                    <FontAwesomeIcon icon={faBell} className="bell-icon" />
                   </div>
                 </div>
                 <div className="conn-comment">
@@ -174,7 +215,7 @@ const Comments = () => {
                   <Button
                     variant="contained"
                     disabled={commentBtn}
-                    onClick={() => console.log(comment)}
+                    onClick={(e) => handleComment(e)}
                   >
                     Comment
                   </Button>

@@ -15,7 +15,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Right_side_bar from "../Right_side_bar/Right_side_bar";
 
-const Left_side_Bar = () => {
+const Left_side_Bar = ({ setLognIn }) => {
   const [topicsshow, setTopicsShow] = useState(true);
   const [gameShow, setGameShow] = useState(false);
   const [sportsShow, setSportsShow] = useState(false);
@@ -905,7 +905,7 @@ const Left_side_Bar = () => {
       <main
         className={userData ? "right-sige-bar-after-login" : "right-side-bar"}
       >
-        <Right_side_bar />
+        <Right_side_bar setLognIn={setLognIn} />
       </main>
     </section>
   );

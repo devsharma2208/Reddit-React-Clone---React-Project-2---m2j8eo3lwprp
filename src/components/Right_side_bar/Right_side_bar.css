@@ -136,7 +136,23 @@
     background-color: rgb(202, 209, 209);
   }
 }
+.like-post-after-login {
+  padding: 0.4rem;
+  border-radius: 50%;
+  &:hover {
+    color: rgb(255, 2, 2);
+    background-color: rgb(202, 209, 209);
+  }
+}
 .disLike {
+  padding: 0.4rem;
+  border-radius: 50%;
+  &:hover {
+    color: rgb(158, 2, 255);
+    background-color: rgb(202, 209, 209);
+  }
+}
+.disLike-after-login {
   padding: 0.4rem;
   border-radius: 50%;
   &:hover {

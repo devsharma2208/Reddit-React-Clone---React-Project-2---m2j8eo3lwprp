@@ -8,7 +8,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 
-const Fetch_Data = ({ userData }) => {
+const Fetch_Data = ({ userData, setLognIn }) => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const [isFetching, setIsFetching] = useState(false);
@@ -181,6 +181,7 @@ const Fetch_Data = ({ userData }) => {
                   <div className="right-content-comntes-likes">
                     <div>
                       <svg
+                        onClick={() => setLognIn(true)}
                         className="like-post"
                         rpl=""
                         fill="currentColor"
@@ -197,6 +198,7 @@ const Fetch_Data = ({ userData }) => {
                     <p>{item.likeCount}</p>
                     <div>
                       <svg
+                        onClick={() => setLognIn(true)}
                         className="disLike"
                         rpl=""
                         fill="currentColor"
@@ -211,7 +213,10 @@ const Fetch_Data = ({ userData }) => {
                       </svg>
                     </div>
                   </div>
-                  <div className="right-content-comntes comments">
+                  <div
+                    className="right-content-comntes comments"
+                    onClick={() => setLognIn(true)}
+                  >
                     <svg
                       className="comments-icon"
                       rpl=""
@@ -229,7 +234,7 @@ const Fetch_Data = ({ userData }) => {
                     </svg>
                     <p>{item.commentCount}k</p>
                   </div>
-                  <div className="share-btn">
+                  <div className="share-btn" onClick={() => setLognIn(true)}>
                     <FontAwesomeIcon icon={faArrowUpFromBracket} />
                     <p>Share</p>
                   </div>

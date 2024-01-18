@@ -211,3 +211,15 @@
   text-align: end;
   margin-right: 1rem;
 }
+.bell-icon {
+  cursor: pointer;
+  &:hover {
+    color: blue;
+  }
+}
+.arrow-icon-comm {
+  cursor: pointer;
+  &:hover {
+    color: red;
+  }
+}

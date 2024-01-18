@@ -15,7 +15,7 @@ function App() {
 
       {lognIn && <Login setLognIn={setLognIn} />}
       <Routes>
-        <Route path="/" element={<Left_side_Bar />} />
+        <Route path="/" element={<Left_side_Bar setLognIn={setLognIn} />} />
         <Route path="submit" element={<Create_Post />} />
         <Route path="/comments/:name" element={<Comments />} />
       </Routes>
