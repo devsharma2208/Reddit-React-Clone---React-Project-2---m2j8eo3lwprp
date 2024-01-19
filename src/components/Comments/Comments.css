@@ -194,7 +194,7 @@
 }
 .comments-formate-container {
   margin: 1rem;
-  > div {
+  > div > div {
     margin-top: 1rem;
     display: flex;
     gap: 1rem;
@@ -206,6 +206,12 @@
       font-size: 0.7rem;
     }
   }
+}
+.comment-authow {
+  margin-bottom: -1rem;
+}
+.comment-comm {
+  margin-left: 4rem;
 }
 .comment-btn {
   text-align: end;

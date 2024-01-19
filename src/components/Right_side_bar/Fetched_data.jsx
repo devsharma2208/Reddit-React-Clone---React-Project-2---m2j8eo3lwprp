@@ -13,7 +13,8 @@ const Fetch_Data = ({ userData, setLognIn }) => {
   const [page, setPage] = useState(1);
   const [isFetching, setIsFetching] = useState(false);
   const [error, setError] = useState(null);
-
+  const [like, setLike] = useState("");
+  const [likeIndex, setLikeIndex] = useState(-1);
   const userToken = localStorage.getItem("userDetails")
     ? JSON.parse(localStorage.getItem("userDetails")).token
     : "";
@@ -76,14 +77,18 @@ const Fetch_Data = ({ userData, setLognIn }) => {
       projectID: "7k1ct68pbbmr",
     },
   };
-  const handleLike = async (postId) => {
-    console.log(postId);
+  const handleLike = async (postId, index) => {
+    // console.log(postId);
+    // setIndex(index);
     try {
       const res = await axios.post(
         `https://academics.newtonschool.co/api/v1/reddit/like/${postId}`,
         {},
         likePost_config
       );
+
+      setLikeIndex(index);
+      // setLikeDislike(false);
       // console.log(res);
       // window.location.reload();
     } catch (err) {
@@ -116,9 +121,15 @@ const Fetch_Data = ({ userData, setLognIn }) => {
             {userData && (
               <div className="right-content-comntes-after-login">
                 <div className="right-content-comntes-likes-after-login">
-                  <div onClick={() => handleLike(item._id)}>
+                  <div
+                    onClick={() => {
+                      handleLike(item._id, index);
+                    }}
+                  >
                     <svg
-                      className="like-post-after-login"
+                      className={`like-post-after-login ${
+                        likeIndex === index && "likedPost"
+                      }`}
                       rpl=""
                       fill="currentColor"
                       height="16"
@@ -134,8 +145,10 @@ const Fetch_Data = ({ userData, setLognIn }) => {
                       ></path>
                     </svg>
                   </div>
-                  <p>{item.likeCount}</p>
-                  <div onClick={() => handleDislike(item._id)}>
+                  <p>
+                    {likeIndex === index ? item.likeCount + 1 : item.likeCount}
+                  </p>
+                  <div onClick={() => handleDislike(item._id, index)}>
                     <svg
                       className="disLike-after-login"
                       rpl=""

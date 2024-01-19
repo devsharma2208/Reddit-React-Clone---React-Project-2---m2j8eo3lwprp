@@ -28,6 +28,7 @@ const Comments = () => {
   const userToken = localStorage.getItem("userDetails")
     ? JSON.parse(localStorage.getItem("userDetails")).token
     : "";
+  const userDetails = JSON.parse(localStorage.getItem("userDetails"));
   const [comment, setComment] = useState("");
   const formats = [
     "header",
@@ -71,7 +72,7 @@ const Comments = () => {
 
         likePost_config
       );
-      // console.log(res.data.data);
+      console.log(res.data.data);
       setCommentData(res.data.data);
     } catch (err) {
       console.log(err);
@@ -225,8 +226,18 @@ const Comments = () => {
                     commentData.map((comment) => {
                       return (
                         <div>
-                          <p>{comment.content}</p>
-                          <span>{comment.createdAt.split("T")[0]}</span>
+                          <div className="comment-authow">
+                            <img
+                              src="https://i.pinimg.com/originals/16/bd/52/16bd524cb65c552e1ccbb9548296d2fa.png"
+                              alt="icon"
+                              width={30}
+                            />
+                            <h4>{userDetails.name}</h4>
+                          </div>
+                          <div className="comment-comm">
+                            <p>{comment.content}</p>
+                            <span>{comment.createdAt.split("T")[0]}</span>
+                          </div>
                         </div>
                       );
                     })}

@@ -144,6 +144,9 @@
     background-color: rgb(202, 209, 209);
   }
 }
+.likedPost {
+  color: red;
+}
 .disLike {
   padding: 0.4rem;
   border-radius: 50%;
