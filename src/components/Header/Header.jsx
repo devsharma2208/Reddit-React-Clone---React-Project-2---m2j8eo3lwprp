@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   faAngleDown,
   faAngleUp,
+  faBars,
   faEllipsis,
   faHouse,
   faMagnifyingGlass,
@@ -23,10 +24,16 @@ const Header = ({ setLognIn }) => {
   return (
     <div className="header-container">
       <div className="header-content-1">
+        <FontAwesomeIcon className="hemb-icon" icon={faBars} />
         <img
           className="logo"
           src="https://logos-world.net/wp-content/uploads/2023/11/Reddit-New-Logo.png"
           alt="Reddit logo"
+        />
+        <img
+          className="singleRedditLogo"
+          src="https://seeklogo.com/images/R/reddit-icon-new-2023-logo-3F12137D65-seeklogo.com.png"
+          alt="logo"
         />
         {userData && (
           <div>

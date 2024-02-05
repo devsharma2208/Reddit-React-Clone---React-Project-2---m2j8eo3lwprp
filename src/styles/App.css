@@ -22,7 +22,13 @@
   object-fit: contain;
   margin-right: 8rem;
 }
-
+.singleRedditLogo {
+  display: none;
+  height: 2rem;
+  width: 5rem;
+  object-fit: contain;
+  margin-right: 8rem;
+}
 .search-container {
   padding: 0 0.8rem;
   display: flex;
@@ -215,4 +221,77 @@
 .dropdownContainer-profile {
   position: absolute;
   margin: 2rem 2rem 2rem 2rem;
+}
+.hemb-icon {
+  margin-right: 1rem;
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .header-container {
+    width: 100%;
+  }
+  .logo {
+    display: none;
+  }
+  .singleRedditLogo {
+    display: inline;
+    height: 2rem;
+    width: 5rem;
+    object-fit: contain;
+    margin-right: 1rem;
+  }
+  .hemb-icon {
+    margin-right: 0;
+    display: inline;
+    &:hover {
+      cursor: pointer;
+    }
+    .login {
+      width: 3rem;
+    }
+  }
+  .input-search {
+    display: none;
+  }
+  .search-container {
+    background-color: #fff;
+    margin-right: -12rem;
+  }
+  .img-banana {
+    display: none;
+  }
+  .get-app-header,
+  .lskhnkc {
+    display: none;
+  }
+}
+@media only screen and (max-width: 322px) {
+  body {
+    background-color: #000;
+    color: #fff;
+  }
+  .search-container {
+    margin-right: -2rem;
+    background-color: #000000;
+  }
+  .header-container {
+    background-color: #000;
+    color: #fff;
+  }
+  .hemb-icon {
+    color: #fff;
+  }
+  .login {
+    background-color: rgb(255, 0, 0);
+    /* width: 5rem; */
+    /* padding: 0.1rem 0.1rem; */
+    border-radius: 5rem;
+    color: #ffffff;
+    cursor: pointer;
+    > h4 {
+      width: 2.5rem;
+      font-weight: 400;
+      font-size: 0.8rem;
+    }
+  }
 }

@@ -100,3 +100,13 @@
 .after-login-main-container {
   background-color: #e1e8ec;
 }
+@media only screen and (max-width: 768px) {
+  .leftSide_bar {
+    display: none;
+  }
+}
+@media only screen and (max-width: 322px) {
+  .leftSide_bar {
+    display: none;
+  }
+}
