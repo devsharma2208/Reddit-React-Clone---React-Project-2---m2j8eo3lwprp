@@ -226,6 +226,7 @@
   margin-right: 1rem;
   display: none;
 }
+/* Tablate */
 @media only screen and (max-width: 768px) {
   .header-container {
     width: 100%;
@@ -265,11 +266,8 @@
     display: none;
   }
 }
+/* Phone */
 @media only screen and (max-width: 322px) {
-  body {
-    background-color: #000;
-    color: #fff;
-  }
   .search-container {
     margin-right: -2rem;
     background-color: #000000;
@@ -285,6 +283,7 @@
     background-color: rgb(255, 0, 0);
     /* width: 5rem; */
     /* padding: 0.1rem 0.1rem; */
+
     border-radius: 5rem;
     color: #ffffff;
     cursor: pointer;

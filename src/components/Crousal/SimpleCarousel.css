@@ -33,3 +33,8 @@
   border-radius: 1rem;
   cursor: pointer;
 }
+@media only screen and (max-width: 768px) {
+  .carousel {
+    display: none;
+  }
+}

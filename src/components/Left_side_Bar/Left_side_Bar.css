@@ -11,17 +11,19 @@
 .leftSide_bar {
   position: sticky;
   border: 0.015rem solid rgb(212, 207, 207);
-  top: 4.08rem;
+  top: 3.08rem;
   /* background-color: aqua; */
   /* --scrollbarBG: #cfd8dc; */
   --thumbBG: #bcc0c3;
   width: 78%;
   height: 78vh;
   /* height: fit-content; */
+
+  padding: 2rem 1.5rem 2rem 3rem;
+  /* scrollbar-width: thin; */
+
   overflow-y: scroll;
   overflow-x: hidden;
-  padding: 2rem 1.5rem 2rem 3rem;
-  scrollbar-width: thin;
   scrollbar-color: var(--thumbBG) var(--scrollbarBG);
 }
 .leftSide_bar::-webkit-scrollbar-track {
