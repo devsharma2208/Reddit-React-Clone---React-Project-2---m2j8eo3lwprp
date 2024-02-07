@@ -901,7 +901,6 @@ const Left_side_Bar = ({ setLognIn }) => {
           </>
         )}
       </aside>
-
       <main
         className={userData ? "right-sige-bar-after-login" : "right-side-bar"}
       >

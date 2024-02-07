@@ -201,7 +201,8 @@
   .Login-page {
     background-color: rgb(248, 244, 244);
     width: 80%;
-    height: 85%;
+    height: fit-content;
+    z-index: 5000;
   }
   .cross-sign-div {
     margin: 0.5rem;
@@ -214,7 +215,7 @@
 @media only screen and (max-width: 320px) {
   .Login-page {
     background-color: rgb(248, 244, 244);
-    width: 80%;
+    width: 85%;
     height: fit-content;
     border-radius: 1rem;
   }

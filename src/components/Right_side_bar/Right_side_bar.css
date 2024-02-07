@@ -399,14 +399,14 @@
   }
   .main-containt {
     padding: 0.4rem;
-    width: 46rem;
+    width: 40rem;
     margin-right: 0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 800;
   }
 
   .imageMainContainer {
-    width: 750px;
+    width: 100%;
     height: 475px;
   }
   .icon-comment {
@@ -425,28 +425,35 @@
     > div > h6,
     h5 {
       color: rgb(164, 162, 161);
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 800;
       &:hover {
         color: #5a5d5f;
       }
     }
   }
+  .right_side_content {
+    display: block;
+  }
+  .right_side_popular_community {
+    display: none;
+  }
 }
 @media only screen and (max-width: 480px) {
   .main-containt {
-    width: 26rem;
-    margin-right: 0;
+    width: 100%;
+    margin: 0;
     font-size: 1.2rem;
-    font-weight: 800;
+    font-weight: 600;
   }
   .imageMainContainer {
     width: 100%;
     height: 13rem;
   }
   .fetched-main-contiant {
-    border-radius: 1rem;
-    padding: 0;
+    width: 26rem;
+    border-radius: 0.7rem;
+    padding: 0.8rem;
   }
   .right-content-comntes-likes {
     width: 5.6rem;
@@ -467,7 +474,7 @@
 }
 @media only screen and (max-width: 320px) {
   .main-containt {
-    width: 20rem;
+    width: 22rem;
     margin-right: 0;
     font-size: 1.2rem;
     font-weight: 800;
