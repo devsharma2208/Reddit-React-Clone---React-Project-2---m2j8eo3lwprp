@@ -215,7 +215,7 @@
   .Login-page {
     background-color: rgb(248, 244, 244);
     width: 80%;
-    height: 72%;
+    height: fit-content;
     border-radius: 1rem;
   }
   .cross-sign-div {

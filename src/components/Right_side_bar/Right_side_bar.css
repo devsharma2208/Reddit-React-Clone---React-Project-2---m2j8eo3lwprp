@@ -399,10 +399,10 @@
   }
   .main-containt {
     padding: 0.4rem;
-    width: 46rem;
+    width: 100%;
     margin-right: 0;
-    font-size: 1.5rem;
-    font-weight: 800;
+    font-size: 1.2rem;
+    font-weight: 600;
   }
 
   .imageMainContainer {
@@ -435,10 +435,10 @@
 }
 @media only screen and (max-width: 480px) {
   .main-containt {
-    width: 26rem;
+    width: 100%;
     margin-right: 0;
     font-size: 1.2rem;
-    font-weight: 800;
+    font-weight: 600;
   }
   .imageMainContainer {
     width: 100%;

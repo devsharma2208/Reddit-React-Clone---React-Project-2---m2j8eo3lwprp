@@ -227,7 +227,7 @@
 /* Tablate */
 @media only screen and (max-width: 768px) {
   .header-container {
-    width: 101% !important;
+    width: 102% !important;
   }
   .logo {
     display: none;
@@ -268,10 +268,6 @@
 }
 /* Phone */
 @media only screen and (max-width: 480px) {
-  .header-container {
-    position: sticky;
-    top: 2;
-  }
   .search-container {
     margin-left: -2rem;
     margin-right: 0;
@@ -317,6 +313,7 @@
     background-color: black;
   }
   .search-icon {
+    margin-right: -3rem;
     color: white !important;
     font-size: 1.5rem !important;
   }
