@@ -227,7 +227,7 @@
 /* Tablate */
 @media only screen and (max-width: 768px) {
   .header-container {
-    width: 90% !important;
+    width: 101% !important;
   }
   .logo {
     display: none;
@@ -273,6 +273,7 @@
     top: 2;
   }
   .search-container {
+    margin-left: -2rem;
     margin-right: 0;
     /* background-color: #000000; */
   }
@@ -280,7 +281,7 @@
     background-color: #000;
     color: #fff;
     height: 4rem;
-    width: 103% !important;
+    /* width: 102% !important; */
   }
   .hemb-icon {
     color: #fff;
@@ -290,5 +291,21 @@
       font-size: 1.2rem;
       font-weight: 500;
     }
+  }
+}
+@media only screen and (max-width: 375px) {
+  .search-container {
+    margin-left: -2rem;
+    margin-right: 0;
+    /* background-color: #000000; */
+  }
+  .header-container {
+    background-color: #000;
+    color: #fff;
+    height: 4rem;
+    width: 115% !important;
+  }
+  .hemb-icon {
+    color: #fff;
   }
 }
