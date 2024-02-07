@@ -309,3 +309,15 @@
     color: #fff;
   }
 }
+@media only screen and (max-width: 290px) {
+  .input-search {
+    display: none;
+  }
+  .search-container {
+    background-color: black;
+  }
+  .search-icon {
+    color: white !important;
+    font-size: 1.5rem !important;
+  }
+}

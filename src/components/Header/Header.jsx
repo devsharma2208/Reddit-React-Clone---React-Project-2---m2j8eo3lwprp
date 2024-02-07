@@ -59,6 +59,7 @@ const Header = ({ setLognIn }) => {
       </div>
       <div className="search-container">
         <FontAwesomeIcon
+          className="search-icon"
           icon={faMagnifyingGlass}
           style={{
             fontSize: "1.2rem",
