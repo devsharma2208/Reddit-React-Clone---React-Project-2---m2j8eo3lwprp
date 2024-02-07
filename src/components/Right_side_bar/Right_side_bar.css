@@ -380,6 +380,10 @@
     background-color: rgb(222, 221, 221);
   }
 }
+.author-img {
+  width: 3rem;
+  border-radius: 50%;
+}
 .right-content-comntes-after-login {
   height: 102vh;
   background-color: rgb(246, 242, 242);
@@ -387,16 +391,23 @@
   border-radius: 0.2rem;
 }
 @media only screen and (max-width: 768px) {
+  .author-img {
+    width: 5rem;
+  }
   .right_Side-crousal {
     display: none;
   }
   .main-containt {
-    width: 40rem;
-    margin-right: 2.5rem;
+    padding: 0.4rem;
+    width: 46rem;
+    margin-right: 0;
+    font-size: 1.5rem;
+    font-weight: 800;
   }
+
   .imageMainContainer {
-    width: 42rem;
-    height: auto;
+    width: 750px;
+    height: 475px;
   }
   .icon-comment {
     height: 1rem;
@@ -410,16 +421,33 @@
     height: 1.5rem;
     width: auto;
   }
+  .userName-image-container {
+    > div > h6,
+    h5 {
+      color: rgb(164, 162, 161);
+      font-size: 1.3rem;
+      font-weight: 800;
+      &:hover {
+        color: #5a5d5f;
+      }
+    }
+  }
 }
 @media only screen and (max-width: 480px) {
   .main-containt {
-    width: 25rem;
+    width: 26rem;
+    margin-right: 0;
+    font-size: 1.2rem;
+    font-weight: 800;
   }
   .imageMainContainer {
-    width: 23rem;
+    width: 100%;
     height: 13rem;
-    margin-left: 2rem;
   }
+  /* .imageMainContainer {
+    width: 750px;
+    height: 475px;
+  } */
   .fetched-main-contiant {
     border-radius: 1rem;
     padding: 0;

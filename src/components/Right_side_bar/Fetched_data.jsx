@@ -169,12 +169,9 @@ const Fetch_Data = ({ userData, setLognIn }) => {
             <div>
               <div className="userName-image-container">
                 <img
+                  className="author-img"
                   src={item.author.profileImage}
                   alt="author Image"
-                  style={{
-                    width: "3rem",
-                    borderRadius: "50%",
-                  }}
                 />
                 <div>
                   <h5>{item.channel.name}</h5>
