@@ -187,3 +187,23 @@
   color: green;
   font-weight: 700;
 }
+@media only screen and (max-width: 768px) {
+  .Login-page {
+    width: 70%;
+    height: 95%;
+  }
+  .cross-sign-div {
+    margin: 0;
+    padding: 1rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .Login-page {
+    width: 80%;
+    height: 87%;
+  }
+  .cross-sign-div {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+}

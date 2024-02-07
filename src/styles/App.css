@@ -36,8 +36,6 @@
   justify-content: center;
   flex: 1;
   gap: 0.2rem;
-  /* width: 38rem; */
-  /* width: 70%; */
   background-color: rgb(231, 238, 238);
   border-radius: 1.8rem;
   margin-right: 4rem;
@@ -229,7 +227,7 @@
 /* Tablate */
 @media only screen and (max-width: 768px) {
   .header-container {
-    width: 80%;
+    width: 90% !important;
   }
   .logo {
     display: none;
@@ -252,11 +250,10 @@
     }
   }
   .input-search {
-    display: none;
+    width: 100%;
   }
   .search-container {
-    background-color: #fff;
-    margin-right: -5rem;
+    width: 70%;
   }
   .img-banana {
     display: none;
@@ -266,38 +263,32 @@
     display: none;
   }
   .hemb-icon {
-    /* margin-right: 1rem; */
     font-size: 1.5rem;
   }
 }
 /* Phone */
-@media only screen and (max-width: 322px) {
+@media only screen and (max-width: 480px) {
+  .header-container {
+    position: sticky;
+    top: 2;
+  }
   .search-container {
-    margin-right: -2rem;
-    background-color: #000000;
+    margin-right: 0;
+    /* background-color: #000000; */
   }
   .header-container {
     background-color: #000;
     color: #fff;
     height: 4rem;
-    width: 90%;
+    width: 103% !important;
   }
   .hemb-icon {
     color: #fff;
   }
   .login {
-    background-color: rgb(255, 0, 0);
-    margin-right: 1rem;
-    border-radius: 5rem;
-    color: #ffffff;
-    cursor: pointer;
     > h4 {
-      width: 2.5rem;
-      font-weight: 400;
-      font-size: 0.8rem;
+      font-size: 1.2rem;
+      font-weight: 500;
     }
-  }
-  .dot-icon {
-    display: none;
   }
 }
