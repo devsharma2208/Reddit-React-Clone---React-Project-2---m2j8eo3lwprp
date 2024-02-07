@@ -465,9 +465,9 @@
     width: auto;
   }
 }
-@media only screen and (max-width: 290px) {
+@media only screen and (max-width: 320px) {
   .main-containt {
-    width: 20rem;
+    width: 100%;
     margin-right: 0;
     font-size: 1.2rem;
     font-weight: 800;

@@ -309,7 +309,7 @@
     color: #fff;
   }
 }
-@media only screen and (max-width: 290px) {
+@media only screen and (max-width: 320px) {
   .input-search {
     display: none;
   }

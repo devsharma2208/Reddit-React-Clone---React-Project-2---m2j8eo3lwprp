@@ -201,21 +201,31 @@
   .Login-page {
     background-color: rgb(248, 244, 244);
     width: 80%;
-    height: 75%;
+    height: 85%;
   }
   .cross-sign-div {
     margin: 0.5rem;
     padding: 1rem;
   }
+  .login-container {
+    margin: 1rem 1rem 1rem 2rem;
+  }
 }
-@media only screen and (max-width: 290px) {
+@media only screen and (max-width: 320px) {
   .Login-page {
     background-color: rgb(248, 244, 244);
     width: 80%;
-    height: 58%;
+    height: 72%;
+    border-radius: 1rem;
   }
   .cross-sign-div {
     margin: 0.5rem;
     padding: 1rem;
+  }
+  .login-container {
+    margin: 1rem 1rem 1rem 2rem;
+  }
+  .google-login {
+    gap: 1rem;
   }
 }
