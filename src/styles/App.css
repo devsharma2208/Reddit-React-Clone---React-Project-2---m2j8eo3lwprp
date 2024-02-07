@@ -229,14 +229,14 @@
 /* Tablate */
 @media only screen and (max-width: 768px) {
   .header-container {
-    width: 100%;
+    width: 80%;
   }
   .logo {
     display: none;
   }
   .singleRedditLogo {
     display: inline;
-    height: 2rem;
+    height: 2.3rem;
     width: 5rem;
     object-fit: contain;
     margin-right: 1rem;
@@ -256,7 +256,7 @@
   }
   .search-container {
     background-color: #fff;
-    margin-right: -12rem;
+    margin-right: -5rem;
   }
   .img-banana {
     display: none;
@@ -264,6 +264,10 @@
   .get-app-header,
   .lskhnkc {
     display: none;
+  }
+  .hemb-icon {
+    /* margin-right: 1rem; */
+    font-size: 1.5rem;
   }
 }
 /* Phone */
@@ -275,15 +279,15 @@
   .header-container {
     background-color: #000;
     color: #fff;
+    height: 4rem;
+    width: 90%;
   }
   .hemb-icon {
     color: #fff;
   }
   .login {
     background-color: rgb(255, 0, 0);
-    /* width: 5rem; */
-    /* padding: 0.1rem 0.1rem; */
-
+    margin-right: 1rem;
     border-radius: 5rem;
     color: #ffffff;
     cursor: pointer;
@@ -292,5 +296,8 @@
       font-weight: 400;
       font-size: 0.8rem;
     }
+  }
+  .dot-icon {
+    display: none;
   }
 }

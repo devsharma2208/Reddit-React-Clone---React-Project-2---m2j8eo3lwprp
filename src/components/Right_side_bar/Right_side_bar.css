@@ -391,10 +391,10 @@
     display: none;
   }
   .main-containt {
-    width: 45rem;
+    width: 40rem;
   }
   .imageMainContainer {
-    width: 46rem;
+    width: 40rem;
     height: auto;
   }
   .icon-comment {
@@ -412,11 +412,15 @@
 }
 @media only screen and (max-width: 322px) {
   .main-containt {
-    width: 18rem;
+    width: 17rem;
   }
   .imageMainContainer {
     width: 18rem;
     height: 10rem;
+  }
+  .fetched-main-contiant {
+    border-radius: 1rem;
+    padding: 0;
   }
   .right-content-comntes-likes {
     width: 5.6rem;
