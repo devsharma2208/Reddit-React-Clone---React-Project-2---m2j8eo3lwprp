@@ -190,11 +190,17 @@
 @media only screen and (max-width: 768px) {
   .Login-page {
     width: 70%;
-    height: 95%;
+    height: 75%;
   }
   .cross-sign-div {
     margin: 0;
     padding: 1rem;
+  }
+  .sign-container-form {
+    height: 70%;
+    padding-bottom: 1.5rem;
+    margin-left: 0.6rem;
+    width: 90%;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -212,22 +218,14 @@
     margin: 1rem 1rem 1rem 2rem;
   }
   .sign-container-form {
-    width: 23rem;
+    height: fit-content;
+    padding-bottom: 1.5rem;
+    margin-left: 1rem;
   }
 
   .sign-up-container {
-    margin: 1rem 1rem 1rem 5rem;
-    height: 21rem;
-    width: 18rem;
-
-    > h1 {
-      font-size: 1.5rem;
-      padding-bottom: 0.5rem;
-    }
-    > p {
-      font-size: 0.8rem;
-      margin-right: 1.5rem;
-    }
+    margin: 1rem 1rem 1rem 2rem;
+    height: 24rem;
   }
   .continue-google-other {
     margin-top: 2rem;
@@ -236,7 +234,6 @@
   .google-login {
     width: 80%;
     font-size: 0.8rem;
-    margin-left: -0.5rem;
   }
 }
 @media only screen and (max-width: 320px) {
