@@ -265,6 +265,21 @@
   .hemb-icon {
     font-size: 1.5rem;
   }
+  .home-content-after-login {
+    display: none;
+  }
+  .arrow-icon {
+    display: none;
+  }
+  .chat-icon {
+    display: none;
+  }
+  .advertise-icon {
+    display: none;
+  }
+  .dropdownContainer-profile {
+    margin: 2rem 0;
+  }
 }
 /* Phone */
 @media only screen and (max-width: 480px) {
@@ -287,6 +302,9 @@
       font-size: 1.2rem;
       font-weight: 500;
     }
+  }
+  .hed-icons {
+    color: white;
   }
 }
 @media only screen and (max-width: 375px) {
@@ -318,6 +336,6 @@
     font-size: 1.5rem !important;
   }
   .header-container {
-    width: 128% !important;
+    width: 100% !important;
   }
 }

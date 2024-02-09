@@ -438,6 +438,9 @@
   .right_side_popular_community {
     display: none;
   }
+  .right-right-all_content_after_login {
+    width: 70% !important;
+  }
 }
 @media only screen and (max-width: 480px) {
   .main-containt {

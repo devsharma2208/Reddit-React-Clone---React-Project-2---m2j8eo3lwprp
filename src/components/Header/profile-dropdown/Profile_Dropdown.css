@@ -109,3 +109,24 @@
   border-bottom: 0.2rem solid rgb(236, 235, 235);
   margin: 0.8rem 0;
 }
+
+@media only screen and (max-width: 768px) {
+  .name-data {
+    display: none;
+  }
+  .dropdown-container {
+    display: flex;
+    gap: 0.3rem;
+    border: none;
+  }
+  .dropdown-Container-pro {
+    width: 15rem;
+    margin-left: -12rem;
+    color: black;
+    height: 94vh;
+  }
+}
+@media only screen and (max-width: 480px) {
+}
+@media only screen and (max-width: 375px) {
+}

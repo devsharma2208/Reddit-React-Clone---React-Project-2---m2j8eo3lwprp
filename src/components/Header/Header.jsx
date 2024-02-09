@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Left_Side_bar_afterLogin from "./Left_Side_bar_afterLogin";
 import Profile_Dropdown from "./profile-dropdown/Profile_Dropdown";
 import DropDown from "./profile-dropdown/DropDown";
+import { faBell } from "@fortawesome/free-regular-svg-icons";
 
 const Header = ({ setLognIn }) => {
   const [userData, setUserData] = useState();
@@ -74,7 +75,7 @@ const Header = ({ setLognIn }) => {
         />
       </div>
       {userData && (
-        <div className="icons-header">
+        <div className="icons-header chat-icon">
           <img
             className="arrow-icon"
             src="https://www.shareicon.net/download/2015/10/06/113452_arrow_512x512.png"
@@ -91,7 +92,7 @@ const Header = ({ setLognIn }) => {
       </div>
       {userData && (
         <>
-          <div className="icons-header">
+          <div className="icons-header chat-icon">
             <img
               src="https://freepngimg.com/save/158648-chat-icon-download-hq/980x908"
               alt="chat icon"
@@ -99,14 +100,10 @@ const Header = ({ setLognIn }) => {
             />
           </div>
           <div className="icons-header">
-            <img
-              src="https://www.iconpacks.net/icons/1/free-bell-icon-860-thumb.png"
-              alt="Bell icon"
-              width={22}
-            />
+            <FontAwesomeIcon className="bar-icon" icon={faBell} />
           </div>
           <div className="plus-icon">
-            <FontAwesomeIcon icon={faPlus} />
+            <FontAwesomeIcon className="hed-icons" icon={faPlus} />
           </div>
         </>
       )}

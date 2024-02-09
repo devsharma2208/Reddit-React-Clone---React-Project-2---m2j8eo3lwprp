@@ -22,7 +22,7 @@ const Profile_Dropdown = ({ toggle, setToggle }) => {
             width={22}
             height={30}
           />
-          <div>
+          <div className="name-data">
             <p>{userData.name}</p>
             <div className="name-container-data">
               <img
