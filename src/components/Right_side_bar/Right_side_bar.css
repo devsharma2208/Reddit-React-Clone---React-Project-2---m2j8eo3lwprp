@@ -438,8 +438,33 @@
   .right_side_popular_community {
     display: none;
   }
+  .fetched-data-afterlogin {
+    width: 80%;
+
+    display: flex;
+    justify-content: center;
+  }
   .right-right-all_content_after_login {
-    width: 70% !important;
+    width: 90% !important;
+
+    /* margin-left: 2rem; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+  }
+
+  .user-alldata {
+    width: 80%;
+  }
+  .main-content-afterlogin {
+    width: 100% !important;
+  }
+  .right_right_all_content {
+    display: flex;
+    justify-content: center;
+  }
+  .after-log-in-right-side-container {
+    display: none;
   }
 }
 @media only screen and (max-width: 480px) {

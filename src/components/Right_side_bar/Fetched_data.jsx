@@ -109,7 +109,11 @@ const Fetch_Data = ({ userData, setLognIn }) => {
     }
   };
   return (
-    <div className="fetched-data-main-containt-container">
+    <div
+      className={`fetched-data-main-containt-container ${
+        userData && "fetched-data-afterlogin"
+      }`}
+    >
       {data.length > 0 &&
         data.map((item, index) => (
           <div
@@ -166,7 +170,7 @@ const Fetch_Data = ({ userData, setLognIn }) => {
                 </div>
               </div>
             )}
-            <div>
+            <div className="user-alldata">
               <div className="userName-image-container">
                 <img
                   className="author-img"
@@ -178,7 +182,9 @@ const Fetch_Data = ({ userData, setLognIn }) => {
                   <h6>{item.author.name}</h6>
                 </div>
               </div>
-              <h4 className="main-containt">{item.content}</h4>
+              <h4 className="main-containt main-content-afterlogin">
+                {item.content}
+              </h4>
               <div className="imageMainContainer">
                 <img
                   src={item.images[0]}
