@@ -466,6 +466,10 @@
   .after-log-in-right-side-container {
     display: none;
   }
+  .savegfhgfhgf > img,
+  .savegfhgfhgf > p {
+    display: none;
+  }
 }
 @media only screen and (max-width: 480px) {
   .main-containt {
