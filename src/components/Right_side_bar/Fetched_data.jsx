@@ -173,7 +173,7 @@ const Fetch_Data = ({ userData, setLognIn }) => {
             <div className="user-alldata">
               <div className="userName-image-container">
                 <img
-                  className="author-img"
+                  className="author-img after-login-author"
                   src={item.author.profileImage}
                   alt="author Image"
                 />
@@ -185,7 +185,7 @@ const Fetch_Data = ({ userData, setLognIn }) => {
               <h4 className="main-containt main-content-afterlogin">
                 {item.content}
               </h4>
-              <div className="imageMainContainer">
+              <div className="imageMainContainer after-login-img">
                 <img
                   src={item.images[0]}
                   style={{ borderRadius: "1.2rem" }}
