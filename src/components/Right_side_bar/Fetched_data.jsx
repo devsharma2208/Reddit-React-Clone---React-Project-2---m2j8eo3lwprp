@@ -292,7 +292,7 @@ const Fetch_Data = ({ userData, setLognIn }) => {
                     />
                     <p>Save</p>
                   </div>
-                  <div>
+                  <div className="three-dots">
                     <FontAwesomeIcon icon={faEllipsis} />
                   </div>
                 </div>

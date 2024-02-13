@@ -120,3 +120,42 @@
     }
   }
 }
+@media only screen and (max-width: 768px) {
+  .comm-header {
+    height: 3rem;
+    width: 100% !important;
+  }
+  .input-data {
+    width: 80%;
+    margin-left: 2.3rem;
+  }
+  .na-de {
+    width: 70%;
+  }
+  .box-size {
+    height: 69%;
+    width: 70% !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .comm-header {
+    height: 3rem;
+    /* margin-top: 3rem; */
+    width: 100%;
+    margin-left: 1rem;
+  }
+  .input-data {
+    width: 80%;
+    margin-left: 1rem;
+  }
+  .name {
+    width: 60%;
+    margin-left: 1rem;
+  }
+  .na-de {
+    width: 70%;
+    margin-left: 1rem;
+  }
+}

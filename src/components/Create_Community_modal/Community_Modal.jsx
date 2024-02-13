@@ -51,14 +51,16 @@ export default function Community_Modal() {
         }}
       >
         <Fade in={open}>
-          <Box sx={style}>
+          <Box sx={style} className="box-size">
             <div className="comm-header">
               <h4>Create a community</h4>
               <p onClick={handleClose}>+</p>
             </div>
             <div className="border-line"></div>
             <div style={{ margin: "1rem 0" }}>
-              <h4 style={{ color: "#797373" }}>Name</h4>
+              <h4 style={{ color: "#797373" }} className="name">
+                Name
+              </h4>
               <div className="na-de">
                 <p>
                   Community names including capitalization cannot be changed.

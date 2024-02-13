@@ -549,23 +549,39 @@
   .author-img {
     width: 3rem;
   }
+  .right-content-comntes-likes {
+    width: auto;
+    height: 1.8rem;
+  }
   .icon-comment {
     height: 1rem;
     width: auto;
+    margin-left: -1rem;
   }
   .share-btn {
-    height: 1.2rem;
+    height: 1rem;
     width: auto;
     margin-left: -1rem;
+  }
+  .three-dots {
+    margin-left: -3rem;
+  }
+  .right-content-comntes {
+    height: auto;
+    margin-left: -0.5rem;
   }
   .comments-icon {
     height: 1.5rem;
     width: auto;
   }
   .fetched-main-contiant {
-    width: 16rem;
-    border-radius: 0.7rem;
-    padding: 0.8rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 100% !important;
+    /* &:hover {
+      background-color: rgb(237, 240, 242);
+      cursor: pointer;
+    } */
   }
   .main-content-afterlogin {
     width: 5rem;
