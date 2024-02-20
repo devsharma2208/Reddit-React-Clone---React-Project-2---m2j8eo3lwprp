@@ -118,6 +118,10 @@
     display: flex;
     gap: 0.3rem;
     border: none;
+    padding: 0;
+    &:hover {
+      color: black;
+    }
   }
   .dropdown-Container-pro {
     width: 15rem;
