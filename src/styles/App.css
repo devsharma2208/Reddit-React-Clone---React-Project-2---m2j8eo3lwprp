@@ -307,7 +307,7 @@
     color: white;
   }
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 480px) {
   .search-container {
     margin-left: -2rem;
     margin-right: 0;
@@ -317,7 +317,7 @@
     background-color: #000;
     color: #fff;
     height: 4rem;
-    width: 115% !important;
+    /* width: 115% !important; */
   }
   .hemb-icon {
     color: #fff;
