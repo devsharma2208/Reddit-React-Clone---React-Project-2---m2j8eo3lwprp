@@ -101,7 +101,7 @@
 }
 .after-login-main-container {
   background-color: #e1e8ec;
-  width: 98vw;
+  /* width: 98vw; */
 }
 @media only screen and (max-width: 768px) {
   .main-container {

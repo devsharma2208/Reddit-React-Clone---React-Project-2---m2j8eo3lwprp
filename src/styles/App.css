@@ -226,9 +226,9 @@
 }
 /* Tablate */
 @media only screen and (max-width: 768px) {
-  .header-container {
+  /* .header-container {
     width: 86%;
-  }
+  } */
   .logo {
     display: none;
   }
