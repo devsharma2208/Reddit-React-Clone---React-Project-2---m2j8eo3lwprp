@@ -19,8 +19,8 @@ const Profile_Dropdown = ({ toggle, setToggle }) => {
           <img
             src="https://i.redd.it/bpo63ls7pi4a1.png"
             alt="profile logo"
-            width={22}
-            height={30}
+            width={18}
+            height={25}
           />
           <div className="name-data">
             <p>{userData.name}</p>
