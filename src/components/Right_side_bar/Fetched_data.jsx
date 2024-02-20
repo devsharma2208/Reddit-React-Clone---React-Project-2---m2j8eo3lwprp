@@ -284,7 +284,7 @@ const Fetch_Data = ({ userData, setLognIn }) => {
                     />
                     <p>Share</p>
                   </div>
-                  <div className="savegfhgfhgf">
+                  <div className="savegfhgfhgf save">
                     <img
                       src="https://cdn.iconscout.com/icon/free/png-256/free-save-3244517-2701888.png?f=webp"
                       alt="save icon"

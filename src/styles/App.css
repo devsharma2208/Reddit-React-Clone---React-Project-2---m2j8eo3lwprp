@@ -227,7 +227,7 @@
 /* Tablate */
 @media only screen and (max-width: 768px) {
   .header-container {
-    width: 91%;
+    width: 86%;
   }
   .logo {
     display: none;
