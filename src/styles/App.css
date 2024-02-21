@@ -292,7 +292,7 @@
     background-color: #000;
     color: #fff;
     height: 4rem;
-    /* width: 102% !important; */
+    padding: 0 0.5rem;
   }
   .hemb-icon {
     color: #fff;

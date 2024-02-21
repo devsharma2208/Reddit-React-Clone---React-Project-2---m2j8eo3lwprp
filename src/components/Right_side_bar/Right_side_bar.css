@@ -409,7 +409,7 @@
   .imageMainContainer {
     width: 100%;
     height: 400px;
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
   }
   .icon-comment {
     height: 1rem;
@@ -459,7 +459,7 @@
   }
 
   .user-alldata {
-    width: 80%;
+    width: 100%;
   }
   .main-content-afterlogin {
     width: 100% !important;
@@ -506,7 +506,7 @@
     height: 13rem;
   }
   .fetched-main-contiant {
-    width: 18rem;
+    /* width: 18rem; */
     border-radius: 0.7rem;
     padding: 0.8rem;
   }
@@ -557,9 +557,9 @@
     }
   }
 
-  .imageMainContainer {
+  /* .imageMainContainer {
     margin-left: 1.2rem;
-  }
+  } */
   .author-img {
     width: 3rem;
   }
