@@ -239,8 +239,6 @@
 
   .main-content-comm {
     width: 53%;
-    /* display: flex;
-    flex-direction: column; */
   }
   .uoiipo {
     width: 44%;
@@ -265,7 +263,7 @@
     padding-bottom: 1rem;
   }
   .conn-comment {
-    width: 45%;
+    width: 32%;
   }
   .all-da {
     display: none;
@@ -277,11 +275,11 @@
     display: none !important;
   }
   .quill-container {
-    width: 43%;
+    width: 33%;
     margin-left: -1rem;
   }
   .comment-btn {
-    width: 40%;
+    width: 30%;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -291,18 +289,35 @@
     font-size: 0.7rem;
   }
   .nav-bar {
-    width: 50%;
-  }
-  .main-content-comm {
-    width: 50%;
-  }
-  .uoiipo {
     width: 40%;
   }
+  .main-content-comm {
+    width: 40%;
+    padding: 0;
+  }
+  .commene-share-oth {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .uoiipo {
+    width: 30% !important;
+  }
   .con-bell-icon {
-    width: 48%;
+    width: 30%;
+  }
+  .image-single-post {
+    width: 30%;
   }
   .bell-icon {
     padding-bottom: 1rem;
+  }
+  .dicss {
+    width: 20% !important;
+  }
+  .lakesdeep-icn {
+    margin: 0;
+    > p {
+      font-size: 0.6rem;
+    }
   }
 }
