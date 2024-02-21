@@ -526,6 +526,9 @@
     height: 1.5rem;
     width: auto;
   }
+  .three-dots {
+    margin-left: -0.9rem;
+  }
 }
 @media only screen and (max-width: 320px) {
   .main-containt {
