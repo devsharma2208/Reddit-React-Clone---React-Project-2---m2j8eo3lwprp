@@ -276,7 +276,7 @@ const Fetch_Data = ({ userData, setLognIn }) => {
                     />
                     <p>Comments</p>
                   </div>
-                  <div>
+                  <div className="share">
                     <img
                       src="https://w7.pngwing.com/pngs/569/949/png-transparent-computer-icons-share-icon-symbol-right-arrow-miscellaneous-angle-text.png"
                       alt="share icon"

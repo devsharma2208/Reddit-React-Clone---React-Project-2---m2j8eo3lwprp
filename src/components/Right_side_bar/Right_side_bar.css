@@ -522,12 +522,18 @@
     height: 1.2rem;
     width: auto;
   }
+  .share {
+    margin-left: -1rem;
+  }
   .comments-icon {
     height: 1.5rem;
     width: auto;
   }
   .three-dots {
     margin-left: -0.9rem;
+  }
+  .right-content-comntes-after-login {
+    height: 50vh;
   }
 }
 @media only screen and (max-width: 320px) {
