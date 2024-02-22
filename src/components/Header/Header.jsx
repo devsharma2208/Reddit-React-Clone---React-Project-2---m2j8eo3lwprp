@@ -25,7 +25,13 @@ const Header = ({ setLognIn }) => {
   return (
     <div className="header-container">
       <div className="header-content-1">
-        <FontAwesomeIcon className="hemb-icon" icon={faBars} />
+        <FontAwesomeIcon
+          className="hemb-icon"
+          icon={faBars}
+          onClick={() => {
+            setToggle((old) => !old);
+          }}
+        />
         <img
           className="logo"
           src="https://logos-world.net/wp-content/uploads/2023/11/Reddit-New-Logo.png"
@@ -54,7 +60,7 @@ const Header = ({ setLognIn }) => {
                 <FontAwesomeIcon icon={faAngleDown} />
               )}
             </div>
-            <Left_Side_bar_afterLogin toggle={toggle} />
+            <Left_Side_bar_afterLogin toggle={toggle} setToggle={setToggle} />
           </div>
         )}
       </div>

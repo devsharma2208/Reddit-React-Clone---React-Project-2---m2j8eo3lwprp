@@ -3,14 +3,33 @@ import "./Login.css";
 import SignUp from "./SignUp";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import {
+  FilledInput,
+  FormControl,
+  IconButton,
+  InputAdornment,
+  InputLabel,
+  TextField,
+} from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 const Login = ({ setLognIn }) => {
   const [toggle, setToggle] = useState(false);
   const [loginClick, setLoginClick] = useState(false);
   const [errIncorrectEmailOrPass, setErrIncorrectEmailOrPass] = useState("");
-  const email = useRef(null);
-  const password = useRef(null);
+  const [email1, setEmail1] = useState("");
+  const [password1, setPassword1] = useState("");
+  // const email = useRef(null);
+  // const password = useRef(null);
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = React.useState(false);
+
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+
   const config = {
     headers: {
       projectID: "7k1ct68pbbmr",
@@ -47,8 +66,8 @@ const Login = ({ setLognIn }) => {
   useEffect(() => {
     if (loginClick) {
       const body = {
-        email: email.current.value,
-        password: password.current.value,
+        email: email1,
+        password: password1,
         appType: "reddit",
       };
       login_Fetch(body);
@@ -57,6 +76,7 @@ const Login = ({ setLognIn }) => {
     }
   }, [loginClick]);
   const handleLogindata = (e) => {
+    console.log(email1, password1);
     e.preventDefault();
     setLoginClick(true);
   };
@@ -106,18 +126,55 @@ const Login = ({ setLognIn }) => {
                 <p></p>
               </div>
               <div className="userName-password">
-                <label htmlFor="email">Email*</label>
-                <input type="email" name="email" id="email" ref={email} />
+                {/* <label htmlFor="email">Email*</label>
+                <input type="email" name="email" id="email" ref={email} /> */}
+                <TextField
+                  id="filled-basic"
+                  label="Filled"
+                  variant="filled"
+                  value={email1}
+                  onChange={(e) => setEmail1(e.target.value)}
+                />
               </div>
               <div className="userName-password">
-                <label htmlFor="password">Password*</label>
+                {/* <label htmlFor="password">Password*</label>
                 <input
                   type="password"
                   name="password"
                   id="password"
                   ref={password}
                   autoComplete="current-password"
-                />
+                /> */}
+                {/* <TextField
+                  id="password-basic"
+                  label="Filled"
+                  variant="filled"
+                  value={password1}
+                  onChange={(e) => setPassword1(e.target.value)}
+                /> */}
+                <FormControl variant="filled">
+                  <InputLabel htmlFor="filled-adornment-password">
+                    Password
+                  </InputLabel>
+                  <FilledInput
+                    value={password1}
+                    onChange={(e) => setPassword1(e.target.value)}
+                    id="filled-adornment-password"
+                    type={showPassword ? "text" : "password"}
+                    endAdornment={
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={handleClickShowPassword}
+                          onMouseDown={handleMouseDownPassword}
+                          edge="end"
+                        >
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    }
+                  />
+                </FormControl>
               </div>
               <div className="err-massage">
                 {errIncorrectEmailOrPass && errIncorrectEmailOrPass}

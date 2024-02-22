@@ -86,6 +86,7 @@
   }
 }
 .fetched-data-main-containt-container {
+  display: flex;
   /* width: 90% !important; */
   align-items: center;
   flex-direction: column;

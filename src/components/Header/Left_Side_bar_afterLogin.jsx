@@ -1,8 +1,10 @@
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const Left_Side_bar_afterLogin = ({ toggle }) => {
+const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
+  const navigate = useNavigate();
   return (
     <div>
       {toggle && (
@@ -14,7 +16,12 @@ const Left_Side_bar_afterLogin = ({ toggle }) => {
           />
           <ul className="homw-all-content">
             <p className="head-home-lkjkhdk">FEEDS</p>
-            <li>
+            <li
+              onClick={() => {
+                navigate("/");
+                setToggle(false);
+              }}
+            >
               <FontAwesomeIcon icon={faHouse} /> <span>Home</span>
             </li>
             <li>

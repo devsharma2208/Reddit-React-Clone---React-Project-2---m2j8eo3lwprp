@@ -226,9 +226,12 @@
 }
 /* Tablate */
 @media only screen and (max-width: 768px) {
-  /* .header-container {
-    width: 86%;
-  } */
+  .home-toggle-data-after-login {
+    width: auto;
+    margin: 1.5rem -9rem;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
   .logo {
     display: none;
   }
@@ -286,13 +289,17 @@
   .search-container {
     margin-left: -2rem;
     margin-right: 0;
-    /* background-color: #000000; */
   }
   .header-container {
     background-color: #000;
     color: #fff;
     height: 4rem;
     padding: 0 0.5rem;
+  }
+  .home-toggle-data-after-login {
+    width: 13rem;
+    margin: 1.5rem -7.8rem;
+    color: black;
   }
   .hemb-icon {
     color: #fff;
