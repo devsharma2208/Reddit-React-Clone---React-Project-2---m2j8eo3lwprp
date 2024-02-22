@@ -210,3 +210,8 @@
     font-weight: 500;
   }
 }
+@media only screen and (max-width: 480px) {
+  .ql-editor {
+    width: 1rem !important;
+  }
+}
