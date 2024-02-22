@@ -232,17 +232,19 @@
 }
 @media only screen and (max-width: 768px) {
   .comm-container {
-    width: 80%;
+    width: 100%;
     height: auto;
     font-size: 0.7rem;
   }
-
-  /* .main-content-comm {
-    width: 53%;
-  } */
-  .uoiipo {
-    width: 92.3%;
+  .nav-bar {
+    margin: 0 2rem;
+    padding: 0;
   }
+  .main-content-comm {
+    padding: 0;
+    margin: 0 2.2rem;
+  }
+
   .con-hfd {
     font-size: 0.6rem;
     > p {
@@ -250,15 +252,20 @@
     }
   }
   .lakesdeep-icn {
-    margin-right: 1rem;
+    > img {
+      width: 50px !important;
+    }
+    > h5 {
+      font-size: 1rem;
+    }
     > p {
       font-size: 0.6rem;
     }
   }
-
-  .con-bell-icon {
-    width: 45%;
+  .image-single-post {
+    width: 100%;
   }
+
   .bell-icon {
     padding-bottom: 1rem;
     font-size: 1.8rem;
@@ -274,13 +281,9 @@
   .quill-container {
     margin-left: -1rem;
   }
-  .comment-btn {
-    width: 30%;
-  }
 }
 @media only screen and (max-width: 480px) {
   .comm-container {
-    width: 100%;
     height: auto;
     font-size: 0.7rem;
   }
@@ -288,7 +291,12 @@
     margin: 0 2rem;
     padding: 0;
   }
-
+  .uoiipo {
+    width: 92.3%;
+  }
+  .con-bell-icon {
+    width: 45%;
+  }
   .main-content-comm {
     padding: 0;
     margin: 0 2rem 0 2rem;
@@ -299,9 +307,6 @@
     margin: 0;
   }
 
-  .dicss {
-    width: 20% !important;
-  }
   .lakesdeep-icn {
     display: block;
     > img {
@@ -313,12 +318,5 @@
     > p {
       font-size: 0.6rem;
     }
-  }
-
-  .comment-btn {
-    width: 25%;
-  }
-  .comments-formate-container {
-    width: 25%;
   }
 }
