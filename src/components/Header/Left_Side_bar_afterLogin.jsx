@@ -33,7 +33,12 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
               />
               <span>Popular</span>
             </li>
-            <li>
+            <li
+              onClick={() => {
+                navigate("/empty");
+                setToggle(false);
+              }}
+            >
               <img
                 src="https://www.shareicon.net/data/512x512/2015/12/01/680841_button_512x512.png"
                 alt="all image icon"
@@ -42,7 +47,12 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
               <span>All</span>
             </li>
             <p className="head-home-lkjkhdk">OTHERS</p>
-            <li>
+            <li
+              onClick={() => {
+                navigate("/empty");
+                setToggle(false);
+              }}
+            >
               <img
                 src="https://freepngimg.com/save/17678-reddit-png-picture/296x406"
                 alt="user Icon"
@@ -50,7 +60,12 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
               />
               <span>User Setting</span>
             </li>
-            <li>
+            <li
+              onClick={() => {
+                navigate("/empty");
+                setToggle(false);
+              }}
+            >
               <img
                 src="https://freepngimg.com/save/17678-reddit-png-picture/296x406"
                 alt="user Icon"
@@ -66,7 +81,12 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
               />{" "}
               <span>Create Post</span>
             </li>
-            <li>
+            <li
+              onClick={() => {
+                navigate("/empty");
+                setToggle(false);
+              }}
+            >
               <img
                 src="https://www.iconpacks.net/icons/1/free-bell-icon-860-thumb.png"
                 alt="Bell icon"
@@ -74,7 +94,12 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
               />{" "}
               <span>Notifications</span>
             </li>
-            <li>
+            <li
+              onClick={() => {
+                navigate("/empty");
+                setToggle(false);
+              }}
+            >
               <img
                 src="https://static.thenounproject.com/png/1407038-200.png"
                 alt="primium icon"
@@ -82,7 +107,12 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
               />
               <span>Premium</span>
             </li>
-            <li>
+            <li
+              onClick={() => {
+                navigate("/empty");
+                setToggle(false);
+              }}
+            >
               <img
                 src="https://static.vecteezy.com/system/resources/previews/020/911/731/original/profile-icon-avatar-icon-user-icon-person-icon-free-png.png"
                 alt="avatar icon"

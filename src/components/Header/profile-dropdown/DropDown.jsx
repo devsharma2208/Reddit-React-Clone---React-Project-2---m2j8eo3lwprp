@@ -95,10 +95,20 @@ const DropDown = () => {
         </li>
 
         <li className="head-home-lkjkhdk">Profile</li>
-        <li className="head-home-lkjkhdk">
+        <li
+          className="head-home-lkjkhdk"
+          onClick={() => {
+            navigate("/empty");
+          }}
+        >
           <span>Create Avatar</span>
         </li>
-        <li className="head-home-lkjkhdk">
+        <li
+          className="head-home-lkjkhdk"
+          onClick={() => {
+            navigate("/empty");
+          }}
+        >
           <span>User Settings</span>
         </li>
         <div className="empty"></div>
@@ -110,11 +120,21 @@ const DropDown = () => {
           />{" "}
           <span>View Options</span>
         </p>
-        <li className="head-home-lkjk">
+        <li
+          className="head-home-lkjk"
+          onClick={() => {
+            navigate("/empty");
+          }}
+        >
           <span>Dark Mode</span>
         </li>
         <div className="empty"></div>
-        <p className="opti">
+        <p
+          className="opti"
+          onClick={() => {
+            navigate("/empty");
+          }}
+        >
           <img
             src="https://cdn3.iconfinder.com/data/icons/user-interface-web-1/550/web-circle-circular-round_11-512.png"
             alt="primium icon"
