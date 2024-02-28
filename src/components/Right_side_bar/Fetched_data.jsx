@@ -178,7 +178,7 @@ const Fetch_Data = ({ userData, setLognIn }) => {
                   alt="author Image"
                 />
                 <div>
-                  <h5>{item.channel.name}</h5>
+                  <h5>{item.channel && item.channel.name}</h5>
                   <h6>{item.author.name}</h6>
                 </div>
               </div>

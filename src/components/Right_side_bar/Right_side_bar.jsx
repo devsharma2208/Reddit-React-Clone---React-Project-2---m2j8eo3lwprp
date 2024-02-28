@@ -21,7 +21,7 @@ const Right_side_bar = ({ setLognIn }) => {
         "https://academics.newtonschool.co/api/v1/reddit/channel",
         config
       );
-      // console.log(res);
+      console.log(res.data.data);
       setPopularPostData(res.data.data);
     } catch (err) {
       console.log(err);
@@ -50,7 +50,7 @@ const Right_side_bar = ({ setLognIn }) => {
                   popularPostData.map((item, index) => (
                     <div className="fixed-right-content-text" key={index}>
                       <img
-                        src={item.owner.profileImage}
+                        src={item.image}
                         alt="men"
                         style={{ width: "2rem", borderRadius: "50%" }}
                       />

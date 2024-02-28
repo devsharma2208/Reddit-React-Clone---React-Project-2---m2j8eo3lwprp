@@ -61,6 +61,7 @@
   font-size: 0.9rem;
   color: rgb(160, 154, 154);
   align-items: center;
+  cursor: pointer;
 }
 .arroow-icons {
   color: rgb(160, 154, 154);
@@ -95,7 +96,37 @@
   gap: 1rem;
   color: #666768;
   font-size: 0.95rem;
+  cursor: pointer;
 }
+#upcomming-topics {
+  font-size: 0.5rem;
+  letter-spacing: 0.02rem;
+  font-weight: 700;
+  margin: 0;
+}
+.up-tv {
+  margin-left: -1rem !important;
+}
+.jljlljlk {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.popularPostsleft {
+  font-size: 0.7rem !important;
+  margin: 0 !important;
+}
+.upcoming {
+  background-color: red;
+  color: white;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 0.1rem 0.3rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  margin-right: -1rem;
+}
+
 .left-side-after-login {
   border: none;
 }

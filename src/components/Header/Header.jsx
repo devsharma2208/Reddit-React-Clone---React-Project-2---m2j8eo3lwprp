@@ -14,11 +14,13 @@ import Left_Side_bar_afterLogin from "./Left_Side_bar_afterLogin";
 import Profile_Dropdown from "./profile-dropdown/Profile_Dropdown";
 import DropDown from "./profile-dropdown/DropDown";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ setLognIn }) => {
   const [userData, setUserData] = useState();
   const [toggle, setToggle] = useState(false);
   const [profileDropDoen, setProfileDropDown] = useState(false);
+  const navigate = useNavigate();
   useEffect(() => {
     setUserData(JSON.parse(localStorage.getItem("userDetails")));
   }, []);
@@ -81,7 +83,10 @@ const Header = ({ setLognIn }) => {
         />
       </div>
       {userData && (
-        <div className="icons-header chat-icon">
+        <div
+          className="icons-header chat-icon"
+          onClick={() => navigate("./empty")}
+        >
           <img
             className="arrow-icon"
             src="https://www.shareicon.net/download/2015/10/06/113452_arrow_512x512.png"
@@ -90,7 +95,7 @@ const Header = ({ setLognIn }) => {
           />
         </div>
       )}
-      <div className="img-banana">
+      <div className="img-banana" onClick={() => navigate("./empty")}>
         <img
           src="https://www.redditstatic.com/shreddit/assets/moments/recap/recap-banana-icon.svg"
           alt="img-banana"
@@ -98,17 +103,20 @@ const Header = ({ setLognIn }) => {
       </div>
       {userData && (
         <>
-          <div className="icons-header chat-icon">
+          <div
+            className="icons-header chat-icon"
+            onClick={() => navigate("./empty")}
+          >
             <img
               src="https://freepngimg.com/save/158648-chat-icon-download-hq/980x908"
               alt="chat icon"
               width={22}
             />
           </div>
-          <div className="icons-header">
+          <div className="icons-header" onClick={() => navigate("./empty")}>
             <FontAwesomeIcon className="bar-icon" icon={faBell} />
           </div>
-          <div className="plus-icon">
+          <div className="plus-icon" onClick={() => navigate("./empty")}>
             <FontAwesomeIcon className="hed-icons" icon={faPlus} />
           </div>
         </>
@@ -116,7 +124,10 @@ const Header = ({ setLognIn }) => {
       {!userData ? (
         <>
           <div className="lskhnkc">|</div>
-          <div className="get-app-header">
+          <div
+            className="get-app-header"
+            onClick={() => alert("No App Available Now")}
+          >
             <FontAwesomeIcon className="bar-icon" icon={faQrcode} />
 
             <h4>Get App</h4>
@@ -136,7 +147,7 @@ const Header = ({ setLognIn }) => {
       ) : (
         <>
           <div className="dwopdown-container">
-            <div className="advertise-icon">
+            <div className="advertise-icon" onClick={() => navigate("./empty")}>
               <img
                 src="https://cdn-icons-png.flaticon.com/512/411/411789.png"
                 alt="advertise icon"

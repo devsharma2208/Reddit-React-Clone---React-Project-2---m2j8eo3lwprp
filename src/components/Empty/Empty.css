@@ -1,0 +1,25 @@
+.empty_container {
+  margin: 2rem;
+  text-align: center;
+  > p > span {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+      color: rgb(6, 6, 179);
+    }
+  }
+}
+.emptybtn {
+  margin: 2rem;
+  color: white;
+  background-color: red;
+  width: 8rem;
+  height: 2rem;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.1rem;
+  &:hover {
+    background-color: rgb(232, 45, 45);
+  }
+}
