@@ -284,17 +284,28 @@
 @media only screen and (max-width: 480px) {
   .comm-container {
     height: auto;
-    font-size: 0.7rem;
+    font-size: 0.8rem !important;
   }
   .nav-bar {
     margin: 0 2rem;
     padding: 0;
   }
+  .input-search {
+    display: none;
+  }
+
   .uoiipo {
     width: 92.3%;
   }
   .con-bell-icon {
-    width: 45%;
+    margin-top: -1rem;
+  }
+  .bell-icon {
+    padding-top: 1.5rem;
+    font-size: 1rem;
+  }
+  .react-quill-data {
+    margin-left: -1.5rem;
   }
   .main-content-comm {
     padding: 0;
@@ -317,5 +328,8 @@
     > p {
       font-size: 0.6rem;
     }
+  }
+  .comments-formate-container {
+    margin: 0 0 0 -1rem;
   }
 }
