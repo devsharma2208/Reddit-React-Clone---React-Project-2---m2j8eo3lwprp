@@ -228,7 +228,8 @@
   .right-side-create-comments {
     display: none;
   }
-  .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  .css-1u3bzj6-MuiFormControl-root-MuiTextField-root,
+  .css-i44wyl {
     width: 100%;
   }
   .quill-container {
