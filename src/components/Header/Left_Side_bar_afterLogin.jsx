@@ -34,6 +34,7 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
               <span>Popular</span>
             </li>
             <li
+              className="opiuoiu"
               onClick={() => {
                 navigate("/empty");
                 setToggle(false);

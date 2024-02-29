@@ -39,11 +39,11 @@ const Left_side_Bar = ({ setLognIn }) => {
         {!userData && (
           <>
             <div className="left-side-bar-top-content">
-              <div className="left-name-icons">
+              <div className="left-name-icons" id="left-home-com">
                 <FontAwesomeIcon className="icons-left-side" icon={faHouse} />
                 <p>Home</p>
               </div>
-              <div className="left-name-icons">
+              <div className="left-name-icons" id="left-home-com">
                 <FontAwesomeIcon
                   className="icons-left-side"
                   icon={faSquareArrowUpRight}

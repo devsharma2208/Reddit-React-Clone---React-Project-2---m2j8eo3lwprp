@@ -34,14 +34,16 @@
   border-radius: 6px;
   border: 3px solid var(--scrollbarBG);
 }
-
+#left-home-com {
+  cursor: pointer;
+}
 .left-name-icons {
   display: flex;
   gap: 1rem;
   align-items: center;
   color: rgb(102, 97, 97);
   font-size: 1.1rem;
-  cursor: pointer;
+  cursor: not-allowed;
   > p {
     font-size: 0.9rem;
     margin: 0.5rem 0.5rem;
@@ -62,7 +64,7 @@
   font-size: 0.9rem;
   color: rgb(160, 154, 154);
   align-items: center;
-  cursor: pointer;
+  cursor: not-allowed;
 }
 .arroow-icons {
   color: rgb(160, 154, 154);
@@ -76,7 +78,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
+  cursor: not-allowed;
 }
 .left-side-bar {
   border-left: 0.18rem solid rgb(237, 231, 231);
@@ -90,6 +92,7 @@
     font-size: 0.9rem;
     margin: 0.8rem 0.8rem;
     color: rgb(104, 106, 107);
+    cursor: not-allowed;
   }
 }
 .popularPosts-left-side-bar {
@@ -108,6 +111,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: not-allowed;
 }
 .popularPostsleft {
   font-size: 0.7rem !important;
@@ -176,7 +180,7 @@
 .jljlljlk:hover #upcomming-topics,
 .comm-btn:hover #upcomming-topics {
   visibility: visible;
-  cursor: pointer;
+  cursor: not-allowed;
 }
 .left-side-after-login {
   border: none;

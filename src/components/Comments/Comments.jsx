@@ -194,7 +194,7 @@ const Comments = () => {
                     <FontAwesomeIcon icon={faMessage} />
                     <span>Comment</span>
                   </div>
-                  <div className="shar-comment-oth">
+                  <div className="shar-comment-oth" disabled>
                     <FontAwesomeIcon icon={faShare} />
                     <span>Share</span>
                   </div>

@@ -184,6 +184,9 @@
   border: 0.1rem solid rgb(191, 185, 185);
   border-radius: 0 0 0.5rem 0.5rem;
 }
+.opiuoiu {
+  cursor: not-allowed !important;
+}
 .homw-all-content {
   list-style: none;
   padding: 1rem;
