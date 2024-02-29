@@ -89,12 +89,12 @@ const DropDown = () => {
         <span>My Stuff</span>
       </div>
       <ul className="homw-all-content profile-dropdown-details">
-        <li className="online-Status-btn">
+        {/* <li className="online-Status-btn">
           <p>Online Status</p>
           <FormControlLabel control={<IOSSwitch defaultChecked />} />
-        </li>
+        </li> */}
 
-        <li className="head-home-lkjkhdk">Profile</li>
+        {/* <li className="head-home-lkjkhdk">Profile</li> */}
         <li
           className="head-home-lkjkhdk"
           onClick={() => {
@@ -111,23 +111,23 @@ const DropDown = () => {
         >
           <span>User Settings</span>
         </li>
-        <div className="empty"></div>
-        <p className="opt">
+        {/* <div className="empty"></div> */}
+        {/* <p className="opt">
           <img
             src="https://www.iconpacks.net/icons/3/free-view-icon-6444-thumb.png"
             alt="plus"
             width={22}
           />{" "}
           <span>View Options</span>
-        </p>
-        <li
+        </p> */}
+        {/* <li
           className="head-home-lkjk"
           onClick={() => {
             navigate("/empty");
           }}
         >
           <span>Dark Mode</span>
-        </li>
+        </li> */}
         <div className="empty"></div>
         <p
           className="opti"
