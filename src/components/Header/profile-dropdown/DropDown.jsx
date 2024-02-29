@@ -142,7 +142,12 @@ const DropDown = () => {
           />
           <span>Create a Community</span>
         </p>
-        <p className="opti">
+        <p
+          className="opti"
+          onClick={() => {
+            navigate("/empty");
+          }}
+        >
           <img
             src="https://cdn-icons-png.flaticon.com/512/411/411789.png"
             alt="avatar icon"
@@ -150,7 +155,12 @@ const DropDown = () => {
           />
           <span>Advertise on Reddit</span>
         </p>
-        <p className="opti">
+        <p
+          className="opti"
+          onClick={() => {
+            navigate("/premimum");
+          }}
+        >
           <img
             src="https://static.thenounproject.com/png/1407038-200.png"
             alt="avatar icon"
@@ -158,18 +168,33 @@ const DropDown = () => {
           />
           <span>Premium</span>
         </p>
-        <p className="opti">
+        <p
+          className="opti"
+          onClick={() => {
+            navigate("/empty");
+          }}
+        >
           <img
             src="https://cdn-icons-png.flaticon.com/512/4406/4406266.png"
             alt="avatar icon"
             width={22}
           />
-          <div className="expo">
+          <div
+            className="expo"
+            onClick={() => {
+              navigate("/empty");
+            }}
+          >
             <span>Explore</span>
             <FontAwesomeIcon icon={faAngleDown} />
           </div>
         </p>
-        <p className="opti">
+        <p
+          className="opti"
+          onClick={() => {
+            navigate("/empty");
+          }}
+        >
           <img
             src="https://static-00.iconduck.com/assets.00/question-mark-circled-icon-512x512-wsm5hkwj.png"
             alt="avatar icon"
@@ -177,13 +202,23 @@ const DropDown = () => {
           />
           <span>Help Center</span>
         </p>
-        <p className="opti">
+        <p
+          className="opti"
+          onClick={() => {
+            navigate("/empty");
+          }}
+        >
           <img
             src="https://www.thesslstore.com/blog/wp-content/uploads/2017/05/circle-with-i-1.png"
             alt="avatar icon"
             width={22}
           />
-          <div className="more">
+          <div
+            className="more"
+            onClick={() => {
+              navigate("/empty");
+            }}
+          >
             <span>More</span>
             <FontAwesomeIcon icon={faAngleDown} />
           </div>
@@ -196,16 +231,36 @@ const DropDown = () => {
           />
           <span>Terms & Policies</span>
         </p>
-        <li className="head-home-lkjk">
+        <li
+          className="head-home-lkjk"
+          onClick={() => {
+            navigate("/empty");
+          }}
+        >
           <span>User Agreement</span>
         </li>
-        <li className="head-home-lkjk">
+        <li
+          className="head-home-lkjk"
+          onClick={() => {
+            navigate("/empty");
+          }}
+        >
           <span>Pricacy Policy</span>
         </li>
-        <li className="head-home-lkjk">
+        <li
+          className="head-home-lkjk"
+          onClick={() => {
+            navigate("/empty");
+          }}
+        >
           <span>Content Policy</span>
         </li>
-        <li className="head-home-lkjk">
+        <li
+          className="head-home-lkjk"
+          onClick={() => {
+            navigate("/empty");
+          }}
+        >
           <span>Moderator Code of Conduct</span>
         </li>
         <div className="unmjo"></div>

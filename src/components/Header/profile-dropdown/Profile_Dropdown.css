@@ -87,6 +87,7 @@
   font-weight: 500;
   margin-left: -0.5rem;
   margin-top: 0.8rem;
+  cursor: pointer;
 }
 .expo {
   display: flex;

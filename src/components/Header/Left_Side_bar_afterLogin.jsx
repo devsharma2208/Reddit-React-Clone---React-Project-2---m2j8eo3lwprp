@@ -73,7 +73,12 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
               />
               <span>Messages</span>
             </li>
-            <li>
+            <li
+              onClick={() => {
+                navigate("submit");
+                setToggle(false);
+              }}
+            >
               <img
                 src="https://www.pngall.com/wp-content/uploads/10/Plus-Symbol-Vector-PNG-Cutout.png"
                 alt="plus"
@@ -96,7 +101,7 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
             </li>
             <li
               onClick={() => {
-                navigate("/empty");
+                navigate("/premimum");
                 setToggle(false);
               }}
             >

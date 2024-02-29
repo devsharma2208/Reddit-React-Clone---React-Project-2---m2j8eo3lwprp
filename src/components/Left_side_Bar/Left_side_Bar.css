@@ -41,6 +41,7 @@
   align-items: center;
   color: rgb(102, 97, 97);
   font-size: 1.1rem;
+  cursor: pointer;
   > p {
     font-size: 0.9rem;
     margin: 0.5rem 0.5rem;
@@ -75,6 +76,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 .left-side-bar {
   border-left: 0.18rem solid rgb(237, 231, 231);
@@ -98,12 +100,7 @@
   font-size: 0.95rem;
   cursor: pointer;
 }
-#upcomming-topics {
-  font-size: 0.5rem;
-  letter-spacing: 0.02rem;
-  font-weight: 700;
-  margin: 0;
-}
+
 .up-tv {
   margin-left: -1rem !important;
 }
@@ -117,16 +114,70 @@
   margin: 0 !important;
 }
 .upcoming {
-  background-color: red;
-  color: white;
-  font-weight: 600;
-  font-size: 0.8rem;
-  padding: 0.1rem 0.3rem;
+  visibility: hidden;
+  width: 90px;
+  background-color: rgb(255, 0, 0);
+  color: #fff;
   text-align: center;
-  border-radius: 0.5rem;
-  margin-right: -1rem;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
 }
+.upcoming::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+#upcomming-topics {
+  visibility: hidden;
+  width: 50px;
 
+  background-color: rgb(255, 0, 0);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  left: 70%;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+  font-size: 0.6rem;
+}
+#upcomming-topics::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+.comm-btn #upcomming-topics::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: none;
+}
+.left-topics:hover .upcoming,
+.leftBar-iconsand-topics:hover #upcomming-topics,
+.left-name-icons:hover #upcomming-topics,
+.jljlljlk:hover #upcomming-topics,
+.comm-btn:hover #upcomming-topics {
+  visibility: visible;
+  cursor: pointer;
+}
 .left-side-after-login {
   border: none;
 }

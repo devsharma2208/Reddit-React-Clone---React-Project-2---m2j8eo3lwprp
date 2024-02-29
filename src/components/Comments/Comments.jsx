@@ -57,7 +57,7 @@ const Comments = () => {
         `https://academics.newtonschool.co/api/v1/reddit/post/${userImage.postId}`,
         singlePostConfig
       );
-      // console.log(res.data.data);
+      console.log(res.data.data);
       setSinglePostData(res.data.data);
     } catch (err) {
       console.log(err);
@@ -163,7 +163,10 @@ const Comments = () => {
                 <div className="con-bell-icon">
                   <div className="lakesdeep-icn">
                     <img
-                      src={singlePostDataValue.channel.image}
+                      src={
+                        singlePostDataValue.channel &&
+                        singlePostDataValue.channel.image
+                      }
                       alt=""
                       width={30}
                     />
@@ -254,10 +257,17 @@ const Comments = () => {
               <div className="na-da-ta-ca">
                 <img
                   className="ch-img"
-                  src={singlePostDataValue.channel.image}
+                  src={
+                    singlePostDataValue.channel &&
+                    singlePostDataValue.channel.image
+                  }
                   alt="channel Image"
                 />
-                <h4>/r_{singlePostDataValue.channel.name}</h4>
+                <h4>
+                  /r_
+                  {singlePostDataValue.channel &&
+                    singlePostDataValue.channel.name}
+                </h4>
               </div>
               <div className="con-comm">
                 <p>{singlePostDataValue.content}</p>

@@ -19,7 +19,7 @@ const After_login_Content_right = () => {
           </div>
         </div>
         <div className="try-btn">
-          <button>Try Now</button>
+          <button onClick={() => natigate("/premimum")}>Try Now</button>
         </div>
       </div>
       <div className="create-comm-container-jdks">

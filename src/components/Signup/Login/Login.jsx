@@ -130,7 +130,7 @@ const Login = ({ setLognIn }) => {
                 <input type="email" name="email" id="email" ref={email} /> */}
                 <TextField
                   id="filled-basic"
-                  label="Filled"
+                  label="Useremail*"
                   variant="filled"
                   value={email1}
                   onChange={(e) => setEmail1(e.target.value)}
@@ -154,7 +154,7 @@ const Login = ({ setLognIn }) => {
                 /> */}
                 <FormControl variant="filled">
                   <InputLabel htmlFor="filled-adornment-password">
-                    Password
+                    Password*
                   </InputLabel>
                   <FilledInput
                     value={password1}

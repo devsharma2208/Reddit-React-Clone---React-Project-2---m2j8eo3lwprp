@@ -6,7 +6,6 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo, faPlus } from "@fortawesome/free-solid-svg-icons";
-import { Checkbox } from "@mui/material";
 
 const Create_Post = () => {
   const top100Films = [
@@ -137,7 +136,6 @@ const Create_Post = () => {
     { label: "Monty Python and the Holy Grail", year: 1975 },
   ];
   const [comment, setComment] = useState("");
-  const [useFancyEditor, setUseFancyEditor] = useState(false);
 
   const formats = [
     "header",

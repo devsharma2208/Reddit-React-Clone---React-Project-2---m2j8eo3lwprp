@@ -116,8 +116,13 @@ export default function Community_Modal() {
               </div>
             </div>
             <div className="btns-community">
-              <button>Cancle</button>
-              <button className="comm-btn">Create Community</button>
+              <button onClick={handleClose}>Cancle</button>
+              <button className="comm-btn">
+                Create Community{" "}
+                <p className="upcoming" id="upcomming-topics">
+                  UPCOMING
+                </p>
+              </button>
             </div>
           </Box>
         </Fade>

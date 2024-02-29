@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import Create_Post from "./Create_Post/Create_Post";
 import Comments from "./Comments/Comments";
 import Empty from "./Empty/Empty";
+import Premimum from "./Premimum/Premimum";
 
 function App() {
   const [lognIn, setLognIn] = useState(false);
@@ -20,6 +21,7 @@ function App() {
         <Route path="submit" element={<Create_Post />} />
         <Route path="/comments/:name" element={<Comments />} />
         <Route path="/empty" element={<Empty />} />
+        <Route path="/premimum" element={<Premimum />} />
       </Routes>
     </div>
   );
