@@ -174,7 +174,7 @@ const Comments = () => {
                       8 hours ago
                     </p>
                   </div>
-                  <div>
+                  <div onClick={() => navigate("/empty")}>
                     <FontAwesomeIcon icon={faBell} className="bell-icon" />
                   </div>
                 </div>

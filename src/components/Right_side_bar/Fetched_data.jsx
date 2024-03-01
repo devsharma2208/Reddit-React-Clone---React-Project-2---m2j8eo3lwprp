@@ -118,6 +118,7 @@ const Fetch_Data = ({ userData, setLognIn }) => {
       setLikeIndex(index);
     } catch (err) {
       console.log(err);
+      alert("You Already Like this post...");
     }
   };
   const handleDislike = async (postId, index) => {
@@ -131,6 +132,7 @@ const Fetch_Data = ({ userData, setLognIn }) => {
       setDisLikeIndex(index);
     } catch (err) {
       console.log(err);
+      alert("You Already DisLike this post...");
     }
   };
   return (
