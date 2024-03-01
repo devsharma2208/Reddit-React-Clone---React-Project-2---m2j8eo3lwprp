@@ -116,7 +116,8 @@
   cursor: pointer;
   color: rgb(135, 139, 139);
 }
-.arrow-icon {
+.arrow-icon,
+.arrow-icon-dropdown {
   transform: rotate(45deg);
 }
 .plus-icon {

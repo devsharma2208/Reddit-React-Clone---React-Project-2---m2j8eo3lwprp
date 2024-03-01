@@ -13,8 +13,10 @@ const Fetch_Data = ({ userData, setLognIn }) => {
   const [page, setPage] = useState(1);
   const [isFetching, setIsFetching] = useState(false);
   const [error, setError] = useState(null);
-  const [like, setLike] = useState("");
+  const [postId, setPostId] = useState(null);
+  const [singlePostData, setSinglePostData] = useState("");
   const [likeIndex, setLikeIndex] = useState(-1);
+  const [disLikeIndex, setDisLikeIndex] = useState(-1);
   const userToken = localStorage.getItem("userDetails")
     ? JSON.parse(localStorage.getItem("userDetails")).token
     : "";
@@ -59,7 +61,6 @@ const Fetch_Data = ({ userData, setLognIn }) => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -71,39 +72,63 @@ const Fetch_Data = ({ userData, setLognIn }) => {
     fetchData();
   }, []);
 
+  const singlePostAPI = async (postId) => {
+    try {
+      const res = await axios.get(
+        `https://academics.newtonschool.co/api/v1/reddit/post/${postId}`,
+        config
+      );
+      // console.log(res.data.data);
+      setSinglePostData(res.data.data);
+      setPostId(null);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    if (postId != null) {
+      singlePostAPI(postId);
+    }
+    if (singlePostData) {
+      let newData = [...data];
+      if (likeIndex != -1) {
+        newData.splice(likeIndex, 1, singlePostData);
+      } else if (disLikeIndex != -1) {
+        newData.splice(disLikeIndex, 1, singlePostData);
+      }
+      setData(newData);
+      setSinglePostData("");
+    }
+  }, [postId, singlePostData]);
   const likePost_config = {
     headers: {
       Authorization: `Bearer ${userToken}`,
       projectID: "7k1ct68pbbmr",
     },
   };
+
   const handleLike = async (postId, index) => {
-    // console.log(postId);
-    // setIndex(index);
     try {
-      const res = await axios.post(
+      await axios.post(
         `https://academics.newtonschool.co/api/v1/reddit/like/${postId}`,
         {},
         likePost_config
       );
-
+      setPostId(postId);
       setLikeIndex(index);
-      // setLikeDislike(false);
-      // console.log(res);
-      // window.location.reload();
     } catch (err) {
       console.log(err);
     }
   };
-  const handleDislike = async (postId) => {
-    console.log(postId);
+  const handleDislike = async (postId, index) => {
     try {
       const res = await axios.delete(
         `https://academics.newtonschool.co/api/v1/reddit/like/${postId}`,
 
         likePost_config
       );
-      console.log(res);
+      setPostId(postId);
+      setDisLikeIndex(index);
     } catch (err) {
       console.log(err);
     }
@@ -149,10 +174,8 @@ const Fetch_Data = ({ userData, setLognIn }) => {
                       ></path>
                     </svg>
                   </div>
-                  <p>
-                    {likeIndex === index ? item.likeCount + 1 : item.likeCount}
-                  </p>
-                  <div onClick={() => handleDislike(item._id, index)}>
+                  <p>{item.likeCount}</p>
+                  <div onClick={(e) => handleDislike(item._id, index)}>
                     <svg
                       className="disLike-after-login"
                       rpl=""
@@ -309,7 +332,7 @@ const Fetch_Data = ({ userData, setLognIn }) => {
           />
         </div>
       )}
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p style={{ color: "red" }}>No more data available</p>}
     </div>
   );
 };

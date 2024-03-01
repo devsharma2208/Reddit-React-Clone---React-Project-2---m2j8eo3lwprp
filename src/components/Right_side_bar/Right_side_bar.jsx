@@ -28,8 +28,10 @@ const Right_side_bar = ({ setLognIn }) => {
     }
   };
   useEffect(() => {
-    popularPost_Fetch();
-  }, []);
+    if (!userData) {
+      popularPost_Fetch();
+    }
+  }, [userData]);
   return (
     <section className="right_side_bar_container">
       {!userData && (

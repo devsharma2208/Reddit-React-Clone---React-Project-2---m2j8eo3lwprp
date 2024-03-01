@@ -26,7 +26,7 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
             </li>
             <li>
               <img
-                class="arrow-icon"
+                class="arrow-icon-dropdown"
                 src="https://www.shareicon.net/download/2015/10/06/113452_arrow_512x512.png"
                 alt="arrow icon"
                 width="22"

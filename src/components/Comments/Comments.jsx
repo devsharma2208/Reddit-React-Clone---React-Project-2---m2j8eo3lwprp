@@ -101,9 +101,7 @@ const Comments = () => {
     }
   }, [commentBtn]);
   useEffect(() => {
-    console.log("guddu");
     if (commentToggle) {
-      console.log("sharma");
       let body = {
         content: comment,
       };
