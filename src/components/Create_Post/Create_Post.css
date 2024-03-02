@@ -214,6 +214,39 @@
   .ql-editor {
     width: 38rem !important;
   }
+  .create-post-text {
+    font-size: 1.1rem;
+  }
+  .draft-comments {
+    text-align: left;
+  }
+  /* .grid-create-post {
+    display: block;
+  } */
+  .right-side-create-comments {
+    display: none;
+  }
+  .last-post {
+    display: none;
+  }
+  .create-post-header-container {
+    width: 83%;
+  }
+  .create-post-header-data {
+    > div {
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+  }
+  .input-textfield {
+    width: 95%;
+  }
+  .input-title-con {
+    margin-right: 0.1rem;
+  }
+  .hgsh {
+    margin-left: 1rem;
+  }
 }
 @media only screen and (max-width: 480px) {
   .ql-editor {
@@ -227,6 +260,13 @@
   }
   .right-side-create-comments {
     display: none;
+  }
+  .create-post-header-container {
+    width: 100%;
+  }
+
+  .input-title-con {
+    width: 80%;
   }
   .css-1u3bzj6-MuiFormControl-root-MuiTextField-root,
   .css-i44wyl {

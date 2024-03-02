@@ -25,6 +25,9 @@ const Comments = () => {
   const [commentData, setCommentData] = useState("");
   const [commentBtn, setCommentBtn] = useState(true);
   const [commentToggle, setCommentToggle] = useState(false);
+  const [getAlldata, setGetAllData] = useState(true);
+  const [likeDislike, setLikeDislike] = useState(false);
+  const [newSinglePostData, setNewSinglePostData] = useState("");
   const userToken = localStorage.getItem("userDetails")
     ? JSON.parse(localStorage.getItem("userDetails")).token
     : "";
@@ -57,8 +60,15 @@ const Comments = () => {
         `https://academics.newtonschool.co/api/v1/reddit/post/${userImage.postId}`,
         singlePostConfig
       );
-      console.log(res.data.data);
-      setSinglePostData(res.data.data);
+      if (getAlldata) {
+        // console.log(res.data.data);
+        setSinglePostData(res.data.data);
+        setGetAllData(false);
+      } else {
+        // console.log(res.data.data.likeCount);
+        setNewSinglePostData(res.data.data.likeCount);
+        setLikeDislike(false);
+      }
     } catch (err) {
       console.log(err);
     }
@@ -72,7 +82,7 @@ const Comments = () => {
 
         likePost_config
       );
-      console.log(res.data.data);
+      // console.log(res.data.data);
       setCommentData(res.data.data);
     } catch (err) {
       console.log(err);
@@ -86,7 +96,7 @@ const Comments = () => {
         body,
         likePost_config
       );
-      console.log(res);
+      // console.log(res);
       setCommentToggle(false);
       setComment("");
     } catch (err) {
@@ -96,10 +106,20 @@ const Comments = () => {
   };
   useEffect(() => {
     if (commentBtn) {
-      singlePostData();
       getComments(userImage);
     }
-  }, [commentBtn]);
+    if (getAlldata) {
+      singlePostData();
+    }
+    if (likeDislike) {
+      singlePostData();
+    }
+    if (newSinglePostData) {
+      let new2singlePostData = { ...singlePostDataValue };
+      new2singlePostData.likeCount = newSinglePostData;
+      setSinglePostData(new2singlePostData);
+    }
+  }, [commentBtn, getAlldata, newSinglePostData, likeDislike]);
   useEffect(() => {
     if (commentToggle) {
       let body = {
@@ -117,6 +137,35 @@ const Comments = () => {
     setCommentBtn(true);
     setCommentToggle(true);
   };
+
+  const handleLike = async () => {
+    try {
+      const res = await axios.post(
+        `https://academics.newtonschool.co/api/v1/reddit/like/${userImage.postId}`,
+        {},
+        likePost_config
+      );
+      // console.log(res);
+      setLikeDislike(true);
+    } catch (err) {
+      console.log(err);
+      alert("You Already Like this post...");
+    }
+  };
+  const handleDisLike = async () => {
+    try {
+      const res = await axios.delete(
+        `https://academics.newtonschool.co/api/v1/reddit/like/${userImage.postId}`,
+
+        likePost_config
+      );
+      // console.log(res);
+      setLikeDislike(true);
+    } catch (err) {
+      console.log(err);
+      alert("You Already DisLike this post...");
+    }
+  };
   return (
     <>
       {singlePostDataValue && (
@@ -125,9 +174,17 @@ const Comments = () => {
             <div className="content">
               <div className="arrow-img">
                 <span className="spn">|</span>
-                <FontAwesomeIcon icon={faUpLong} />
+                <FontAwesomeIcon
+                  className="arrow-icon-comm"
+                  icon={faUpLong}
+                  onClick={handleLike}
+                />
                 <p>{singlePostDataValue && singlePostDataValue.likeCount}</p>
-                <FontAwesomeIcon icon={faDownLong} />{" "}
+                <FontAwesomeIcon
+                  className="arrow-icon-comm"
+                  icon={faDownLong}
+                  onClick={handleDisLike}
+                />{" "}
                 <span className="spn">|</span>
               </div>
               <div className="con-hfd">
@@ -147,6 +204,7 @@ const Comments = () => {
                   <FontAwesomeIcon
                     icon={faUpLong}
                     className="arrow-icon-comm"
+                    onClick={handleLike}
                   />
                 </div>
                 <div>{singlePostDataValue.likeCount}</div>
@@ -154,6 +212,7 @@ const Comments = () => {
                   <FontAwesomeIcon
                     icon={faDownLong}
                     className="arrow-icon-comm"
+                    onClick={handleDisLike}
                   />
                 </div>
               </div>
@@ -192,15 +251,25 @@ const Comments = () => {
                     <FontAwesomeIcon icon={faMessage} />
                     <span>Comment</span>
                   </div>
-                  <div className="shar-comment-oth" disabled>
+                  <div
+                    className="shar-comment-oth"
+                    disabled
+                    onClick={() => navigate("/empty")}
+                  >
                     <FontAwesomeIcon icon={faShare} />
                     <span>Share</span>
                   </div>
-                  <div className="shar-comment-oth save">
+                  <div
+                    className="shar-comment-oth save"
+                    onClick={() => navigate("/empty")}
+                  >
                     <FontAwesomeIcon icon={faBookmark} />
                     <span>Save</span>
                   </div>
-                  <div className="shar-comment-oth">
+                  <div
+                    className="shar-comment-oth"
+                    onClick={() => navigate("/empty")}
+                  >
                     <FontAwesomeIcon icon={faEllipsis} />
                   </div>
                 </div>
@@ -271,7 +340,7 @@ const Comments = () => {
                 <p>{singlePostDataValue.content}</p>
               </div>
               <div className="under-line"></div>
-              <div className="btn-com">
+              <div className="btn-com" onClick={() => navigate("/empty")}>
                 <button>Join</button>
               </div>
               <div className="under-line"></div>

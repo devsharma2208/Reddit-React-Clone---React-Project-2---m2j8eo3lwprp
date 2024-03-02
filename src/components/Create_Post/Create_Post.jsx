@@ -223,7 +223,7 @@ const Create_Post = () => {
                 <div className="quill-container">
                   {" "}
                   <ReactQuill
-                    className="react-quill-data"
+                    className="react-quill-data hgsh"
                     value={comment}
                     onChange={(value) => setComment(value)}
                     formats={formats}
