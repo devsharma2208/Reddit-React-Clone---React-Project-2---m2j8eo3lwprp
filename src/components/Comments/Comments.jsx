@@ -105,7 +105,7 @@ const Comments = () => {
     }
   };
   useEffect(() => {
-    if (commentBtn) {
+    if (commentBtn || commentToggle) {
       getComments(userImage);
     }
     if (getAlldata) {
@@ -119,7 +119,7 @@ const Comments = () => {
       new2singlePostData.likeCount = newSinglePostData;
       setSinglePostData(new2singlePostData);
     }
-  }, [commentBtn, getAlldata, newSinglePostData, likeDislike]);
+  }, [commentBtn, getAlldata, newSinglePostData, likeDislike, commentToggle]);
   useEffect(() => {
     if (commentToggle) {
       let body = {
@@ -129,8 +129,10 @@ const Comments = () => {
     }
   }, [commentToggle]);
   const handleReactQuillValue = (content, delta, source, editor) => {
+    const text = editor.getText().trim();
+
     setCommentBtn(false);
-    setComment(editor.getContents().ops[0].insert);
+    setComment(text);
   };
   const handleComment = (e) => {
     // e.preventDefault();

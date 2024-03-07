@@ -50,6 +50,7 @@ const Login = ({ setLognIn }) => {
           name: res.data.data.name,
           email: res.data.data.email,
           token: res.data.token,
+          id: res.data.data._id,
         }),
       ]);
       setLognIn(false);
@@ -125,7 +126,7 @@ const Login = ({ setLognIn }) => {
                 <span>OR</span>
                 <p></p>
               </div>
-              <div className="userName-password">
+              <div className="login-user">
                 {/* <label htmlFor="email">Email*</label>
                 <input type="email" name="email" id="email" ref={email} /> */}
                 <TextField
@@ -136,7 +137,7 @@ const Login = ({ setLognIn }) => {
                   onChange={(e) => setEmail1(e.target.value)}
                 />
               </div>
-              <div className="userName-password">
+              <div className="login-user">
                 {/* <label htmlFor="password">Password*</label>
                 <input
                   type="password"

@@ -200,6 +200,24 @@
     color: #504e4e;
   }
 }
+.container {
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20rem;
+  flex-direction: column;
+}
+.dropzone {
+  align-items: center;
+  border: 1px dashed grey;
+  border-radius: 0.3rem;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+}
 .list-container {
   font-size: 0.8rem;
   padding: 1rem;
@@ -209,6 +227,16 @@
     border-bottom: 0.2rem solid rgb(246, 243, 243);
     font-weight: 500;
   }
+}
+.textuploadImg {
+  color: rgb(0, 110, 255);
+}
+.uploadFile {
+  color: rgb(0, 170, 255);
+  border: 0.18rem solid rgb(0, 170, 255);
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 0.5rem;
 }
 @media only screen and (max-width: 768px) {
   .ql-editor {
@@ -231,6 +259,13 @@
   }
   .create-post-header-container {
     width: 83%;
+  }
+
+  .grid-create-post {
+    display: block;
+  }
+  .create-post-header-container {
+    width: 100%;
   }
   .create-post-header-data {
     > div {
@@ -264,7 +299,9 @@
   .create-post-header-container {
     width: 100%;
   }
-
+  .textuploadImg {
+    font-size: 0.8rem;
+  }
   .input-title-con {
     width: 80%;
   }

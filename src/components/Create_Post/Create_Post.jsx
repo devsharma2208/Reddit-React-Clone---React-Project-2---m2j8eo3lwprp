@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Create_Post.css";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
@@ -6,136 +6,60 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo, faPlus } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
+import Dropzone from "react-dropzone";
+import { useDropzone } from "react-dropzone";
+import { useNavigate } from "react-router-dom";
 
+const thumbsContainer = {
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  marginTop: 16,
+};
+
+const thumb = {
+  display: "inline-flex",
+  borderRadius: 2,
+  border: "1px solid #eaeaea",
+  marginBottom: 8,
+  marginRight: 8,
+  width: "100%",
+  height: 100,
+  padding: 4,
+  boxSizing: "border-box",
+};
+
+const thumbInner = {
+  display: "flex",
+  minWidth: 0,
+  maxWidth: "100%",
+  overflow: "hidden",
+};
+
+const img = {
+  display: "block",
+  width: "auto",
+  height: "100%",
+};
 const Create_Post = () => {
-  const top100Films = [
-    { label: "The Shawshank Redemption", year: 1994 },
-    { label: "The Godfather", year: 1972 },
-    { label: "The Godfather: Part II", year: 1974 },
-    { label: "The Dark Knight", year: 2008 },
-    { label: "12 Angry Men", year: 1957 },
-    { label: "Schindler's List", year: 1993 },
-    { label: "Pulp Fiction", year: 1994 },
-    {
-      label: "The Lord of the Rings: The Return of the King",
-      year: 2003,
-    },
-    { label: "The Good, the Bad and the Ugly", year: 1966 },
-    { label: "Fight Club", year: 1999 },
-    {
-      label: "The Lord of the Rings: The Fellowship of the Ring",
-      year: 2001,
-    },
-    {
-      label: "Star Wars: Episode V - The Empire Strikes Back",
-      year: 1980,
-    },
-    { label: "Forrest Gump", year: 1994 },
-    { label: "Inception", year: 2010 },
-    {
-      label: "The Lord of the Rings: The Two Towers",
-      year: 2002,
-    },
-    { label: "One Flew Over the Cuckoo's Nest", year: 1975 },
-    { label: "Goodfellas", year: 1990 },
-    { label: "The Matrix", year: 1999 },
-    { label: "Seven Samurai", year: 1954 },
-    {
-      label: "Star Wars: Episode IV - A New Hope",
-      year: 1977,
-    },
-    { label: "City of God", year: 2002 },
-    { label: "Se7en", year: 1995 },
-    { label: "The Silence of the Lambs", year: 1991 },
-    { label: "It's a Wonderful Life", year: 1946 },
-    { label: "Life Is Beautiful", year: 1997 },
-    { label: "The Usual Suspects", year: 1995 },
-    { label: "Léon: The Professional", year: 1994 },
-    { label: "Spirited Away", year: 2001 },
-    { label: "Saving Private Ryan", year: 1998 },
-    { label: "Once Upon a Time in the West", year: 1968 },
-    { label: "American History X", year: 1998 },
-    { label: "Interstellar", year: 2014 },
-    { label: "Casablanca", year: 1942 },
-    { label: "City Lights", year: 1931 },
-    { label: "Psycho", year: 1960 },
-    { label: "The Green Mile", year: 1999 },
-    { label: "The Intouchables", year: 2011 },
-    { label: "Modern Times", year: 1936 },
-    { label: "Raiders of the Lost Ark", year: 1981 },
-    { label: "Rear Window", year: 1954 },
-    { label: "The Pianist", year: 2002 },
-    { label: "The Departed", year: 2006 },
-    { label: "Terminator 2: Judgment Day", year: 1991 },
-    { label: "Back to the Future", year: 1985 },
-    { label: "Whiplash", year: 2014 },
-    { label: "Gladiator", year: 2000 },
-    { label: "Memento", year: 2000 },
-    { label: "The Prestige", year: 2006 },
-    { label: "The Lion King", year: 1994 },
-    { label: "Apocalypse Now", year: 1979 },
-    { label: "Alien", year: 1979 },
-    { label: "Sunset Boulevard", year: 1950 },
-    {
-      label:
-        "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
-      year: 1964,
-    },
-    { label: "The Great Dictator", year: 1940 },
-    { label: "Cinema Paradiso", year: 1988 },
-    { label: "The Lives of Others", year: 2006 },
-    { label: "Grave of the Fireflies", year: 1988 },
-    { label: "Paths of Glory", year: 1957 },
-    { label: "Django Unchained", year: 2012 },
-    { label: "The Shining", year: 1980 },
-    { label: "WALL·E", year: 2008 },
-    { label: "American Beauty", year: 1999 },
-    { label: "The Dark Knight Rises", year: 2012 },
-    { label: "Princess Mononoke", year: 1997 },
-    { label: "Aliens", year: 1986 },
-    { label: "Oldboy", year: 2003 },
-    { label: "Once Upon a Time in America", year: 1984 },
-    { label: "Witness for the Prosecution", year: 1957 },
-    { label: "Das Boot", year: 1981 },
-    { label: "Citizen Kane", year: 1941 },
-    { label: "North by Northwest", year: 1959 },
-    { label: "Vertigo", year: 1958 },
-    {
-      label: "Star Wars: Episode VI - Return of the Jedi",
-      year: 1983,
-    },
-    { label: "Reservoir Dogs", year: 1992 },
-    { label: "Braveheart", year: 1995 },
-    { label: "M", year: 1931 },
-    { label: "Requiem for a Dream", year: 2000 },
-    { label: "Amélie", year: 2001 },
-    { label: "A Clockwork Orange", year: 1971 },
-    { label: "Like Stars on Earth", year: 2007 },
-    { label: "Taxi Driver", year: 1976 },
-    { label: "Lawrence of Arabia", year: 1962 },
-    { label: "Double Indemnity", year: 1944 },
-    {
-      label: "Eternal Sunshine of the Spotless Mind",
-      year: 2004,
-    },
-    { label: "Amadeus", year: 1984 },
-    { label: "To Kill a Mockingbird", year: 1962 },
-    { label: "Toy Story 3", year: 2010 },
-    { label: "Logan", year: 2017 },
-    { label: "Full Metal Jacket", year: 1987 },
-    { label: "Dangal", year: 2016 },
-    { label: "The Sting", year: 1973 },
-    { label: "2001: A Space Odyssey", year: 1968 },
-    { label: "Singin' in the Rain", year: 1952 },
-    { label: "Toy Story", year: 1995 },
-    { label: "Bicycle Thieves", year: 1948 },
-    { label: "The Kid", year: 1921 },
-    { label: "Inglourious Basterds", year: 2009 },
-    { label: "Snatch", year: 2000 },
-    { label: "3 Idiots", year: 2009 },
-    { label: "Monty Python and the Holy Grail", year: 1975 },
-  ];
-  const [comment, setComment] = useState("");
+  const [title, setTitle] = useState("");
+  const [toggle, setToggle] = useState(false);
+  const navigate = useNavigate();
+  const [mediaType, setMediaType] = useState(null);
+  const userToken = localStorage.getItem("userDetails")
+    ? JSON.parse(localStorage.getItem("userDetails")).token
+    : "";
+  const user = localStorage.getItem("userDetails")
+    ? JSON.parse(localStorage.getItem("userDetails"))
+    : "";
+
+  // useEffect(() => {
+  //   createPostAPI();
+  // }, []);
+
+  const top100Films = [{ label: user.name, year: 1994 }];
+  const [post, setPost] = useState("");
 
   const formats = [
     "header",
@@ -147,6 +71,100 @@ const Create_Post = () => {
     "list",
     "bullet",
   ];
+  const convertDataUrlToBlob = (dataUrl) => {
+    const [, base64] = dataUrl.split(",");
+    const binaryString = atob(base64);
+    const arrayBuffer = new ArrayBuffer(binaryString.length);
+    const uint8Array = new Uint8Array(arrayBuffer);
+
+    for (let i = 0; i < binaryString.length; i++) {
+      uint8Array[i] = binaryString.charCodeAt(i);
+    }
+    const blobZaid = new Blob([uint8Array], { type: mediaType });
+    console.log("isBlob:", blobZaid instanceof Blob);
+    return blobZaid; // use mediaType here to set the correct MIME type
+  };
+
+  const [files, setFiles] = useState([]);
+  const [imageData, setImageData] = useState("");
+
+  const { getRootProps, getInputProps } = useDropzone({
+    accept: {
+      "image/*": [],
+    },
+    onDrop: (acceptedFiles) => {
+      console.log(acceptedFiles);
+
+      const file = acceptedFiles[0];
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        setImageData(e.target.result);
+      };
+      reader.readAsDataURL(file);
+      setFiles(
+        acceptedFiles.map((file) =>
+          Object.assign(file, {
+            preview: URL.createObjectURL(file),
+          })
+        )
+      );
+    },
+  });
+  const formData = new FormData();
+  formData.append("title", title);
+  formData.append("content", post);
+  if (imageData) {
+    const mediaBlob = convertDataUrlToBlob(imageData);
+    console.log(mediaBlob instanceof Blob);
+    formData.append("images", mediaBlob, "image_filename.jpg");
+  }
+
+  const thumbs = files.map((file) => (
+    <div style={thumb} key={file.name}>
+      <div style={thumbInner}>
+        <img
+          src={file.preview}
+          style={img}
+          // Revoke data uri after image is loaded
+          onLoad={() => {
+            URL.revokeObjectURL(file.preview);
+          }}
+        />
+      </div>
+    </div>
+  ));
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${userToken}`,
+      projectID: "7k1ct68pbbmr",
+    },
+  };
+
+  useEffect(() => {
+    return () => files.forEach((file) => URL.revokeObjectURL(file.preview));
+  }, []);
+  const createPostAPI = async () => {
+    console.log(formData);
+    try {
+      const res = await axios.post(
+        "https://academics.newtonschool.co/api/v1/reddit/post/",
+        formData,
+        config
+      );
+
+      console.log(res);
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const handlePostData = () => {
+    console.log(imageData);
+    createPostAPI();
+    console.log({ ...formData });
+  };
   return (
     <main className="create-post-container">
       <div className="div-container-create">
@@ -174,7 +192,7 @@ const Create_Post = () => {
             </div>
             <div className="create-post-header-container">
               <div className="create-post-header-data">
-                <div className="hkhklhlk">
+                <div className="hkhklhlk" onClick={() => setToggle(false)}>
                   <img
                     src="https://ps.w.org/wp-create-multiple-posts-pages/assets/icon-128x128.png?rev=1865509"
                     alt="post image"
@@ -182,7 +200,7 @@ const Create_Post = () => {
                   />
                   <p>Post</p>
                 </div>
-                <div className="hkhklhlk">
+                <div className="hkhklhlk" onClick={() => setToggle(true)}>
                   <img
                     src="https://cdn0.iconfinder.com/data/icons/multimedia-line-30px/30/image_photo-512.png"
                     alt="post image"
@@ -190,7 +208,7 @@ const Create_Post = () => {
                   />
                   <p>Image & Video</p>
                 </div>
-                <div className="hkhklhlk">
+                <div className="hklhlhfs">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/5/56/Chain_link_icon_slanted.png"
                     alt="post image"
@@ -207,12 +225,15 @@ const Create_Post = () => {
                   <p>Poll</p>
                 </div>
               </div>
+
               <div>
                 <div className="input-title-con">
                   <TextField
                     className="input-textfield"
                     size="small"
                     name="Size"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
                     placeholder="Title"
                     count={{
                       show: true,
@@ -220,16 +241,38 @@ const Create_Post = () => {
                     }}
                   />
                 </div>
-                <div className="quill-container">
-                  {" "}
-                  <ReactQuill
-                    className="react-quill-data hgsh"
-                    value={comment}
-                    onChange={(value) => setComment(value)}
-                    formats={formats}
-                  />
-                </div>
+                {!toggle ? (
+                  <div className="quill-container">
+                    {" "}
+                    <ReactQuill
+                      className="react-quill-data hgsh"
+                      value={post}
+                      theme="snow"
+                      onChange={(content, delta, source, editor) => {
+                        const text = editor.getText().trim();
+                        setPost(text);
+                      }}
+                      formats={formats}
+                    />
+                  </div>
+                ) : (
+                  <>
+                    <div className="drop-image">
+                      <section className="container">
+                        <div {...getRootProps({ className: "dropzone" })}>
+                          <input {...getInputProps()} />
+                          <p className="textuploadImg">
+                            Drag and drop some files here, or{" "}
+                            <span className="uploadFile">Upload file</span>
+                          </p>
+                        </div>
+                        <aside style={thumbsContainer}>{thumbs}</aside>
+                      </section>
+                    </div>
+                  </>
+                )}
               </div>
+
               <div className="bo-da-ta">
                 <div>
                   <FontAwesomeIcon icon={faPlus} />
@@ -250,8 +293,9 @@ const Create_Post = () => {
               </div>
               <div className="hr"></div>
               <div className="btn-comment">
+                <div>{post}</div>
                 <button>Save Draft</button>
-                <button>Post</button>
+                <button onClick={handlePostData}>Post</button>
               </div>
               <div className="check-box">
                 <input
