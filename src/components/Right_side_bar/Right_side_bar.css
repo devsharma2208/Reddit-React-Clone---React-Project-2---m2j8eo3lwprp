@@ -594,6 +594,7 @@
   }
   .button-container {
     gap: 0.3rem;
+    top: 4rem;
   }
   .fetched-main-contiant {
     width: 91%;

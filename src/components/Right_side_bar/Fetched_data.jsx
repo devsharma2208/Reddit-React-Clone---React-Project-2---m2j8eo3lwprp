@@ -44,9 +44,9 @@ const Fetch_Data = ({ userData, setLognIn }) => {
       }, 2000);
     }
     if (newPost) {
-      const newData = data.sort(
-        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-      );
+      const newData = data.sort((a, b) => {
+        return new Date(b.createdAt) - new Date(a.createdAt);
+      });
       setData(newData);
       setTimeout(() => {
         setNewPost(false);
