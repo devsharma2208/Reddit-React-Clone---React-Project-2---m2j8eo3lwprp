@@ -424,7 +424,7 @@ const Fetch_Data = ({ userData, setLognIn }) => {
                           alt="comment icon"
                           width={22}
                         />
-                        <p>Comments</p>
+                        <p>{item.commentCount} Comments</p>
                       </div>
                       <div className="share">
                         <img

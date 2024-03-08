@@ -322,7 +322,7 @@ const Create_Post = () => {
               </div>
               <div className="hr"></div>
               <div className="btn-comment">
-                <div>{post}</div>
+                {/* <div>{post}</div> */}
                 <button>Save Draft</button>
                 {id ? (
                   <button onClick={handleEditPost}>Edit</button>
