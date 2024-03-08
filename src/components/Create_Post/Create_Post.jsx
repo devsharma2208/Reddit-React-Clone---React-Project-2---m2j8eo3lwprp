@@ -9,7 +9,7 @@ import { faCircleInfo, faPlus } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import Dropzone from "react-dropzone";
 import { useDropzone } from "react-dropzone";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const thumbsContainer = {
   display: "flex",
@@ -43,6 +43,9 @@ const img = {
   height: "100%",
 };
 const Create_Post = () => {
+  const { id } = useParams();
+  // const [postId, setPostId] = useState(id.replace(/[:.]/g, ''));
+  const postId = JSON.parse(sessionStorage.getItem("postId"));
   const [title, setTitle] = useState("");
   const [toggle, setToggle] = useState(false);
   const navigate = useNavigate();
@@ -160,10 +163,35 @@ const Create_Post = () => {
       console.log(err);
     }
   };
+  const updatePostConfig = {
+    headers: {
+      Authorization: `Bearer ${userToken}`,
+      projectID: "7k1ct68pbbmr",
+      "Content-Type": "multipart/form-data",
+    },
+  };
+  const updatePostAPI = async () => {
+    console.log("update Post");
+    try {
+      const res = await axios.patch(
+        `https://academics.newtonschool.co/api/v1/reddit/post/${postId.postId}`,
+        formData,
+        updatePostConfig
+      );
+
+      console.log(res);
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const handleEditPost = () => {
+    updatePostAPI();
+  };
   const handlePostData = () => {
     console.log(imageData);
     createPostAPI();
-    console.log({ ...formData });
+    // console.log({ ...formData });
   };
   return (
     <main className="create-post-container">
@@ -295,7 +323,11 @@ const Create_Post = () => {
               <div className="btn-comment">
                 <div>{post}</div>
                 <button>Save Draft</button>
-                <button onClick={handlePostData}>Post</button>
+                {id ? (
+                  <button onClick={handleEditPost}>Edit</button>
+                ) : (
+                  <button onClick={handlePostData}>Post</button>
+                )}
               </div>
               <div className="check-box">
                 <input

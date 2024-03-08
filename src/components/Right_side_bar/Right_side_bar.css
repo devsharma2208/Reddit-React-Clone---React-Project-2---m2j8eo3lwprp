@@ -153,14 +153,17 @@
 .deletePost {
   display: block;
   position: absolute;
-  margin: 4rem 0 0 2rem;
+  margin: 6rem 0 0 2rem;
   background-color: #d8dcdf;
-  padding: 0.3rem;
+  padding: 0.5rem;
   color: rgb(0, 0, 0);
   font-weight: 600;
+}
+.editDeletePost {
+  padding: 0 0.3rem;
   &:hover {
-    background-color: black;
-    color: #ffffff;
+    background-color: rgb(113, 109, 109);
+    color: white;
   }
 }
 .hot-img {

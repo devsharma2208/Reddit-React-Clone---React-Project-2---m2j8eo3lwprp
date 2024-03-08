@@ -14,12 +14,14 @@ const Fetch_Data = ({ userData, setLognIn }) => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const [isFetching, setIsFetching] = useState(false);
+  const [postIndex, setPostIndex] = useState("");
   const [toggle, setToggle] = useState(false);
   const [error, setError] = useState(null);
   const [postId, setPostId] = useState(null);
   const [singlePostData, setSinglePostData] = useState("");
   const [likeIndex, setLikeIndex] = useState(-1);
   const [disLikeIndex, setDisLikeIndex] = useState(-1);
+  const [edit, setEdit] = useState(true);
   const logedinUser = JSON.parse(localStorage.getItem("userDetails"));
   const userToken = localStorage.getItem("userDetails")
     ? JSON.parse(localStorage.getItem("userDetails")).token
@@ -196,62 +198,66 @@ const Fetch_Data = ({ userData, setLognIn }) => {
         userData && "fetched-data-afterlogin"
       }`}
     >
-      <div className="create-post-icon">
-        <div>
-          <img
-            className="hot-img"
-            src="https://i.redd.it/bpo63ls7pi4a1.png"
-            alt="reddit"
-          />
-        </div>
-        <div onClick={() => navigate("/submit")}>
-          <input type="text" placeholder="Create Post" />
-        </div>
-        <div>
-          <FontAwesomeIcon className="gallery-icons" icon={faImage} />
-          <FontAwesomeIcon className="gallery-icons" icon={faLink} />
-        </div>
-      </div>
-      <div className="button-container">
-        <button className="btn-img hot" onClick={() => navigate("/empty")}>
-          <img
-            className="hot-img"
-            src="https://png.pngtree.com/png-clipart/20220921/ourmid/pngtree-fire-logo-png-image_6209600.png"
-            alt="fire-img"
-          />{" "}
-          HOT
-        </button>
-        <button className="btn-img" onClick={() => setNewPost(true)}>
-          <img
-            className="hot-img"
-            src="https://www.iconpacks.net/icons/1/free-settings-icon-778-thumb.png"
-            alt="setting-img"
-          />{" "}
-          NEW
-        </button>
-        <button className="btn-img" onClick={top}>
-          {" "}
-          <img
-            className="hot-img"
-            src="https://pngfre.com/wp-content/uploads/red-arrow-25-1-1024x1024.png"
-            alt="arrow-img"
-          />
-          TOP
-        </button>
+      {userToken && (
+        <>
+          <div className="create-post-icon">
+            <div>
+              <img
+                className="hot-img"
+                src="https://i.redd.it/bpo63ls7pi4a1.png"
+                alt="reddit"
+              />
+            </div>
+            <div onClick={() => navigate("/submit")}>
+              <input type="text" placeholder="Create Post" />
+            </div>
+            <div>
+              <FontAwesomeIcon className="gallery-icons" icon={faImage} />
+              <FontAwesomeIcon className="gallery-icons" icon={faLink} />
+            </div>
+          </div>
+          <div className="button-container">
+            <button className="btn-img hot" onClick={() => navigate("/empty")}>
+              <img
+                className="hot-img"
+                src="https://png.pngtree.com/png-clipart/20220921/ourmid/pngtree-fire-logo-png-image_6209600.png"
+                alt="fire-img"
+              />{" "}
+              HOT
+            </button>
+            <button className="btn-img" onClick={() => setNewPost(true)}>
+              <img
+                className="hot-img"
+                src="https://www.iconpacks.net/icons/1/free-settings-icon-778-thumb.png"
+                alt="setting-img"
+              />{" "}
+              NEW
+            </button>
+            <button className="btn-img" onClick={top}>
+              {" "}
+              <img
+                className="hot-img"
+                src="https://pngfre.com/wp-content/uploads/red-arrow-25-1-1024x1024.png"
+                alt="arrow-img"
+              />
+              TOP
+            </button>
 
-        <button className="btn-img" onClick={() => setBest(true)}>
-          {" "}
-          <img
-            className="hot-img"
-            src="https://static.vecteezy.com/system/resources/previews/018/842/682/original/3d-high-quality-guarantee-symbol-medal-button-with-checkmark-best-quality-of-product-and-service-icon-standard-quality-control-certification-3d-render-illustration-free-png.png"
-            alt="best"
-          />
-          BEST
-        </button>
-        <p className="three-dot-2" onClick={() => navigate("/empty")}>
-          <FontAwesomeIcon icon={faEllipsis} />
-        </p>
-      </div>
+            <button className="btn-img" onClick={() => setBest(true)}>
+              {" "}
+              <img
+                className="hot-img"
+                src="https://static.vecteezy.com/system/resources/previews/018/842/682/original/3d-high-quality-guarantee-symbol-medal-button-with-checkmark-best-quality-of-product-and-service-icon-standard-quality-control-certification-3d-render-illustration-free-png.png"
+                alt="best"
+              />
+              BEST
+            </button>
+            <p className="three-dot-2" onClick={() => navigate("/empty")}>
+              <FontAwesomeIcon icon={faEllipsis} />
+            </p>
+          </div>{" "}
+        </>
+      )}
       {!best || !newPost ? (
         <>
           {data.length > 0 &&
@@ -320,6 +326,9 @@ const Fetch_Data = ({ userData, setLognIn }) => {
                       <h6>{item.author.name}</h6>
                     </div>
                   </div>
+                  <h3 className="main-containt main-content-afterlogin">
+                    {item.title && item.title}
+                  </h3>
                   <h4 className="main-containt main-content-afterlogin">
                     {item.content}
                   </h4>
@@ -437,16 +446,36 @@ const Fetch_Data = ({ userData, setLognIn }) => {
                         <div>
                           <div
                             className="three-dots"
-                            onClick={() => setToggle((old) => !old)}
+                            onClick={() => {
+                              setPostIndex(index);
+                              setToggle((old) => !old);
+                            }}
                           >
                             <FontAwesomeIcon icon={faEllipsis} />
                           </div>
-                          {toggle && (
-                            <div
-                              className="deletePost"
-                              onClick={() => handleDeletePost(item._id)}
-                            >
-                              Delete
+                          {postIndex === index && toggle && (
+                            <div className="deletePost">
+                              <div
+                                className="editDeletePost"
+                                onClick={() => {
+                                  navigate(`submit/:${item._id}`);
+                                  sessionStorage.setItem(
+                                    "postId",
+                                    JSON.stringify({
+                                      postId: item._id,
+                                    })
+                                  );
+                                  setEdit(false);
+                                }}
+                              >
+                                Edit
+                              </div>
+                              <div
+                                onClick={() => handleDeletePost(item._id)}
+                                className="editDeletePost"
+                              >
+                                Delete
+                              </div>
                             </div>
                           )}
                         </div>

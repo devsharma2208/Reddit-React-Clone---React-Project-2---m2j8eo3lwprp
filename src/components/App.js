@@ -19,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Left_side_Bar setLognIn={setLognIn} />} />
         <Route path="submit" element={<Create_Post />} />
+        <Route path="submit/:id" element={<Create_Post />} />
         <Route path="/comments/:name" element={<Comments />} />
         <Route path="/empty" element={<Empty />} />
         <Route path="/premimum" element={<Premimum />} />
