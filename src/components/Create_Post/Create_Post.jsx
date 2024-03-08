@@ -180,6 +180,7 @@ const Create_Post = () => {
       );
 
       console.log(res);
+      sessionStorage.clear();
       navigate("/");
     } catch (err) {
       console.log(err);
