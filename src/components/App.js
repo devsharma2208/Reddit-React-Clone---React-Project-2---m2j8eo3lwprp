@@ -8,6 +8,7 @@ import Create_Post from "./Create_Post/Create_Post";
 import Comments from "./Comments/Comments";
 import Empty from "./Empty/Empty";
 import Premimum from "./Premimum/Premimum";
+import Community_Details from "./Create_Community_modal/Community_Details";
 
 function App() {
   const [lognIn, setLognIn] = useState(false);
@@ -23,6 +24,7 @@ function App() {
         <Route path="/comments/:name" element={<Comments />} />
         <Route path="/empty" element={<Empty />} />
         <Route path="/premimum" element={<Premimum />} />
+        <Route path="/community" element={<Community_Details />} />
       </Routes>
     </div>
   );
