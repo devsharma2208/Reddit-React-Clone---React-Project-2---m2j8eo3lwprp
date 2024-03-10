@@ -321,9 +321,17 @@ const Fetch_Data = ({ userData, setLognIn }) => {
                       src={item.author.profileImage}
                       alt="author Image"
                     />
-                    <div>
-                      <h5>{item.channel && item.channel.name}</h5>
-                      <h6>{item.author.name}</h6>
+                    <div
+                      onClick={() =>
+                        navigate(
+                          `/community/${item.channel ? item.channel._id : 2}/${
+                            item.author.name
+                          }`
+                        )
+                      }
+                    >
+                      <h4>{item.author.name}</h4>
+                      <h6>{item.channel && item.channel.name}</h6>
                     </div>
                   </div>
                   <h3 className="main-containt main-content-afterlogin">

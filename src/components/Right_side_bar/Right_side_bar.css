@@ -190,11 +190,19 @@
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
-  > div > h6,
-  h5 {
-    color: rgb(164, 162, 161);
-    &:hover {
-      color: #5a5d5f;
+  > div {
+    > h6,
+    h4 {
+      color: rgb(164, 162, 161);
+      letter-spacing: 0.1rem;
+      &:hover {
+        color: #5a5d5f;
+      }
+    }
+    > h6 {
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

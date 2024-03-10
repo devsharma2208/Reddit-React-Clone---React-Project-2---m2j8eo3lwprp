@@ -24,7 +24,7 @@ function App() {
         <Route path="/comments/:name" element={<Comments />} />
         <Route path="/empty" element={<Empty />} />
         <Route path="/premimum" element={<Premimum />} />
-        <Route path="/community" element={<Community_Details />} />
+        <Route path="/community/:id/:name" element={<Community_Details />} />
       </Routes>
     </div>
   );
