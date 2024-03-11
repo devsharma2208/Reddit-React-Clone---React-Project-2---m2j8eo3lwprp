@@ -5,10 +5,11 @@ import {
   faEllipsis,
   faImage,
   faLink,
-  faMessage,
+  faShare,
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { faBookmark, faMessage } from "@fortawesome/free-regular-svg-icons";
 
 const Community_Details = () => {
   const navigate = useNavigate();
@@ -37,6 +38,9 @@ const Community_Details = () => {
   useEffect(() => {
     communityDataFetch();
   }, []);
+  const top = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
   return (
     <div>
       <div>
@@ -89,7 +93,7 @@ const Community_Details = () => {
                   />{" "}
                   HOT
                 </button>
-                <button className="btn-img" onClick={() => setNewPost(true)}>
+                <button className="btn-img" onClick={() => navigate("/empty")}>
                   <img
                     className="hot-img"
                     src="https://www.iconpacks.net/icons/1/free-settings-icon-778-thumb.png"
@@ -107,7 +111,7 @@ const Community_Details = () => {
                   TOP
                 </button>
 
-                <button className="btn-img" onClick={() => setBest(true)}>
+                <button className="btn-img" onClick={() => navigate("/empty")}>
                   {" "}
                   <img
                     className="hot-img"
@@ -143,19 +147,37 @@ const Community_Details = () => {
                           </p>
                         </div>
                         <div>
-                          <button className="comment-btn-community">
+                          <button
+                            className="comment-btn-community"
+                            onClick={() => {
+                              navigate(`/comments/:${item.author}`);
+                              sessionStorage.setItem(
+                                "userImage",
+                                JSON.stringify({
+                                  imageUrl: item.images[0],
+                                  postId: item._id,
+                                })
+                              );
+                            }}
+                          >
                             <FontAwesomeIcon icon={faMessage} />
                             Comment
                           </button>
-                          <button>Share</button>
-                          <button>Save</button>
+                          <button>
+                            <FontAwesomeIcon icon={faShare} />
+                            Share
+                          </button>
+                          <button>
+                            <FontAwesomeIcon icon={faBookmark} />
+                            Save
+                          </button>
                         </div>
                       </main>
                     </div>
                   );
                 })
               ) : (
-                <h1>No Post Available</h1>
+                <h1 className="noData">😌 No Post Available</h1>
               )}
             </div>
             <div className="right-side-community-create-post">

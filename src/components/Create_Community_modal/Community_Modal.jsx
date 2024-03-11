@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import "./Community_modal.css";
 import { Tooltip } from "@mui/material";
 import {
@@ -14,6 +13,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-regular-svg-icons";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const style = {
   position: "absolute",
   top: "50%",
@@ -30,7 +31,35 @@ export default function Community_Modal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [communityName, setCommunityName] = React.useState(null);
+  const navigate = useNavigate();
+  const userDetails = JSON.parse(localStorage.getItem("userDetails"));
+  const config = {
+    headers: {
+      Authorization: `Bearer ${userDetails.token}`,
+      projectID: "7k1ct68pbbmr",
+    },
+  };
+  const formData = new FormData();
+  formData.append("name", communityName);
+  // console.log(communityName.replace("/r", ""));
 
+  const createCommunity = async () => {
+    try {
+      const res = await axios.post(
+        "https://academics.newtonschool.co/api/v1/reddit/channel/",
+        formData,
+        config
+      );
+      console.log(res);
+      navigate(`/community/${res.data.data._id}/${userDetails.name}`);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const handleCommunityData = () => {
+    createCommunity();
+  };
   return (
     <div>
       <Button onClick={handleOpen} className="modal-btn">
@@ -71,11 +100,16 @@ export default function Community_Modal() {
               </div>
             </div>
             <div className="input-data">
-              <input type="text" defaultValue="/r" />
+              <input
+                type="text"
+                placeholder="Name"
+                value={communityName}
+                onChange={(e) => setCommunityName(e.target.value)}
+              />
             </div>
             <div className="radio-btns">
               <div>
-                <input type="radio" name="radio" id="public" />
+                <input type="radio" name="radio" id="public" defaultChecked />
                 <label htmlFor="public">
                   <FontAwesomeIcon icon={faUser} />
                   <p>Public </p>
@@ -85,7 +119,7 @@ export default function Community_Modal() {
                 </label>
               </div>
               <div>
-                <input type="radio" name="radio" id="restricted" />
+                <input type="radio" name="radio" id="restricted" disabled />
                 <label htmlFor="restricted">
                   <FontAwesomeIcon icon={faEye} />
                   <p>Restricted </p>
@@ -96,7 +130,7 @@ export default function Community_Modal() {
                 </label>
               </div>{" "}
               <div>
-                <input type="radio" name="radio" id="private" />
+                <input type="radio" name="radio" id="private" disabled />
                 <label htmlFor="private">
                   <FontAwesomeIcon icon={faLock} />
                   <p>Private </p>
@@ -109,7 +143,7 @@ export default function Community_Modal() {
             <div className="che-bo">
               <h4>Adult content</h4>
               <div>
-                <input type="checkbox" name="che" id="che" />
+                <input type="checkbox" name="che" id="che" defaultChecked />
                 <label htmlFor="che">
                   <span>NSFW</span> 18+ year old community
                 </label>
@@ -117,11 +151,8 @@ export default function Community_Modal() {
             </div>
             <div className="btns-community">
               <button onClick={handleClose}>Cancle</button>
-              <button className="comm-btn">
+              <button className="comm-btn" onClick={handleCommunityData}>
                 Create Community{" "}
-                <p className="upcoming" id="upcomming-topics">
-                  UPCOMING
-                </p>
               </button>
             </div>
           </Box>

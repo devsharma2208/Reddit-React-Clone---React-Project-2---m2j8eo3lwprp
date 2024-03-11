@@ -18,6 +18,7 @@ import {
   faMessage,
 } from "@fortawesome/free-regular-svg-icons";
 import { Button } from "@mui/material";
+import CommentData from "./CommentData";
 const Comments = () => {
   const navigate = useNavigate();
   const [singlePostDataValue, setSinglePostData] = useState("");
@@ -28,6 +29,7 @@ const Comments = () => {
   const [getAlldata, setGetAllData] = useState(true);
   const [likeDislike, setLikeDislike] = useState(false);
   const [newSinglePostData, setNewSinglePostData] = useState("");
+  const [commentUserData, setCommentUser] = useState("");
   const userToken = localStorage.getItem("userDetails")
     ? JSON.parse(localStorage.getItem("userDetails")).token
     : "";
@@ -61,7 +63,7 @@ const Comments = () => {
         singlePostConfig
       );
       if (getAlldata) {
-        // console.log(res.data.data);
+        console.log(res.data.data);
         setSinglePostData(res.data.data);
         setGetAllData(false);
       } else {
@@ -79,10 +81,9 @@ const Comments = () => {
     try {
       const res = await axios.get(
         `https://academics.newtonschool.co/api/v1/reddit/post/${userImage.postId}/comments`,
-
         likePost_config
       );
-      // console.log(res.data.data);
+      console.log(res.data.data);
       setCommentData(res.data.data);
     } catch (err) {
       console.log(err);
@@ -168,6 +169,7 @@ const Comments = () => {
       alert("You Already DisLike this post...");
     }
   };
+
   return (
     <>
       {singlePostDataValue && (
@@ -229,7 +231,7 @@ const Comments = () => {
                       alt=""
                       width={30}
                     />
-                    <h5> r/Lakshadweep_Islands</h5>
+                    <h5> r/{singlePostDataValue.author.name}</h5>
                     <p>
                       Posted by <span>u/{singlePostDataValue.author.name}</span>{" "}
                       8 hours ago
@@ -297,20 +299,10 @@ const Comments = () => {
                   {commentData &&
                     commentData.map((comment) => {
                       return (
-                        <div>
-                          <div className="comment-authow">
-                            <img
-                              src="https://i.pinimg.com/originals/16/bd/52/16bd524cb65c552e1ccbb9548296d2fa.png"
-                              alt="icon"
-                              width={30}
-                            />
-                            <h4>{userDetails.name}</h4>
-                          </div>
-                          <div className="comment-comm">
-                            <p>{comment.content}</p>
-                            <span>{comment.createdAt.split("T")[0]}</span>
-                          </div>
-                        </div>
+                        <CommentData
+                          comment={comment}
+                          setCommentToggle={setCommentToggle}
+                        />
                       );
                     })}
                 </div>

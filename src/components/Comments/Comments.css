@@ -199,6 +199,12 @@
     display: flex;
     gap: 1rem;
     align-items: center;
+    > button {
+      cursor: pointer;
+      border: none;
+      font-size: 1.3rem;
+      margin-left: 75%;
+    }
     > p {
       font-weight: 600;
     }
@@ -284,7 +290,14 @@
 @media only screen and (max-width: 480px) {
   .comm-container {
     height: auto;
-    font-size: 0.8rem !important;
+    /* font-size: 0.8rem !important; */
+  }
+  .comments-formate-container {
+    > div > div {
+      > button {
+        margin-left: 25%;
+      }
+    }
   }
   .nav-bar {
     margin: 0 2rem;
