@@ -1,10 +1,56 @@
+import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
   const navigate = useNavigate();
+  const [userCommunity, setUserCommunity] = useState([]);
+  const [toggleComm, setToggleComm] = useState(true);
+  const userData = JSON.parse(localStorage.getItem("userDetails"));
+  const config = {
+    headers: {
+      projectID: "7k1ct68pbbmr",
+    },
+  };
+  const deleteCommunityConfig = {
+    headers: {
+      Authorization: `Bearer ${userData.token}`,
+      projectID: "7k1ct68pbbmr",
+    },
+  };
+  const userCommunityAPI = async () => {
+    try {
+      const res = await axios.get(
+        "https://academics.newtonschool.co/api/v1/reddit/channel",
+        config
+      );
+      console.log(res.data.data);
+      setUserCommunity(res.data.data);
+      setToggleComm(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const deleteCommunity = async (id) => {
+    try {
+      const res = await axios.delete(
+        `https://academics.newtonschool.co/api/v1/reddit/channel/${id}`,
+        deleteCommunityConfig
+      );
+      console.log(res);
+      setToggleComm(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    if (toggleComm) {
+      userCommunityAPI();
+    }
+  }, [toggleComm]);
   return (
     <div>
       {toggle && (
@@ -15,6 +61,40 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
             className="home-input-after-login"
           />
           <ul className="homw-all-content">
+            <p className="head-home-lkjkhdk">Your Community</p>
+            {userCommunity.map((item, index) => {
+              return (
+                <>
+                  {userData.id === item.owner._id && (
+                    <div
+                      key={index}
+                      onClick={() => {
+                        navigate(
+                          `/community/${item.channel ? item.channel._id : 2}/${
+                            item.name
+                          }`
+                        );
+                        setToggle(false);
+                      }}
+                    >
+                      <div className="commUser">
+                        <img
+                          src="https://i.redd.it/snoovatar/avatars/31f83df2-a2b7-440d-b431-c6d611313e54.png"
+                          alt="arrow icon"
+                        />
+                        <div className="cummunityDetails">
+                          <span className="communityName">{item.name}</span>
+                          <FontAwesomeIcon
+                            icon={faTrashCan}
+                            onClick={() => deleteCommunity(item._id)}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </>
+              );
+            })}
             <p className="head-home-lkjkhdk">FEEDS</p>
             <li
               onClick={() => {
@@ -33,6 +113,7 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
               />
               <span>Popular</span>
             </li>
+
             <li
               className="opiuoiu"
               onClick={() => {

@@ -322,13 +322,14 @@ const Fetch_Data = ({ userData, setLognIn }) => {
                       alt="author Image"
                     />
                     <div
-                      onClick={() =>
-                        navigate(
-                          `/community/${item.channel ? item.channel._id : 2}/${
-                            item.author.name
-                          }`
-                        )
-                      }
+                      onClick={() => {
+                        userToken &&
+                          navigate(
+                            `/community/${
+                              item.channel ? item.channel._id : 2
+                            }/${item.author.name}`
+                          );
+                      }}
                     >
                       <h4>{item.author.name}</h4>
                       <h6>{item.channel && item.channel.name}</h6>

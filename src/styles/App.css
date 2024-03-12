@@ -94,10 +94,35 @@
   font-size: 0.8rem;
   cursor: pointer;
 }
+.commUser {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  > img {
+    width: 20px;
+    margin-top: 0.5rem;
+  }
+}
+.cummunityDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  > svg {
+    cursor: pointer;
+    &:hover {
+      color: red;
+    }
+  }
+}
 .lskhnkc {
   color: #e5e9e9;
   font-size: 1.5rem;
 }
+/* .communityName {
+  margin-left: 2.5rem;
+} */
 .login {
   background-color: rgb(231, 45, 45);
   padding: 0.5rem 1rem;

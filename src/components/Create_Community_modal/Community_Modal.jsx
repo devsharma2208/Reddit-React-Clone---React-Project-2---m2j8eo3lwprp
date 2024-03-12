@@ -52,7 +52,7 @@ export default function Community_Modal() {
         config
       );
       console.log(res);
-      navigate(`/community/${res.data.data._id}/${userDetails.name}`);
+      navigate(`/community/${res.data.data._id}/${res.data.data.name}`);
     } catch (error) {
       console.log(error);
     }

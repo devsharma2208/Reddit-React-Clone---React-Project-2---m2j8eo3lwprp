@@ -310,6 +310,20 @@
     overflow-y: scroll;
     overflow-x: hidden;
   }
+  .right-side-community-create-post {
+    display: none;
+  }
+  .community-container-2 {
+    > div {
+      > .create-post-icon {
+        > div {
+          > input {
+            width: 28rem;
+          }
+        }
+      }
+    }
+  }
 }
 @media only screen and (max-width: 480px) {
   .comm-header {
@@ -329,5 +343,41 @@
   .na-de {
     width: 70%;
     margin-left: 1rem;
+  }
+  .community-container-2 {
+    margin: 0;
+    width: 100%;
+    > div {
+      > .create-post-icon {
+        > div {
+          > input {
+            width: 12rem;
+          }
+        }
+      }
+    }
+  }
+  .communityColor {
+    height: 6rem;
+  }
+  .communityDetails {
+    > div {
+      margin-top: 0.2rem;
+      > h2 {
+        font-size: 0.8rem;
+      }
+      > h4 {
+        font-size: 0.8rem;
+      }
+      > div {
+        margin-top: -0.6rem;
+        > img {
+          height: 3rem;
+        }
+      }
+    }
+  }
+  .noData {
+    font-size: 1rem;
   }
 }
