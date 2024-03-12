@@ -380,4 +380,13 @@
   .noData {
     font-size: 1rem;
   }
+  .popularPostData {
+    > main {
+      > div {
+        > button {
+          margin-right: 0.2rem;
+        }
+      }
+    }
+  }
 }

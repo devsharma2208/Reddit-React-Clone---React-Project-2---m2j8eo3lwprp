@@ -163,11 +163,11 @@ const Community_Details = () => {
                             <FontAwesomeIcon icon={faMessage} />
                             Comment
                           </button>
-                          <button>
+                          <button onClick={() => navigate("/empty")}>
                             <FontAwesomeIcon icon={faShare} />
                             Share
                           </button>
-                          <button>
+                          <button onClick={() => navigate("/empty")}>
                             <FontAwesomeIcon icon={faBookmark} />
                             Save
                           </button>

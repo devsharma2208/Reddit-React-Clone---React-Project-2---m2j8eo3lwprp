@@ -294,10 +294,14 @@
   }
   .comments-formate-container {
     > div > div {
+      gap: 0.5rem;
       > button {
         margin-left: 25%;
       }
     }
+  }
+  .comment-comm {
+    margin-left: 2.5rem;
   }
   .nav-bar {
     margin: 0 2rem;
