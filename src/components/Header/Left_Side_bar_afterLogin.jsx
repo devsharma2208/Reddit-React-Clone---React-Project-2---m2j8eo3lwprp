@@ -59,7 +59,7 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
         <div className="home-toggle-data-after-login">
           <input
             type="text"
-            placeholder="Filter"
+            placeholder="Filter (Upcoming)"
             className="home-input-after-login"
           />
           <ul className="homw-all-content">

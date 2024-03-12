@@ -79,7 +79,7 @@ const Header = ({ setLognIn }) => {
         <input
           className="input-search"
           type="search"
-          placeholder="Search-Reddit"
+          placeholder="Search-Reddit (Upcoming)"
         />
       </div>
       {userData && (

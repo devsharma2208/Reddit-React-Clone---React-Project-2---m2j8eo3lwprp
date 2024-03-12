@@ -1,14 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Login.css";
 import axios from "axios";
+import { TextField } from "@mui/material";
 const SignUp = ({ setToggle }) => {
   // const [isSignUpStatus, setIsSignUpStatus] = useState();
   const [signUpClick, setSignUpClick] = useState(false);
   const [allFieldFill, setAllFieldFill] = useState("");
   const [signup, setSignup] = useState(false);
-  const name = useRef(null);
-  const email = useRef(null);
-  const password = useRef(null);
+  const [name, setName] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+
+  // const name = useRef(null);
+  // const email = useRef(null);
+  // const password = useRef(null);
   const config = {
     headers: {
       projectID: "7k1ct68pbbmr",
@@ -72,7 +77,7 @@ const SignUp = ({ setToggle }) => {
                 alt="google logo"
                 width={20}
               />
-              <p>Continue with Google</p>
+              <p className="continue-GA">Continue with Google</p>
             </div>
             <div className="google-login" aria-disabled>
               <img
@@ -80,7 +85,7 @@ const SignUp = ({ setToggle }) => {
                 alt="google logo"
                 width={20}
               />
-              <p>Continue with Apple</p>
+              <p className="continue-GA">Continue with Apple</p>
             </div>
             <div className="or-login-key">
               <p></p>
@@ -88,21 +93,42 @@ const SignUp = ({ setToggle }) => {
               <p></p>
             </div>
 
-            <div className="userName-password">
-              <label htmlFor="name">UserName*</label>
-              <input type="text" name="name" id="name" ref={name} />
+            <div className="login-user">
+              {/* <label htmlFor="name">UserName*</label> */}
+              {/* <input type="text" name="name" id="name" ref={name} /> */}
+              <TextField
+                id="filled-basic"
+                label="Name*"
+                variant="filled"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
             </div>
-            <div className="userName-password">
-              <label htmlFor="email">Email*</label>
-              <input type="email" name="email" id="email" ref={email} />
+            <div className="login-user">
+              {/* <label htmlFor="email">Email*</label>
+              <input type="email" name="email" id="email" ref={email} /> */}
+              <TextField
+                id="filled-basic"
+                label="Email*"
+                variant="filled"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
-            <div className="userName-password">
-              <label htmlFor="password">Password*</label>
+            <div className="login-user">
+              {/* <label htmlFor="password">Password*</label>
               <input
                 type="password"
                 name="password"
                 id="password"
                 ref={password}
+              /> */}
+              <TextField
+                id="filled-basic"
+                label="Password*"
+                variant="filled"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="forget-pass-signup">

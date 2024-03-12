@@ -477,7 +477,7 @@
   border-radius: 50%;
 }
 .right-content-comntes-after-login {
-  height: 102vh;
+  height: auto;
   background-color: rgb(246, 242, 242);
   padding: 2px;
   border-radius: 0.2rem;

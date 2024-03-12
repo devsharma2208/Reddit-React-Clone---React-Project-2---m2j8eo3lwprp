@@ -111,7 +111,7 @@ const Login = ({ setLognIn }) => {
                   alt="google logo"
                   width={20}
                 />
-                <p>Continue with Google</p>
+                <p className="continue-GA">Continue with Google</p>
               </div>
               <div className="google-login" aria-disabled>
                 <img
@@ -119,7 +119,7 @@ const Login = ({ setLognIn }) => {
                   alt="google logo"
                   width={20}
                 />
-                <p>Continue with Apple</p>
+                <p className="continue-GA">Continue with Apple</p>
               </div>
               <div className="or-login-key">
                 <p></p>
@@ -131,7 +131,7 @@ const Login = ({ setLognIn }) => {
                 <input type="email" name="email" id="email" ref={email} /> */}
                 <TextField
                   id="filled-basic"
-                  label="Useremail*"
+                  label="Email*"
                   variant="filled"
                   value={email1}
                   onChange={(e) => setEmail1(e.target.value)}
