@@ -88,6 +88,17 @@
   margin-left: -0.5rem;
   margin-top: 0.8rem;
   cursor: pointer;
+  > span {
+    > div {
+      > button {
+        color: black;
+        padding: 0;
+        &:hover {
+          background-color: white;
+        }
+      }
+    }
+  }
 }
 .expo {
   display: flex;
@@ -111,6 +122,10 @@
   margin: 0.8rem 0;
 }
 
+.css-8ndowl,
+.css-79ws1d-MuiModal-root {
+  z-index: 2500;
+}
 @media only screen and (max-width: 768px) {
   .name-data {
     display: none;

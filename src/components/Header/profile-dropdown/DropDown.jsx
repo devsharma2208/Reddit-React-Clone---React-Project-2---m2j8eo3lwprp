@@ -6,7 +6,8 @@ import { styled } from "@mui/material/styles";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import { useNavigate } from "react-router-dom";
-const DropDown = () => {
+import Community_Modal from "../../Create_Community_modal/Community_Modal";
+const DropDown = ({ setProfileDropDown }) => {
   const navigate = useNavigate();
   const handleUser = () => {
     localStorage.clear();
@@ -99,6 +100,7 @@ const DropDown = () => {
           className="head-home-lkjkhdk"
           onClick={() => {
             navigate("/empty");
+            setProfileDropDown(false);
           }}
         >
           <span>Create Avatar</span>
@@ -107,6 +109,7 @@ const DropDown = () => {
           className="head-home-lkjkhdk"
           onClick={() => {
             navigate("/empty");
+            setProfileDropDown(false);
           }}
         >
           <span>User Settings</span>
@@ -129,23 +132,21 @@ const DropDown = () => {
           <span>Dark Mode</span>
         </li> */}
         <div className="empty"></div>
-        <p
-          className="opti"
-          onClick={() => {
-            navigate("/empty");
-          }}
-        >
+        <p className="opti">
           <img
             src="https://cdn3.iconfinder.com/data/icons/user-interface-web-1/550/web-circle-circular-round_11-512.png"
             alt="primium icon"
             width={22}
           />
-          <span>Create a Community</span>
+          <span>
+            <Community_Modal />
+          </span>
         </p>
         <p
           className="opti"
           onClick={() => {
             navigate("/empty");
+            setProfileDropDown(false);
           }}
         >
           <img
@@ -159,6 +160,7 @@ const DropDown = () => {
           className="opti"
           onClick={() => {
             navigate("/premimum");
+            setProfileDropDown(false);
           }}
         >
           <img
@@ -172,6 +174,7 @@ const DropDown = () => {
           className="opti"
           onClick={() => {
             navigate("/empty");
+            setProfileDropDown(false);
           }}
         >
           <img
@@ -183,6 +186,7 @@ const DropDown = () => {
             className="expo"
             onClick={() => {
               navigate("/empty");
+              setProfileDropDown(false);
             }}
           >
             <span>Explore</span>
@@ -193,6 +197,7 @@ const DropDown = () => {
           className="opti"
           onClick={() => {
             navigate("/empty");
+            setProfileDropDown(false);
           }}
         >
           <img
@@ -206,6 +211,7 @@ const DropDown = () => {
           className="opti"
           onClick={() => {
             navigate("/empty");
+            setProfileDropDown(false);
           }}
         >
           <img
@@ -217,6 +223,7 @@ const DropDown = () => {
             className="more"
             onClick={() => {
               navigate("/empty");
+              setProfileDropDown(false);
             }}
           >
             <span>More</span>
@@ -235,6 +242,7 @@ const DropDown = () => {
           className="head-home-lkjk"
           onClick={() => {
             navigate("/empty");
+            setProfileDropDown(false);
           }}
         >
           <span>User Agreement</span>
@@ -243,6 +251,7 @@ const DropDown = () => {
           className="head-home-lkjk"
           onClick={() => {
             navigate("/empty");
+            setProfileDropDown(false);
           }}
         >
           <span>Pricacy Policy</span>
@@ -251,6 +260,7 @@ const DropDown = () => {
           className="head-home-lkjk"
           onClick={() => {
             navigate("/empty");
+            setProfileDropDown(false);
           }}
         >
           <span>Content Policy</span>
@@ -259,6 +269,7 @@ const DropDown = () => {
           className="head-home-lkjk"
           onClick={() => {
             navigate("/empty");
+            setProfileDropDown(false);
           }}
         >
           <span>Moderator Code of Conduct</span>

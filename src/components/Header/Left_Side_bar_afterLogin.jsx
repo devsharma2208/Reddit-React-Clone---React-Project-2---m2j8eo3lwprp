@@ -9,6 +9,7 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
   const navigate = useNavigate();
   const [userCommunity, setUserCommunity] = useState([]);
   const [toggleComm, setToggleComm] = useState(true);
+  const community = JSON.parse(sessionStorage.getItem("community"));
   const userData = JSON.parse(localStorage.getItem("userDetails"));
   const config = {
     headers: {
@@ -30,6 +31,7 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
       console.log(res.data.data);
       setUserCommunity(res.data.data);
       setToggleComm(false);
+      sessionStorage.removeItem("community");
     } catch (err) {
       console.log(err);
     }
@@ -47,10 +49,10 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
     }
   };
   useEffect(() => {
-    if (toggleComm) {
+    if (toggleComm || community) {
       userCommunityAPI();
     }
-  }, [toggleComm]);
+  }, [toggleComm, community]);
   return (
     <div>
       {toggle && (
@@ -66,24 +68,26 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
               return (
                 <>
                   {userData.id === item.owner._id && (
-                    <div
-                      key={index}
-                      onClick={() => {
-                        navigate(
-                          `/community/${item.channel ? item.channel._id : 2}/${
-                            item.name
-                          }`
-                        );
-                        setToggle(false);
-                      }}
-                    >
+                    <div key={index}>
                       <div className="commUser">
                         <img
                           src="https://i.redd.it/snoovatar/avatars/31f83df2-a2b7-440d-b431-c6d611313e54.png"
                           alt="arrow icon"
                         />
                         <div className="cummunityDetails">
-                          <span className="communityName">{item.name}</span>
+                          <span
+                            className="communityName"
+                            onClick={() => {
+                              navigate(
+                                `/community/${
+                                  item.channel ? item.channel._id : 2
+                                }/${item.name}`
+                              );
+                              setToggle(false);
+                            }}
+                          >
+                            {item.name}
+                          </span>
                           <FontAwesomeIcon
                             icon={faTrashCan}
                             onClick={() => deleteCommunity(item._id)}

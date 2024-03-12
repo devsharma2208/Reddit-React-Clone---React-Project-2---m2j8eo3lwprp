@@ -161,7 +161,7 @@ const Header = ({ setLognIn }) => {
             />
             {profileDropDoen && (
               <div className="dropdownContainer-profile">
-                <DropDown />
+                <DropDown setProfileDropDown={setProfileDropDown} />
               </div>
             )}
           </div>
