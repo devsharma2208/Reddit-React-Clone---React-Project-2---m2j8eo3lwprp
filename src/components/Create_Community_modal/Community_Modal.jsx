@@ -54,6 +54,7 @@ export default function Community_Modal() {
       console.log(res);
       navigate(`/community/${res.data.data._id}/${res.data.data.name}`);
       sessionStorage.setItem("community", JSON.stringify(true));
+      setOpen(false);
     } catch (error) {
       console.log(error);
     }
