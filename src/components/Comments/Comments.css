@@ -203,7 +203,7 @@
       cursor: pointer;
       border: none;
       font-size: 1.3rem;
-      margin-left: 75%;
+      /* margin-left: 75%; */
     }
     > p {
       font-weight: 600;
