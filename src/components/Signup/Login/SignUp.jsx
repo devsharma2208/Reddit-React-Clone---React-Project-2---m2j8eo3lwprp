@@ -1,7 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Login.css";
 import axios from "axios";
-import { TextField } from "@mui/material";
+import {
+  FilledInput,
+  FormControl,
+  IconButton,
+  InputAdornment,
+  InputLabel,
+  TextField,
+} from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 const SignUp = ({ setToggle }) => {
   // const [isSignUpStatus, setIsSignUpStatus] = useState();
   const [signUpClick, setSignUpClick] = useState(false);
@@ -10,7 +18,11 @@ const SignUp = ({ setToggle }) => {
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
-
+  const [showPassword, setShowPassword] = React.useState(false);
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
   // const name = useRef(null);
   // const email = useRef(null);
   // const password = useRef(null);
@@ -44,9 +56,9 @@ const SignUp = ({ setToggle }) => {
   useEffect(() => {
     if (signUpClick) {
       const body = {
-        name: name.current.value,
-        email: email.current.value,
-        password: password.current.value,
+        name: name,
+        email: email,
+        password: password,
         appType: "reddit",
       };
       signUp_Fetch(body);
@@ -55,7 +67,7 @@ const SignUp = ({ setToggle }) => {
   }, [signUpClick]);
   const handleSignUpdata = (e) => {
     e.preventDefault();
-    if (name.current.value && email.current.value && password.current.value) {
+    if (name && email && password) {
       setSignUpClick(true);
     } else {
       setAllFieldFill("Please Fill all required fields");
@@ -123,13 +135,29 @@ const SignUp = ({ setToggle }) => {
                 id="password"
                 ref={password}
               /> */}
-              <TextField
-                id="filled-basic"
-                label="Password*"
-                variant="filled"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
+              <FormControl variant="filled">
+                <InputLabel htmlFor="filled-adornment-password">
+                  Password*
+                </InputLabel>
+                <FilledInput
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  id="filled-adornment-password"
+                  type={showPassword ? "text" : "password"}
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                />
+              </FormControl>
             </div>
             <div className="forget-pass-signup">
               <p className="fill-all-field">{allFieldFill && allFieldFill}</p>
