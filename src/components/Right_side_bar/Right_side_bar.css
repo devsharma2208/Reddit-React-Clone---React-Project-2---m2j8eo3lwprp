@@ -27,9 +27,10 @@
   justify-content: space-evenly;
   gap: 0.3rem;
   align-items: flex-start;
+  border: 1px solid rgb(255, 255, 255);
   &:hover {
     background-color: white !important;
-    border: 1px solid black;
+    border: 1px solid rgb(129, 126, 126);
   }
 }
 #popular-com-fix::-webkit-scrollbar {

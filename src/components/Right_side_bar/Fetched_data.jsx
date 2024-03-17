@@ -12,6 +12,8 @@ import { useNavigate } from "react-router-dom";
 
 const Fetch_Data = ({ userData, setLognIn }) => {
   const [data, setData] = useState([]);
+  const [data1, setData1] = useState([]);
+  const [searchData, setSearchData] = useState("");
   const [page, setPage] = useState(1);
   const [isFetching, setIsFetching] = useState(false);
   const [postIndex, setPostIndex] = useState("");
@@ -69,6 +71,8 @@ const Fetch_Data = ({ userData, setLognIn }) => {
       );
       console.log(res.data.data);
       setData((prevData) => [...prevData, ...res.data.data]);
+      setData1((prevData) => [...prevData, ...res.data.data]);
+
       setPage((prevPage) => prevPage + 1);
 
       console.log(
@@ -343,7 +347,11 @@ const Fetch_Data = ({ userData, setLognIn }) => {
                   </h4>
                   <div className="imageMainContainer after-login-img">
                     <img
-                      src={item.images[0]}
+                      src={
+                        item.images[0]
+                          ? item.images[0]
+                          : "https://www.designmantic.com/blog/wp-content/uploads/2024/02/Reddit1.jpg"
+                      }
                       style={{ borderRadius: "1.2rem" }}
                       alt="channel Image"
                     />
