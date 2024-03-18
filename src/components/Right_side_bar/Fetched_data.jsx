@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import _debounce from "lodash/debounce";
 import {
@@ -9,11 +9,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
+import { context } from "../ContextApi/ContextProvider";
 
 const Fetch_Data = ({ userData, setLognIn }) => {
+  const { search, themeColor } = useContext(context);
+  // console.log(search);
   const [data, setData] = useState([]);
   const [data1, setData1] = useState([]);
-  const [searchData, setSearchData] = useState("");
+  const [searchDataAvaiable, setSearchDataAvaialble] = useState(false);
   const [page, setPage] = useState(1);
   const [isFetching, setIsFetching] = useState(false);
   const [postIndex, setPostIndex] = useState("");
@@ -98,19 +101,56 @@ const Fetch_Data = ({ userData, setLognIn }) => {
       fetchData();
     }
   }, 200); // Adjust the debounce delay as needed
-
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
+    if (!search) {
+      window.addEventListener("scroll", handleScroll);
+      // Cleanup the event listener on component unmount
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, [handleScroll, search]);
 
   // Fetch data initially
   useEffect(() => {
     fetchData();
   }, []);
+  const handleSearchData = _debounce((query) => {
+    window.scrollTo({ top: 0, left: 0 });
+
+    const filterData = data1.filter((item) => {
+      return (
+        item.author.name.toLowerCase().includes(query.toLowerCase()) ||
+        (item.title &&
+          item.title.toLowerCase().includes(query.toLowerCase())) ||
+        item.content.toLowerCase().includes(query.toLowerCase())
+      );
+    });
+    if (filterData) {
+      setData(filterData);
+      setSearchDataAvaialble(false);
+      setTimeout(() => {
+        setIsFetching(false);
+      }, 2000);
+    }
+    if (filterData.length === 0) {
+      setTimeout(() => {
+        setIsFetching(false);
+        setSearchDataAvaialble(true);
+      }, 2000);
+    }
+  }, 200);
+  useEffect(() => {
+    if (search) {
+      setIsFetching(true);
+      handleSearchData(search);
+      return () => {
+        handleSearchData.cancel();
+      };
+    } else {
+      setData(data1);
+    }
+  }, [search]);
 
   const singlePostAPI = async (postId) => {
     try {
@@ -200,7 +240,7 @@ const Fetch_Data = ({ userData, setLognIn }) => {
     <div
       className={`fetched-data-main-containt-container ${
         userData && "fetched-data-afterlogin"
-      }`}
+      } ${themeColor && "darkTheme"}`}
     >
       {userToken && (
         <>
@@ -264,7 +304,7 @@ const Fetch_Data = ({ userData, setLognIn }) => {
       )}
       {!best || !newPost ? (
         <>
-          {data.length > 0 &&
+          {data &&
             data.map((item, index) => (
               <div
                 key={index}
@@ -522,6 +562,11 @@ const Fetch_Data = ({ userData, setLognIn }) => {
         </div>
       )}
       {error && <p style={{ color: "red" }}>No more data available</p>}
+      {searchDataAvaiable && (
+        <p style={{ color: "black", fontWeight: "800", textAlign: "center" }}>
+          No Data Found
+        </p>
+      )}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   faAngleDown,
   faAngleUp,
@@ -15,8 +15,10 @@ import Profile_Dropdown from "./profile-dropdown/Profile_Dropdown";
 import DropDown from "./profile-dropdown/DropDown";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
 import { useNavigate } from "react-router-dom";
+import { context } from "../ContextApi/ContextProvider";
 
 const Header = ({ setLognIn }) => {
+  const { setSearch, themeColor } = useContext(context);
   const [userData, setUserData] = useState();
   const [toggle, setToggle] = useState(false);
   const [profileDropDoen, setProfileDropDown] = useState(false);
@@ -25,7 +27,7 @@ const Header = ({ setLognIn }) => {
     setUserData(JSON.parse(localStorage.getItem("userDetails")));
   }, []);
   return (
-    <div className="header-container">
+    <div className={`header-container ${themeColor && "darktheme"}`}>
       <div className="header-content-1">
         <FontAwesomeIcon
           className="hemb-icon"
@@ -79,7 +81,8 @@ const Header = ({ setLognIn }) => {
         <input
           className="input-search"
           type="search"
-          placeholder="Search-Reddit (Upcoming)"
+          placeholder="Search-Reddit "
+          onChange={(e) => setSearch(e.target.value)}
         />
       </div>
       {userData && (

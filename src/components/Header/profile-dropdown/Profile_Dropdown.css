@@ -41,7 +41,7 @@
 .my-staf-div {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 .online-Status-btn {
   width: 110%;
@@ -57,12 +57,15 @@
 .head-home-lkjkhdk {
   display: flex;
   font-size: 0.8rem;
-  margin-left: 1rem;
+  margin-left: 1.5rem;
   font-weight: 500;
 }
 .empty {
   border-bottom: 0.1rem solid rgb(236, 235, 235);
   margin-top: 1rem;
+}
+.logout {
+  margin-left: -0.6rem;
 }
 .opt {
   display: flex;
@@ -125,6 +128,30 @@
 .css-8ndowl,
 .css-79ws1d-MuiModal-root {
   z-index: 2500 !important;
+}
+.darkTheme {
+  background-color: black;
+  color: white;
+  &:hover {
+    background-color: black !important;
+  }
+  > ul {
+    > li,
+    p {
+      &:hover {
+        background-color: rgb(60, 59, 59);
+        color: white;
+      }
+    }
+    > p > span > div > button {
+      background-color: black;
+      color: white;
+      &:hover {
+        background-color: rgb(60, 59, 59);
+        color: white;
+      }
+    }
+  }
 }
 @media only screen and (max-width: 768px) {
   .name-data {

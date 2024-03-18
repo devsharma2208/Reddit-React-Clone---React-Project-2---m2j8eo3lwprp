@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Right_side_bar.css";
 import Fetch_Data from "./Fetched_data";
 import Crousal from "../Crousal/Crousal";
 import axios from "axios";
 import After_login_Content_right from "./After_login_right-Content/After_login_Content_right";
+import { context } from "../ContextApi/ContextProvider";
 
 const Right_side_bar = ({ setLognIn }) => {
+  const { themeColor } = useContext(context);
   const [popularPostData, setPopularPostData] = useState([]);
   const [userData, setUserData] = useState(
     JSON.parse(localStorage.getItem("userDetails"))
@@ -33,7 +35,9 @@ const Right_side_bar = ({ setLognIn }) => {
     }
   }, [userData]);
   return (
-    <section className="right_side_bar_container">
+    <section
+      className={`right_side_bar_container ${themeColor && "darkTheme"}`}
+    >
       {!userData && (
         <div className="right_Side-crousal">
           <Crousal />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Profile_Dropdown.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faArrowDown } from "@fortawesome/free-solid-svg-icons";
@@ -7,7 +7,10 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import { useNavigate } from "react-router-dom";
 import Community_Modal from "../../Create_Community_modal/Community_Modal";
+import MaterialUISwitch from "../LightDarkSwitch";
+import { context } from "../../ContextApi/ContextProvider";
 const DropDown = ({ setProfileDropDown }) => {
+  const { themeColor, setThemeColor } = useContext(context);
   const navigate = useNavigate();
   const handleUser = () => {
     localStorage.clear();
@@ -74,8 +77,9 @@ const DropDown = ({ setProfileDropDown }) => {
       }),
     },
   }));
+
   return (
-    <div className="dropdown-Container-pro">
+    <div className={`dropdown-Container-pro ${themeColor && "darkTheme"}`}>
       <div className="my-staf-div">
         <img
           style={{
@@ -93,9 +97,9 @@ const DropDown = ({ setProfileDropDown }) => {
         {/* <li className="online-Status-btn">
           <p>Online Status</p>
           <FormControlLabel control={<IOSSwitch defaultChecked />} />
-        </li> */}
+        </li>
 
-        {/* <li className="head-home-lkjkhdk">Profile</li> */}
+        <li className="head-home-lkjkhdk">Profile</li> */}
         <li
           className="head-home-lkjkhdk"
           onClick={() => {
@@ -123,14 +127,13 @@ const DropDown = ({ setProfileDropDown }) => {
           />{" "}
           <span>View Options</span>
         </p> */}
-        {/* <li
-          className="head-home-lkjk"
-          onClick={() => {
-            navigate("/empty");
-          }}
-        >
+        <li className="head-home-lkjk">
           <span>Dark Mode</span>
-        </li> */}
+          <MaterialUISwitch
+            checked={themeColor}
+            onClick={() => setThemeColor((old) => !old)}
+          />
+        </li>
         <div className="empty"></div>
         <p className="opti">
           <img
@@ -281,7 +284,7 @@ const DropDown = ({ setProfileDropDown }) => {
             alt="avatar icon"
             width={22}
           />
-          <span>Log Out</span>
+          <span className="logout">Log Out</span>
         </li>
         <p className="reddit_inc">Reddit, Inc. © 2024. All rights reserved.</p>
       </ul>

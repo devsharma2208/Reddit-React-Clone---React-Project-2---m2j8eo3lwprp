@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Community_Modal from "../../Create_Community_modal/Community_Modal";
+import { context } from "../../ContextApi/ContextProvider";
 
 const After_login_Content_right = () => {
+  const { themeColor } = useContext(context);
   const natigate = useNavigate();
   return (
-    <div className="after-log-in-right-side-container">
+    <div
+      className={`after-log-in-right-side-container ${
+        themeColor && "darkTheme"
+      }`}
+    >
       <div className="first-box-preimum">
         <div className="reddit-Premium-img">
           <img

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Left_side_Bar.css";
 import { faGg } from "@fortawesome/free-brands-svg-icons";
 import {
@@ -14,8 +14,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Right_side_bar from "../Right_side_bar/Right_side_bar";
+import { context } from "../ContextApi/ContextProvider";
 
 const Left_side_Bar = ({ setLognIn }) => {
+  const { themeColor } = useContext(context);
   const [topicsshow, setTopicsShow] = useState(true);
   const [gameShow, setGameShow] = useState(false);
   const [sportsShow, setSportsShow] = useState(false);
@@ -30,10 +32,14 @@ const Left_side_Bar = ({ setLognIn }) => {
   );
   return (
     <section
-      className={`main-container ${userData && "after-login-main-container"}`}
+      className={`main-container ${userData && "after-login-main-container"} ${
+        themeColor && "darkTheme"
+      }}`}
     >
       <aside
-        className={`leftSide_bar ${userData && "left-side-after-login"}`}
+        className={`leftSide_bar ${userData && "left-side-after-login"}  ${
+          themeColor && "darkTheme"
+        }`}
         id="leftSideBar_id"
       >
         {!userData && (

@@ -9,24 +9,27 @@ import Comments from "./Comments/Comments";
 import Empty from "./Empty/Empty";
 import Premimum from "./Premimum/Premimum";
 import Community_Details from "./Create_Community_modal/Community_Details";
+import ContextProvider from "./ContextApi/ContextProvider";
 
 function App() {
   const [lognIn, setLognIn] = useState(false);
   return (
-    <div className="App">
-      <Header setLognIn={setLognIn} />
+    <ContextProvider>
+      <div className="App">
+        <Header setLognIn={setLognIn} />
 
-      {lognIn && <Login setLognIn={setLognIn} />}
-      <Routes>
-        <Route path="/" element={<Left_side_Bar setLognIn={setLognIn} />} />
-        <Route path="submit" element={<Create_Post />} />
-        <Route path="submit/:id" element={<Create_Post />} />
-        <Route path="/comments/:name" element={<Comments />} />
-        <Route path="/empty" element={<Empty />} />
-        <Route path="/premimum" element={<Premimum />} />
-        <Route path="/community/:id/:name" element={<Community_Details />} />
-      </Routes>
-    </div>
+        {lognIn && <Login setLognIn={setLognIn} />}
+        <Routes>
+          <Route path="/" element={<Left_side_Bar setLognIn={setLognIn} />} />
+          <Route path="submit" element={<Create_Post />} />
+          <Route path="submit/:id" element={<Create_Post />} />
+          <Route path="/comments/:name" element={<Comments />} />
+          <Route path="/empty" element={<Empty />} />
+          <Route path="/premimum" element={<Premimum />} />
+          <Route path="/community/:id/:name" element={<Community_Details />} />
+        </Routes>
+      </div>
+    </ContextProvider>
   );
 }
 

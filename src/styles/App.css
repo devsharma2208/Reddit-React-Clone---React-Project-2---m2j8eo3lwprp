@@ -62,7 +62,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem;
+  padding: 0.2rem;
   height: fit-content;
   height: 2rem;
   width: 2rem;
@@ -254,6 +254,57 @@
 .hemb-icon {
   margin-right: 1rem;
   display: none;
+}
+.darktheme {
+  background-color: #000;
+  color: white;
+  > .icons-header,
+  .img-banana,
+  .plus-icon {
+    background-color: rgb(94, 90, 90);
+    border-radius: 50%;
+    color: black;
+    &:hover {
+      background-color: rgb(245, 241, 241);
+    }
+  }
+  > div {
+    > .advertise-icon {
+      color: white;
+      background-color: rgb(94, 90, 90);
+    }
+    > div {
+      > div {
+        border-color: rgb(83, 79, 79);
+        &:hover {
+          background-color: #6d6f71;
+          color: white;
+        }
+        > .home-toggle-data-after-login {
+          background-color: #000;
+        }
+        > div {
+          > p {
+            color: white;
+          }
+          > ul > li {
+            &:hover {
+              color: black;
+            }
+          }
+          > div > p {
+            color: #fff;
+          }
+        }
+        > h3 {
+          color: #d9d5d5;
+          > span {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
 }
 /* Tablate */
 @media only screen and (max-width: 768px) {

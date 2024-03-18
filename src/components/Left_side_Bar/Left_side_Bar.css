@@ -189,6 +189,10 @@
   background-color: #e1e8ec;
   /* width: 98vw; */
 }
+.darkTheme {
+  background-color: #000;
+  color: white;
+}
 @media only screen and (max-width: 768px) {
   .main-container {
     display: block;
