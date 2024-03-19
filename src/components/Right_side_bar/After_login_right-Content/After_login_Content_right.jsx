@@ -12,7 +12,10 @@ const After_login_Content_right = () => {
         themeColor && "darkTheme"
       }`}
     >
-      <div className="first-box-preimum">
+      <div
+        className="first-box-preimum"
+        id={`${themeColor && "darkThemeSide"}`}
+      >
         <div className="reddit-Premium-img">
           <img
             src="https://i.redd.it/veuemg4c8q171.jpg"
@@ -28,12 +31,15 @@ const After_login_Content_right = () => {
           <button onClick={() => natigate("/premimum")}>Try Now</button>
         </div>
       </div>
-      <div className="create-comm-container-jdks">
+      <div
+        className="create-comm-container-jdks"
+        id={`${themeColor && "darkThemeSide"}`}
+      >
         <div className="bg-img-right"></div>
 
         <div className="bg-img-tattu-container">
           <div className="bg-img-tattu"></div>
-          <p>Home</p>
+          <p id={`${themeColor && "darkThemeSide"}`}>Home</p>
         </div>
         <div className="all-con-adfljk">
           <p className="community-text-p">
@@ -58,7 +64,10 @@ const After_login_Content_right = () => {
           </div>
         </div>
       </div>
-      <div className="last-comm-content-container">
+      <div
+        className="last-comm-content-container"
+        id={`${themeColor && "darkThemeSide"}`}
+      >
         <div className="last-comm-content">
           <div>
             <p>User Agreement</p>

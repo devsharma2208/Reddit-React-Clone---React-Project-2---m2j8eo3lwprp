@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import "./Create_Post.css";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
@@ -10,6 +10,7 @@ import axios from "axios";
 import Dropzone from "react-dropzone";
 import { useDropzone } from "react-dropzone";
 import { useNavigate, useParams } from "react-router-dom";
+import { context } from "../ContextApi/ContextProvider";
 
 const thumbsContainer = {
   display: "flex",
@@ -43,6 +44,7 @@ const img = {
   height: "100%",
 };
 const Create_Post = () => {
+  const { themeColor } = useContext(context);
   const { id } = useParams();
   // const [postId, setPostId] = useState(id.replace(/[:.]/g, ''));
   const postId = JSON.parse(sessionStorage.getItem("postId"));
@@ -195,7 +197,10 @@ const Create_Post = () => {
     // console.log({ ...formData });
   };
   return (
-    <main className="create-post-container">
+    <main
+      className="create-post-container"
+      id={`${themeColor && "createPostDarkTheme"}`}
+    >
       <div className="div-container-create">
         <div>
           <h3 className="create-post-text">Create a post</h3>

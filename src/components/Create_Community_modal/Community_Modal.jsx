@@ -15,6 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-regular-svg-icons";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { context } from "../ContextApi/ContextProvider";
 const style = {
   position: "absolute",
   top: "50%",
@@ -28,6 +29,7 @@ const style = {
 };
 
 export default function Community_Modal() {
+  const { themeColor } = React.useContext(context);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -82,7 +84,10 @@ export default function Community_Modal() {
         }}
       >
         <Fade in={open}>
-          <Box sx={style} className="box-size">
+          <Box
+            sx={style}
+            className={`box-size ${themeColor && "darkThememodal"}`}
+          >
             <div className="comm-header">
               <h4>Create a community</h4>
               <p onClick={handleClose}>+</p>

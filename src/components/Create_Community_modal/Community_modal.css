@@ -292,6 +292,30 @@
   text-align: center;
   margin-top: 5rem;
 }
+.darkThememodal {
+  background-color: rgb(44, 42, 42) !important;
+  color: white !important;
+  > .input-data {
+    > input {
+      background-color: rgb(73, 64, 64);
+      color: white;
+    }
+  }
+  > .btns-community {
+    background-color: rgb(44, 42, 42);
+  }
+  > div {
+    > div {
+      > label {
+        color: rgb(206, 193, 193);
+      }
+    }
+    > h4,
+    p {
+      color: white !important;
+    }
+  }
+}
 @media only screen and (max-width: 768px) {
   .comm-header {
     height: 3rem;

@@ -29,7 +29,7 @@
   align-items: flex-start;
   border: 1px solid rgb(255, 255, 255);
   &:hover {
-    background-color: white !important;
+    /* background-color: white !important; */
     border: 1px solid rgb(129, 126, 126);
   }
 }
@@ -182,7 +182,7 @@
   border-radius: 1rem;
   padding: 1rem;
   &:hover {
-    background-color: rgb(237, 240, 242);
+    background-color: rgb(255, 255, 255);
     cursor: pointer;
   }
 }
@@ -482,6 +482,47 @@
   background-color: rgb(246, 242, 242);
   padding: 2px;
   border-radius: 0.2rem;
+}
+#darkBlackThemeInp {
+  background-color: rgb(60, 56, 56);
+  border-color: rgb(60, 56, 56);
+  color: white;
+  &:hover {
+    background-color: rgb(77, 74, 74);
+    border-color: rgb(164, 157, 157);
+  }
+  .right-content-comntes-after-login {
+    background-color: rgb(43, 40, 40);
+  }
+  > div {
+    > h3,
+    h4 {
+      color: white;
+    }
+    .comments-after-login {
+      > div {
+        &:hover {
+          background-color: rgb(144, 130, 130);
+        }
+      }
+    }
+    > div {
+      &:hover {
+        background-color: transparent;
+      }
+
+      > div {
+        > h4,
+        h6 {
+          color: white;
+        }
+      }
+    }
+  }
+}
+#darkThemeSide {
+  background-color: rgb(77, 74, 74);
+  color: white;
 }
 @media only screen and (max-width: 768px) {
   .author-img {

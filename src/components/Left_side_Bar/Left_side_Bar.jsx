@@ -35,6 +35,7 @@ const Left_side_Bar = ({ setLognIn }) => {
       className={`main-container ${userData && "after-login-main-container"} ${
         themeColor && "darkTheme"
       }}`}
+      id={`${themeColor && "darkBlackTheme"}`}
     >
       <aside
         className={`leftSide_bar ${userData && "left-side-after-login"}  ${

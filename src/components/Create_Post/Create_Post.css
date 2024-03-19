@@ -238,6 +238,92 @@
   text-align: center;
   border-radius: 0.5rem;
 }
+#createPostDarkTheme {
+  background-color: #504e4e;
+  color: white;
+  > div {
+    > div {
+      > h3 {
+        color: rgb(232, 224, 224);
+      }
+    }
+    > div {
+      > div {
+        background-color: transparent;
+        color: white;
+        > .create-post-header-container {
+          background-color: rgb(52, 44, 44);
+        }
+        > .right-side-create-comments {
+          background-color: rgb(52, 44, 44);
+          color: white;
+          > div {
+            > p {
+              color: white;
+            }
+          }
+          > ol {
+            > li {
+              color: white;
+              border-color: #504e4e;
+            }
+          }
+        }
+        > div {
+          color: white;
+          > p {
+            > span {
+              letter-spacing: 0.1rem;
+              color: rgb(3, 255, 53);
+            }
+          }
+          > span {
+            color: rgb(181, 189, 233);
+            letter-spacing: 0.1rem;
+          }
+
+          > div {
+            background-color: rgb(52, 44, 44);
+            color: white;
+            border-color: rgb(130, 126, 126);
+            > .quill-container {
+              &:hover {
+                background-color: rgb(52, 44, 44);
+              }
+            }
+            > .drop-image {
+              &:hover {
+                background-color: transparent;
+              }
+            }
+            > div {
+              color: white;
+              border-color: rgb(130, 126, 126);
+              &:hover {
+                background-color: #565353;
+              }
+              > label {
+                color: white;
+              }
+              > div {
+                color: white;
+
+                > div {
+                  background-color: rgb(147, 141, 141);
+                  color: white;
+
+                  > button {
+                    color: white;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 @media only screen and (max-width: 768px) {
   .ql-editor {
     width: 38rem !important;

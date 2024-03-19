@@ -244,7 +244,10 @@ const Fetch_Data = ({ userData, setLognIn }) => {
     >
       {userToken && (
         <>
-          <div className="create-post-icon">
+          <div
+            className="create-post-icon"
+            id={`${themeColor && "darkBlackThemeInp"}`}
+          >
             <div>
               <img
                 className="hot-img"
@@ -260,8 +263,15 @@ const Fetch_Data = ({ userData, setLognIn }) => {
               <FontAwesomeIcon className="gallery-icons" icon={faLink} />
             </div>
           </div>
-          <div className="button-container">
-            <button className="btn-img hot" onClick={() => navigate("/empty")}>
+          <div
+            className="button-container"
+            id={`${themeColor && "darkBlackThemeInp"}`}
+          >
+            <button
+              className="btn-img hot"
+              id={`${themeColor && "darkBlackThemeInp"}`}
+              onClick={() => navigate("/empty")}
+            >
               <img
                 className="hot-img"
                 src="https://png.pngtree.com/png-clipart/20220921/ourmid/pngtree-fire-logo-png-image_6209600.png"
@@ -269,7 +279,11 @@ const Fetch_Data = ({ userData, setLognIn }) => {
               />{" "}
               HOT
             </button>
-            <button className="btn-img" onClick={() => setNewPost(true)}>
+            <button
+              className="btn-img"
+              id={`${themeColor && "darkBlackThemeInp"}`}
+              onClick={() => setNewPost(true)}
+            >
               <img
                 className="hot-img"
                 src="https://www.iconpacks.net/icons/1/free-settings-icon-778-thumb.png"
@@ -277,7 +291,11 @@ const Fetch_Data = ({ userData, setLognIn }) => {
               />{" "}
               NEW
             </button>
-            <button className="btn-img" onClick={top}>
+            <button
+              className="btn-img"
+              id={`${themeColor && "darkBlackThemeInp"}`}
+              onClick={top}
+            >
               {" "}
               <img
                 className="hot-img"
@@ -287,7 +305,11 @@ const Fetch_Data = ({ userData, setLognIn }) => {
               TOP
             </button>
 
-            <button className="btn-img" onClick={() => setBest(true)}>
+            <button
+              className="btn-img"
+              id={`${themeColor && "darkBlackThemeInp"}`}
+              onClick={() => setBest(true)}
+            >
               {" "}
               <img
                 className="hot-img"
@@ -308,6 +330,7 @@ const Fetch_Data = ({ userData, setLognIn }) => {
             data.map((item, index) => (
               <div
                 key={index}
+                id={`${themeColor && "darkBlackThemeInp"}`}
                 className={`fetched-main-contiant ${
                   userData && "right-right-all_content_after_login"
                 }`}
@@ -485,7 +508,7 @@ const Fetch_Data = ({ userData, setLognIn }) => {
                       </div>
                       <div className="share">
                         <img
-                          src="https://w7.pngwing.com/pngs/569/949/png-transparent-computer-icons-share-icon-symbol-right-arrow-miscellaneous-angle-text.png"
+                          src="https://cdn-icons-png.flaticon.com/512/25/25419.png"
                           alt="share icon"
                           width={22}
                         />
