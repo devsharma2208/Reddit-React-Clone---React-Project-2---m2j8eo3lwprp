@@ -204,6 +204,9 @@
       border: none;
       font-size: 1.3rem;
       /* margin-left: 75%; */
+      &:hover {
+        color: red;
+      }
     }
     > p {
       font-weight: 600;
@@ -233,6 +236,46 @@
   cursor: pointer;
   &:hover {
     color: red;
+  }
+}
+#darkBlackThemecolor {
+  > div {
+    color: white;
+    background-color: rgb(60, 56, 56);
+    > div {
+      color: white;
+      border-color: gray;
+      > .con-bell-icon {
+        color: white;
+        > div {
+          > h5 {
+            color: white;
+          }
+          > p {
+            color: white;
+          }
+        }
+      }
+      > div {
+        color: white;
+        > div {
+          .comment-authow,
+          .comment-comm {
+            background-color: transparent;
+            > button {
+              background-color: transparent;
+              color: white;
+              &:hover {
+                color: red;
+              }
+            }
+          }
+          > div {
+            background-color: rgb(147, 141, 141);
+          }
+        }
+      }
+    }
   }
 }
 @media only screen and (max-width: 768px) {

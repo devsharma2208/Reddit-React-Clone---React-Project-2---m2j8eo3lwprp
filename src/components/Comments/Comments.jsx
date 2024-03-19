@@ -9,7 +9,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import ReactQuill from "react-quill";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Comments.css";
 import { useNavigate } from "react-router-dom";
 import {
@@ -19,7 +19,9 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { Button } from "@mui/material";
 import CommentData from "./CommentData";
+import { context } from "../ContextApi/ContextProvider";
 const Comments = () => {
+  const { themeColor } = useContext(context);
   const navigate = useNavigate();
   const [singlePostDataValue, setSinglePostData] = useState("");
   const userImage = JSON.parse(sessionStorage.getItem("userImage"));
@@ -201,7 +203,10 @@ const Comments = () => {
               <span className="clo-x">X</span> <span>close</span>
             </div>
           </header>
-          <main className="main-content-comm">
+          <main
+            className="main-content-comm"
+            id={`${themeColor && "darkBlackThemecolor"}`}
+          >
             <div className="uoiipo">
               <div>
                 <div>

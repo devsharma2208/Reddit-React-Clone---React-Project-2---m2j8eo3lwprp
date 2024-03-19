@@ -280,6 +280,9 @@
           > span {
             color: rgb(181, 189, 233);
             letter-spacing: 0.1rem;
+            &:hover {
+              background-color: gray;
+            }
           }
 
           > div {
@@ -331,9 +334,9 @@
   .create-post-text {
     font-size: 1.1rem;
   }
-  .draft-comments {
+  /* .draft-comments {
     text-align: left;
-  }
+  } */
   /* .grid-create-post {
     display: block;
   } */
