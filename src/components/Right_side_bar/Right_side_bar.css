@@ -189,10 +189,11 @@
 .userName-image-container {
   display: flex;
   align-items: center;
+  /* flex-wrap: wrap; */
   gap: 1rem;
   margin-bottom: 1rem;
   > div {
-    > h6,
+    > div > h6,
     h4 {
       color: rgb(164, 162, 161);
       letter-spacing: 0.1rem;
@@ -483,6 +484,7 @@
   padding: 2px;
   border-radius: 0.2rem;
 }
+
 #darkBlackThemeInp {
   background-color: rgb(60, 56, 56);
   border-color: rgb(60, 56, 56);
@@ -523,6 +525,14 @@
 #darkThemeSide {
   background-color: rgb(77, 74, 74);
   color: white;
+}
+.content-time {
+  width: 100%;
+}
+.date-time {
+  margin-top: 0.2rem;
+  padding-right: 2rem;
+  color: #bbc1c7;
 }
 @media only screen and (max-width: 768px) {
   .author-img {
@@ -617,11 +627,26 @@
   .author-img {
     width: 2rem;
   }
+  .content-time {
+    width: 100%;
+    display: block;
+  }
+  .date-time {
+    margin-top: 0.2rem;
+    text-align: start;
+    /* width: 52%; */
+    padding-right: 0rem;
+  }
   .userName-image-container {
+    /* flex-wrap: wrap; */
+
+    > div > h4 {
+      font-size: 0.8rem;
+    }
     > div > h6,
     h5 {
       color: rgb(164, 162, 161);
-      font-size: 0.8rem;
+      font-size: 0.6rem;
       font-weight: 800;
       &:hover {
         color: #5a5d5f;

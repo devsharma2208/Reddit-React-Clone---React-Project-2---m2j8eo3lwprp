@@ -389,6 +389,7 @@ const Fetch_Data = ({ userData, setLognIn }) => {
                       alt="author Image"
                     />
                     <div
+                      className="content-time"
                       onClick={() => {
                         userToken &&
                           navigate(
@@ -398,8 +399,17 @@ const Fetch_Data = ({ userData, setLognIn }) => {
                           );
                       }}
                     >
-                      <h4>{item.author.name}</h4>
-                      <h6>{item.channel && item.channel.name}</h6>
+                      <div>
+                        <h4>{item.author.name}</h4>
+                        <h6>{item.channel && item.channel.name}</h6>
+                      </div>
+                      <div className="date-time">
+                        <h5>
+                          {item.createdAt.split("T")[0]}
+                          {"  "}
+                          {item.createdAt.split("T")[1].split(".")[0]}
+                        </h5>
+                      </div>
                     </div>
                   </div>
                   <h3 className="main-containt main-content-afterlogin">

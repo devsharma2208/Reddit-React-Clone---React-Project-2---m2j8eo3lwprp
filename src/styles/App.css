@@ -368,9 +368,12 @@
 }
 /* Phone */
 @media only screen and (max-width: 480px) {
-  .search-container {
-    /* margin-left: -2rem; */
-    margin-right: -2rem;
+  .icons-header,
+  .plus-icon {
+    display: none;
+  }
+  .fjkdjfks {
+    margin-left: -1rem;
   }
   .header-container {
     background-color: #000;
@@ -387,11 +390,11 @@
     color: #fff;
   }
   .search-container {
-    background-color: black;
+    /* background-color: black; */
+    margin-left: -2.5rem;
+    margin-right: -0.5rem;
   }
-  .injminmui {
-    color: white !important;
-  }
+
   .login {
     > h4 {
       font-size: 1rem;
