@@ -52,6 +52,7 @@ const Create_Post = () => {
   const [toggle, setToggle] = useState(false);
   const navigate = useNavigate();
   const [mediaType, setMediaType] = useState(null);
+  const [error, setError] = useState("");
   const userToken = localStorage.getItem("userDetails")
     ? JSON.parse(localStorage.getItem("userDetails")).token
     : "";
@@ -193,7 +194,15 @@ const Create_Post = () => {
   };
   const handlePostData = () => {
     console.log(imageData);
-    createPostAPI();
+    if (post && title) {
+      createPostAPI();
+      setError("");
+    } else {
+      setError("Please fill all required fields");
+      setTimeout(() => {
+        setError("");
+      }, 2000);
+    }
     // console.log({ ...formData });
   };
   return (
@@ -268,6 +277,7 @@ const Create_Post = () => {
                     name="Size"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
+                    required
                     placeholder="Title"
                     count={{
                       show: true,
@@ -326,6 +336,17 @@ const Create_Post = () => {
                 </div>
               </div>
               <div className="hr"></div>
+              <div>
+                <p
+                  style={{
+                    marginLeft: "2rem",
+                    color: "red",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {error}
+                </p>
+              </div>
               <div className="btn-comment">
                 {/* <div>{post}</div> */}
                 <button>Save Draft</button>

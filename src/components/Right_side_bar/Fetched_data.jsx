@@ -278,7 +278,6 @@ const Fetch_Data = ({ userData, setLognIn }) => {
             <button
               className="btn-img hot"
               id={`${themeColor && "darkBlackThemeInp"}`}
-              onClick={() => navigate("/empty")}
             >
               <img
                 className="hot-img"
@@ -326,7 +325,7 @@ const Fetch_Data = ({ userData, setLognIn }) => {
               />
               BEST
             </button>
-            <p className="three-dot-2" onClick={() => navigate("/empty")}>
+            <p className="three-dot-2">
               <FontAwesomeIcon icon={faEllipsis} />
             </p>
           </div>{" "}

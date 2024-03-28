@@ -59,6 +59,7 @@ export default function Community_Modal() {
       setOpen(false);
     } catch (error) {
       console.log(error);
+      alert(error.response.data.message);
     }
   };
   const handleCommunityData = () => {
