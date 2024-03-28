@@ -42,11 +42,15 @@ const Header = ({ setLognIn }) => {
           className="logo"
           src="https://logos-world.net/wp-content/uploads/2023/11/Reddit-New-Logo.png"
           alt="Reddit logo"
+          onClick={() => navigate("/")}
+          style={{ cursor: "pointer" }}
         />
         <img
           className={`singleRedditLogo ${!userData && "fjkdjfks"}`}
           src="https://seeklogo.com/images/R/reddit-icon-new-2023-logo-3F12137D65-seeklogo.com.png"
           alt="logo"
+          onClick={() => navigate("/")}
+          style={{ cursor: "pointer" }}
         />
         {userData && (
           <div>
@@ -90,7 +94,8 @@ const Header = ({ setLognIn }) => {
       {userData && (
         <div
           className="icons-header chat-icon"
-          onClick={() => navigate("./empty")}
+          onClick={() => navigate("/arrow")}
+          style={{ cursor: "not-allowed" }}
         >
           <img
             className="arrow-icon"
@@ -100,7 +105,11 @@ const Header = ({ setLognIn }) => {
           />
         </div>
       )}
-      <div className="img-banana" onClick={() => navigate("./empty")}>
+      <div
+        className="img-banana"
+        onClick={() => navigate("/banana")}
+        style={{ cursor: "not-allowed" }}
+      >
         <img
           src="https://www.redditstatic.com/shreddit/assets/moments/recap/recap-banana-icon.svg"
           alt="img-banana"
@@ -110,7 +119,8 @@ const Header = ({ setLognIn }) => {
         <>
           <div
             className="icons-header chat-icon"
-            onClick={() => navigate("./empty")}
+            onClick={() => navigate("/message")}
+            style={{ cursor: "not-allowed" }}
           >
             <img
               src="https://freepngimg.com/save/158648-chat-icon-download-hq/980x908"
@@ -118,10 +128,14 @@ const Header = ({ setLognIn }) => {
               width={22}
             />
           </div>
-          <div className="icons-header" onClick={() => navigate("./empty")}>
+          <div
+            className="icons-header"
+            onClick={() => navigate("/notification")}
+            style={{ cursor: "not-allowed" }}
+          >
             <FontAwesomeIcon className="bar-icon" icon={faBell} />
           </div>
-          <div className="plus-icon" onClick={() => navigate("./empty")}>
+          <div className="plus-icon" onClick={() => navigate("/submit")}>
             <FontAwesomeIcon className="hed-icons" icon={faPlus} />
           </div>
         </>
@@ -132,6 +146,7 @@ const Header = ({ setLognIn }) => {
           <div
             className="get-app-header"
             onClick={() => alert("No App Available Now")}
+            style={{ cursor: "not-allowed" }}
           >
             <FontAwesomeIcon className="bar-icon" icon={faQrcode} />
 
@@ -145,14 +160,18 @@ const Header = ({ setLognIn }) => {
           >
             <h4>Log In</h4>
           </div>
-          <div className="dot-icon">
+          <div className="dot-icon" style={{ cursor: "not-allowed" }}>
             <FontAwesomeIcon icon={faEllipsis} />
           </div>
         </>
       ) : (
         <>
           <div className="dwopdown-container">
-            <div className="advertise-icon" onClick={() => navigate("./empty")}>
+            <div
+              className="advertise-icon"
+              onClick={() => navigate("./empty")}
+              style={{ cursor: "not-allowed" }}
+            >
               <img
                 src="https://cdn-icons-png.flaticon.com/512/411/411789.png"
                 alt="advertise icon"

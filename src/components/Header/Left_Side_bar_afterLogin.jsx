@@ -2,11 +2,13 @@ import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { context } from "../ContextApi/ContextProvider";
 
 const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
   const navigate = useNavigate();
+  const { themeColor, setThemeColor } = useContext(context);
   const [userCommunity, setUserCommunity] = useState([]);
   const [toggleComm, setToggleComm] = useState(true);
   const community = JSON.parse(sessionStorage.getItem("community"));
@@ -56,7 +58,10 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
   return (
     <div>
       {toggle && (
-        <div className="home-toggle-data-after-login">
+        <div
+          className="home-toggle-data-after-login"
+          id={`${themeColor && "darkThemeafterLogin"}`}
+        >
           <input
             type="text"
             placeholder="Filter (Upcoming)"
@@ -108,7 +113,7 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
             >
               <FontAwesomeIcon icon={faHouse} /> <span>Home</span>
             </li>
-            <li>
+            <li style={{ cursor: "not-allowed" }}>
               <img
                 class="arrow-icon-dropdown"
                 src="https://www.shareicon.net/download/2015/10/06/113452_arrow_512x512.png"
@@ -138,6 +143,7 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
                 navigate("/empty");
                 setToggle(false);
               }}
+              style={{ cursor: "not-allowed" }}
             >
               <img
                 src="https://freepngimg.com/save/17678-reddit-png-picture/296x406"
@@ -151,6 +157,7 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
                 navigate("/empty");
                 setToggle(false);
               }}
+              style={{ cursor: "not-allowed" }}
             >
               <img
                 src="https://freepngimg.com/save/17678-reddit-png-picture/296x406"
@@ -177,6 +184,7 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
                 navigate("/empty");
                 setToggle(false);
               }}
+              style={{ cursor: "not-allowed" }}
             >
               <img
                 src="https://www.iconpacks.net/icons/1/free-bell-icon-860-thumb.png"
@@ -203,6 +211,7 @@ const Left_Side_bar_afterLogin = ({ toggle, setToggle }) => {
                 navigate("/empty");
                 setToggle(false);
               }}
+              style={{ cursor: "not-allowed" }}
             >
               <img
                 src="https://static.vecteezy.com/system/resources/previews/020/911/731/original/profile-icon-avatar-icon-user-icon-person-icon-free-png.png"

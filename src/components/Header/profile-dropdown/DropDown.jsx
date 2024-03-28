@@ -102,6 +102,7 @@ const DropDown = ({ setProfileDropDown }) => {
         <li className="head-home-lkjkhdk">Profile</li> */}
         <li
           className="head-home-lkjkhdk"
+          style={{ cursor: "not-allowed" }}
           onClick={() => {
             navigate("/empty");
             setProfileDropDown(false);
@@ -111,6 +112,7 @@ const DropDown = ({ setProfileDropDown }) => {
         </li>
         <li
           className="head-home-lkjkhdk"
+          style={{ cursor: "not-allowed" }}
           onClick={() => {
             navigate("/empty");
             setProfileDropDown(false);
@@ -147,6 +149,7 @@ const DropDown = ({ setProfileDropDown }) => {
         </p>
         <p
           className="opti"
+          style={{ cursor: "not-allowed" }}
           onClick={() => {
             navigate("/empty");
             setProfileDropDown(false);
@@ -175,6 +178,7 @@ const DropDown = ({ setProfileDropDown }) => {
         </p>
         <p
           className="opti"
+          style={{ cursor: "not-allowed" }}
           onClick={() => {
             navigate("/empty");
             setProfileDropDown(false);
@@ -198,6 +202,7 @@ const DropDown = ({ setProfileDropDown }) => {
         </p>
         <p
           className="opti"
+          style={{ cursor: "not-allowed" }}
           onClick={() => {
             navigate("/empty");
             setProfileDropDown(false);
@@ -212,6 +217,7 @@ const DropDown = ({ setProfileDropDown }) => {
         </p>
         <p
           className="opti"
+          style={{ cursor: "not-allowed" }}
           onClick={() => {
             navigate("/empty");
             setProfileDropDown(false);
@@ -233,7 +239,7 @@ const DropDown = ({ setProfileDropDown }) => {
             <FontAwesomeIcon icon={faAngleDown} />
           </div>
         </p>
-        <p className="opti">
+        <p className="opti" style={{ cursor: "not-allowed" }}>
           <img
             src="https://static.thenounproject.com/png/2017700-200.png"
             alt="avatar icon"
@@ -243,6 +249,7 @@ const DropDown = ({ setProfileDropDown }) => {
         </p>
         <li
           className="head-home-lkjk"
+          style={{ cursor: "not-allowed" }}
           onClick={() => {
             navigate("/empty");
             setProfileDropDown(false);
@@ -252,6 +259,7 @@ const DropDown = ({ setProfileDropDown }) => {
         </li>
         <li
           className="head-home-lkjk"
+          style={{ cursor: "not-allowed" }}
           onClick={() => {
             navigate("/empty");
             setProfileDropDown(false);
@@ -261,6 +269,7 @@ const DropDown = ({ setProfileDropDown }) => {
         </li>
         <li
           className="head-home-lkjk"
+          style={{ cursor: "not-allowed" }}
           onClick={() => {
             navigate("/empty");
             setProfileDropDown(false);
@@ -270,6 +279,7 @@ const DropDown = ({ setProfileDropDown }) => {
         </li>
         <li
           className="head-home-lkjk"
+          style={{ cursor: "not-allowed" }}
           onClick={() => {
             navigate("/empty");
             setProfileDropDown(false);

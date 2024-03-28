@@ -69,7 +69,7 @@ const Comments = () => {
         setSinglePostData(res.data.data);
         setGetAllData(false);
       } else {
-        // console.log(res.data.data.likeCount);
+        console.log(res.data.data.likeCount);
         setNewSinglePostData(res.data.data.likeCount);
         setLikeDislike(false);
       }
@@ -150,7 +150,7 @@ const Comments = () => {
         {},
         likePost_config
       );
-      // console.log(res);
+      console.log(res);
       setLikeDislike(true);
     } catch (err) {
       console.log(err);
@@ -164,8 +164,9 @@ const Comments = () => {
 
         likePost_config
       );
-      // console.log(res);
+      console.log(res);
       setLikeDislike(true);
+      setGetAllData(true);
     } catch (err) {
       console.log(err);
       alert("You Already DisLike this post...");
