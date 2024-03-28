@@ -221,7 +221,7 @@ const Fetch_Data = ({ userData, setLognIn }) => {
       setDisLikeIndex(index);
     } catch (err) {
       console.log(err);
-      alert("You Already DisLike this post...");
+      // alert("You Already DisLike this post...");
     }
   };
   const handleDeletePost = async (postId) => {

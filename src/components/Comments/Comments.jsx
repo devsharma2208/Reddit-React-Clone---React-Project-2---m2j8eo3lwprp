@@ -169,7 +169,7 @@ const Comments = () => {
       setGetAllData(true);
     } catch (err) {
       console.log(err);
-      alert("You Already DisLike this post...");
+      // alert("You Already DisLike this post...");
     }
   };
 
